@@ -3,12 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
+    <title>Home</title>
+    <link rel="stylesheet" href="./sass/_index.scss" />
     <script type="module" src="./index.js"></script>
   </head>
   <body>
+<!-------------Header----------------->
+<header class="header">
+  <include src="./partials/header.html"></include>
+</header>
+<!-------------Main----------------->
+ <div class="container">
+  <div class="categoies">
+    <include src="./partials/categories.html"></include>
+  </div>
+  
+  <div class="support">
+    <include src="./partials/support_ukraine.html"></include>
+  </div>
+  <div class="bookshelf">
+    <include src="./partials/bookshelf.html"></include>
+  </div>
+ </div>
+ 
+<!----------------Modal book------------->
+ <div class="bakdrop is-hidden" data-modal>
+    <div class="modal">
+      <include src="./partials/modal_book.html"></include>
+    </div>
+ </div>
+<!----------------Modal sign------------->
+<div class="bakdrop is-hidden" data-modal>
+  <div class="modal">
+    <include src="./partials/modal_sign_up.html"></include>
+  </div>
+</div>
+
     <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
   </body>
 </html>
