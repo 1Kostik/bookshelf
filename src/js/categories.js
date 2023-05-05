@@ -24,7 +24,7 @@ function onCategoryNameClick(e) {
 
 function markupCategories(catArray) {
   return catArray.reduce((acc, item) => {
-    acc += `<li>${item.list_name}</li>`;
+    acc += `<li class ="cat-list">${item.list_name}</li>`;
     return acc;
   }, '');
 }
