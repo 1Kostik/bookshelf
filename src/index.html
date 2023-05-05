@@ -10,32 +10,38 @@
   <body>
 <!-------------Header----------------->
 <header class="header">
+  <div class="container">
   <include src="./partials/header.html"></include>
+  </div>
 </header>
 <!-------------Main----------------->
  <div class="container">
-  <div class="categoies">
-    <include src="./partials/categories.html"></include>
-  </div>
-  
-  <div class="support">
-    <include src="./partials/support_ukraine.html"></include>
-  </div>
-  <div class="bookshelf">
-    <include src="./partials/bookshelf.html"></include>
-  </div>
+    <div class="categoies">
+      <include src="./partials/categories.html"></include>
+    </div>
+    
+    <div class="support">
+      <include src="./partials/support_ukraine.html"></include>
+    </div>
+    <div class="bookshelf">
+      <include src="./partials/bookshelf.html"></include>
+    </div>
+    <div class="scroll_up"></div>
  </div>
- 
 <!----------------Modal book------------->
- <div class="bakdrop is-hidden" data-modal>
+ <div class="backdrop is-hidden" data-modal>
+  <div class="container">
     <div class="modal">
       <include src="./partials/modal_book.html"></include>
     </div>
+  </div>
  </div>
 <!----------------Modal sign------------->
-<div class="bakdrop is-hidden" data-modal>
-  <div class="modal">
-    <include src="./partials/modal_sign_up.html"></include>
+<div class="backdrop is-hidden" data-modal>
+  <div class="container">
+    <div class="modal">
+      <include src="./partials/modal_sign_up.html"></include>
+    </div>
   </div>
 </div>
 

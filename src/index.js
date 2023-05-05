@@ -1,3 +1,4 @@
+import './js/fetchApi';
 import './js/modal';
 import './js/main';
 import './js/getBook';

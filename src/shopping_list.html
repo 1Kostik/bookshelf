@@ -11,20 +11,23 @@
 <body>
    <!-------------Header----------------->
    <header class="header">
+      <div class="container">
       <include src="./partials/header.html"></include>
+      </div>
    </header>
    <!-------------Main----------------->
    <div class="container">
-   <div class="support">
-      <include src="./partials/support_ukraine.html"></include>
-   </div>
-   <div class="shopping_list">
-      <h1 class="title_shopping_list">Shopping <span class="title_shopping_list_span">List</span></h1>
-      <include src="./partials/shopping_list.html"></include>
-   </div>
+      <div class="support">
+         <include src="./partials/support_ukraine.html"></include>
+      </div>
+      <div class="shopping_list">
+         <h1 class="title_shopping_list">Shopping <span class="title_shopping_list_span">List</span></h1>
+         <include src="./partials/shopping_list.html"></include>
+      </div>
    </div>
    <!----------------Modal book------------->
-   <div class="bakdrop is-hidden" data-modal>
+   <div class="backdrop is-hidden" data-modal>
+      <div class="container"></div>
       <div class="modal">
          <include src="./partials/modal_book.html"></include>
       </div>
