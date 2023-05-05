@@ -1,3 +1,15 @@
+
+.bestsellers-book-list {
+    display: flex;
+    gap: 24px;
+}
+
+.book-title {
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 .title_bookshelf {
 font-style: normal;
 font-weight: 700;
@@ -8,4 +20,5 @@ line-height: 52px;
 letter-spacing: -0.04em;
 
 color: #111111;
+
 }
