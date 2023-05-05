@@ -31,7 +31,7 @@ async function makeupBestsellersBooks(data) {
     const markup =await data.reduce((acc, {list_name, books}) => {
        acc += `
         <div class="bestsellers-category-item">
-        <p class="bestsellers-category-name">${list_name}</p> 
+        <p class="bestsellers-category-name" name="${list_name}">${list_name}</p> 
         <ul class="bestsellers-book-list">
         ${makeMarkupBook(books)}
         </ul>
