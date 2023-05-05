@@ -1,0 +1,12 @@
+.bestsellers-book-list {
+    display: flex;
+    gap: 24px;
+}
+
+.book-title {
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
