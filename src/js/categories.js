@@ -2,7 +2,7 @@
 // import { createOnScreen } from './createOnScreen.js';
 // import { scrollIntoView } from "scroll-js";
 
-const categoriesRef = document.body.querySelector('.categories');
+const categoriesRef = document.querySelector('.categories');
 const categoriesListRef = document.querySelector('.categories-list');
 
 function getCategories() {

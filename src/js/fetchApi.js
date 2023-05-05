@@ -25,21 +25,21 @@ class FetchApiBooks {
 }
 
 //---------------- EXAMPLE -----------------------
-const fetchList = new FetchApiBooks();
+// const fetchList = new FetchApiBooks();
 
-// fetchList.fetchCategoryList();
-fetchList.fetchTopBooks();
+// // fetchList.fetchCategoryList();
+// fetchList.fetchTopBooks();
 // fetchList.fetchSelectedCategory("Paperback Nonfiction");
 // fetchList.fetchBookInfo("643282b1e85766588626a07f");
 
 
 
-import { enderBook, renderBestSellCategories } from './renderMarkup';
+// import { enderBook, renderBestSellCategories } from './renderMarkup';
 
-fetchList
-  .fetchTopBooks()
-  .then(renderBestSellCategories)
-    .catch(error => console.log(error));
+// fetchList
+//   .fetchTopBooks()
+//   .then(renderBestSellCategories)
+//     .catch(error => console.log(error));
   
 
 
