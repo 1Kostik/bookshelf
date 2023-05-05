@@ -1,4 +1,4 @@
-class FetchApiBooks {
+export class FetchApiBooks {
   constructor() {
     this.baseUrl = 'https://books-backend.p.goit.global';
 
@@ -34,7 +34,7 @@ class FetchApiBooks {
 
 
 
-// import { enderBook, renderBestSellCategories } from './renderMarkup';
+// import { renderBook, renderBestSellCategories } from './renderMarkup';
 
 // fetchList
 //   .fetchTopBooks()
