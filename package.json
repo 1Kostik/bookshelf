@@ -20,7 +20,8 @@
   "dependencies": {
     "modern-normalize": "^1.1.0",
     "parcel-transformer-hbs": "^1.0.4",
-    "scroll-js": "^3.5.2"
+    "scroll-js": "^3.5.2",
+    "swiper": "^9.2.4"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",

@@ -37,7 +37,8 @@
        scroll-behavior: smooth;
       }
       body { font-family: "DM Sans", sans-serif;
-       color: var(--text-black);
+      
+       background: var(--bg-home-page);
       }
 ul {
   list-style: none;
