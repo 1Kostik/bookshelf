@@ -10,7 +10,7 @@ async function getBestsellersBooks() {
         const data = await response.json();
         return data;
     } catch (error) {
-        console.log(error.message)
+        console.log(error.message);
     }
 }
 
