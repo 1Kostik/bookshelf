@@ -23,7 +23,6 @@
   --text-color-title-violet: #4F2EE8;
   --text-color-categoties-dark-theme: rgba(255, 255, 255, 0.6);
   --text-color-author-categori-dark-theme: rgba(180, 175, 175, 1);
-
 }
 @font-face {
       font-family: 'DM Sans';
@@ -103,4 +102,20 @@ img {
     padding-left: 24px;
     padding-right: 24px;
   }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 30;
+  overflow-y: scroll;
+  background-color: rgba(17, 17, 17, 0.4);
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
