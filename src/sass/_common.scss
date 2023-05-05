@@ -23,7 +23,6 @@
   --text-color-title-violet: #4F2EE8;
   --text-color-categoties-dark-theme: rgba(255, 255, 255, 0.6);
   --text-color-author-categori-dark-theme: rgba(180, 175, 175, 1);
-
 }
 @font-face {
       font-family: 'DM Sans';
@@ -103,4 +102,39 @@ img {
     padding-left: 24px;
     padding-right: 24px;
   }
+}
+
+.is-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.4);
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; 
+}
+.modal {
+  opacity: 0;
+  visibility: hidden;
+}
+.modal.active,
+.backdrop.active{
+   opacity: 1;
+   visibility: visible;
 }
