@@ -1,8 +1,7 @@
 ul{
     list-style-type: none;
 }
-a
-{
+a{
     text-decoration: none;
     color: black;
 
@@ -13,5 +12,10 @@ a
     overflow: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    margin-bottom: 30px;
     
+}
+
+li{
+   cursor: pointer; 
 }
