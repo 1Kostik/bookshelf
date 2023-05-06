@@ -27,11 +27,11 @@ async function loadBooksItems(event) {
 }
 
 async function makeupBestsellersBooks(data) {
-    console.log(data)
+    console.log(data);
     const markup =await data.reduce((acc, {list_name, books}) => {
        acc += `
         <div class="bestsellers-category-item">
-        <p class="bestsellers-category-name">${list_name}</p> 
+        <p class="bestsellers-category-name" name="${list_name}">${list_name}</p> 
         <ul class="bestsellers-book-list">
         ${makeMarkupBook(books)}
         </ul>
