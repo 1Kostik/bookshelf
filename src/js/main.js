@@ -22,7 +22,6 @@ async function  loadTopBooksOnClick(event) {
            return
        }
         makeMarkupTopBooksGallery(data);
-       
     } catch (error) {
         console.log(error.message)
     }
@@ -39,7 +38,8 @@ async function onCattegoryButtonElClick(event) {
          if (data.length === 0 || data === undefined) {
             Notiflix.Notify.failure("Sorry, we didn't find anything according to your request.");
            return
-       }
+         }
+         toUpperCaseCategoryName(cattegoryName);
         document.querySelector('.bestsellers-title').innerHTML = changeColorStyleInTitle(cattegoryName);
          makeMarkupCategoryShelf(data, cattegoryName);
     } catch (error) {
@@ -88,7 +88,7 @@ async function loadCategoryBooksOnClick(event) {
     document.querySelector('.bestsellers-title').innerHTML = changeColorStyleInTitle(nameCategory);
      makeMarkupCategoryShelf(data, nameCategory);
     } catch (error) {
-        console.log(error.message)
+     console.log(error.message);
     }
 }
 
@@ -101,3 +101,11 @@ function makeMarkupCategoryShelf(data, nameCategory) {
         </div>`
 }
 
+
+function toUpperCaseCategoryName(cattegoryName) {
+    const listEl = document.querySelector('.upper-case');
+    if (listEl) {
+        listEl.classList.remove('upper-case');
+    }
+    document.querySelector(`li[name="${cattegoryName}"]`).classList.add('upper-case');
+}
