@@ -23,9 +23,6 @@ function onCategoryNameClick(e) {
   }
   let currentName = e.target.textContent;
 
-
-  
-  
   const currenUpperCaseCategory = document.querySelector(
     '.cat-list.upper-case'
   );
@@ -33,9 +30,9 @@ function onCategoryNameClick(e) {
   if (currenUpperCaseCategory) {
     currenUpperCaseCategory.classList.remove('upper-case');
   }
-  
+
   const currentCat = e.target;
-  const parentCurrentCat = currentCat.closest('.cat-list')
+  const parentCurrentCat = currentCat.closest('.cat-list');
 
   parentCurrentCat.classList.add('upper-case');
 
@@ -49,7 +46,7 @@ function onCategoryNameClick(e) {
 
 function markupCategories(catArray) {
   return catArray.reduce((acc, item) => {
-    acc += `<li class ="cat-list">${item.list_name}</li>`;
+    acc += `<li class ="cat-list cat-text" name = "${item.list_name}">${item.list_name}</li>`;
     return acc;
   }, '');
 }
