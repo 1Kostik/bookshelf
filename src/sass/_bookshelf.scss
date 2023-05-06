@@ -42,3 +42,20 @@ object-fit: cover;
 .categories-title-last-word{
     color:var(--text-color-title-violet);
 }
+
+.bestsellers-category-item{
+    position: relative;
+
+}
+
+.bestsellers-button{
+    padding-top: 14px;
+    padding-right: 28px;
+    padding-bottom: 14px;
+    padding-left: 28px;
+    display: flex;
+    border-radius: 40px;
+    border:2px solid var(--text-color-title-violet);
+    font-size: 14px;
+    text-transform: uppercase;
+}
