@@ -12,6 +12,19 @@ ul {
   margin-bottom: 30px;
 }
 
+.cat-text {
+  font-family: 'DM Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+
+letter-spacing: 133%;
+
+color: rgba(17, 17, 17, 0.6);
+}
+
 .cat-list {
   cursor: pointer;
   margin-bottom: 32px;
@@ -22,6 +35,17 @@ ul {
 
 .upper-case {
   text-transform: uppercase;
+  font-family: 'DM Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+
+letter-spacing: 133%;
+text-transform: uppercase;
+
+color: #4F2EE8;
 }
 
 .categories::-webkit-scrollbar {
