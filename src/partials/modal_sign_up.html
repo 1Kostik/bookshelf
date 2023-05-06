@@ -1,21 +1,38 @@
-<div class="bgCss">
+<button class="signUpBtn" data-modal-open-sign>
+  <p>Sign up</p>
+  <i class="fa-solid fa-arrow-right" style="color: #ddd608;"></i>
+</button>
 
-    <div class="wrap">
-      <button class="cls"></button>
-    
-      <form action="submit" class="form_sign">
-        <input placeholder="NAME" class="name input" type="text">
-    
-        <input placeholder="EMAIL" class="email" type="email" name="email" autofocus  />
-    
-        <input placeholder="PASSWORD" class="pass input" type="password" name="password" id="">
-    
-        <button>Sign up</button>
-      </form>
-      <ul class="list sign_list">
-        <li><a href="">sign up</a></li>
-        <li><a href="">sign in</a></li>
-      </ul>
-    </div>
-  
+<div class="bacckdrop is-hidden" data-modal-sign>
+
+  <div class="wrap_modal_sign">
+
+    <button type="button" class="close-modal" data-modal-close-sign>
+      <i class="fa-solid fa-xmark fa-xl"></i>
+    </button>
+
+    <form action="submit" class="form_sign">
+      <input placeholder="NAME" class="name input" type="text"><i class="fa-solid fa-user"></i>
+
+      <input placeholder="EMAIL" class="email input" type="email" name="email" /><i class="fa-regular fa-envelope"></i>
+
+      <input placeholder="PASSWORD" class="pass input" type="password" name="password" id=""><i class="fa-solid fa-lock"></i>
+
+      <button>Sign up</button>
+    </form>
+    <ul class="list sign_list">
+      <li><a href="">sign up</a></li>
+      <li><a href="">sign in</a></li>
+    </ul>
   </div>
+</div>
+
+<div>
+  <div class="fa-4x">
+    <button class="countBtn">add</button>
+    <span class="fa-layers fa-fw" style="background:rgb(210, 243, 207)">
+      <i class="fa-solid fa-check"></i>
+      <span class="fa-layers-counter" style="background:rgba(110, 224, 110, 0.753)"><span class="acum"></span></span>
+    </span>
+  </div>
+</div>
