@@ -27,7 +27,7 @@ async function loadBooksItems(event) {
 }
 
 async function makeupBestsellersBooks(data) {
-    console.log(data)
+    console.log(data);
     const markup =await data.reduce((acc, {list_name, books}) => {
        acc += `
         <div class="bestsellers-category-item">
