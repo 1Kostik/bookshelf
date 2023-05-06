@@ -28,6 +28,7 @@ async function loadBooksItems(event) {
 
 async function makeupBestsellersBooks(data) {
     console.log(data);
+    const bestsellersTitle = "Best Sellers Books";
     const markup =await data.reduce((acc, {list_name, books}) => {
        acc += `
         <div class="bestsellers-category-item">
@@ -39,7 +40,15 @@ async function makeupBestsellersBooks(data) {
         </div>`
         
         return acc
-    }, '');
+    }, `<h2 class="bestsellers-title">${changeColorStyleInTitle(bestsellersTitle)}</h2>`);
     refs.bestsellersSectionEl.innerHTML = markup;
+}
+
+function changeColorStyleInTitle(category) {
+    const titleInArray = category.trim().split(" ");
+    const lastWord=titleInArray[titleInArray.length-1];
+    const stringExceptLastWord = titleInArray.slice(0, titleInArray.length - 1).join(' ');
+    const string = stringExceptLastWord + ` <span class="categories-title-last-word">${lastWord}</span>`;
+    return string;
 }
 
