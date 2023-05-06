@@ -1,0 +1,114 @@
+@media screen and (max-width: 767px) {
+  .shopping_list {
+    margin-top: 40px;
+  }
+
+  .title_shopping_list {
+    width: 193px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.19;
+    letter-spacing: -0.04em;
+    margin-bottom: 120px;
+  }
+
+  .title_shopping_list_span {
+    color: var(--hover-focus);
+  }
+
+  .shopping-list-empty-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .shopping-list-empty-text {
+    margin-bottom: 14px;
+
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.29;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .shopping-list-empty-image {
+    background-image: url(../img/mobile/shopping_list/books.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 265px;
+    height: 198px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .shopping-list-empty-image {
+      background-image: url(../img/mobile/shopping_list/books@2x.png);
+      background-size: 265px 198px;
+    }
+  }
+}
+
+// tablet
+
+@media screen and (min-width: 768px) {
+  .shopping_list {
+    margin-top: 40px;
+  }
+
+  .title_shopping_list {
+    width: 292px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    margin-bottom: 140px;
+  }
+
+  .title_shopping_list_span {
+    color: var(--hover-focus);
+  }
+
+  .shopping-list-empty-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .shopping-list-empty-text {
+    margin-bottom: 20px;
+
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.33;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .shopping-list-empty-image {
+    background-image: url(../img/tablet/books.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 322px;
+    height: 241px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .shopping-list-empty-image {
+      background-image: url(../img/tablet/books@2x.png);
+      background-size: 322px 241px;
+    }
+  }
+}
+
+// Desktop
+
+@media screen and (min-width: 1200px) {
+}
