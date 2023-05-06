@@ -1,25 +1,50 @@
-// import { scrollIntoView } from "scroll-js";
+// import { scrollTo } from 'scroll-js';
 
 import { FetchApiBooks } from './fetchApi';
 
-const fetchCategories = new FetchApiBooks();
-
 const categoriesRef = document.querySelector('.categories');
+
 const categoriesListRef = document.querySelector('.categories-list');
+const catListRef = document.querySelector('.cat-list');
+
+// var myElement = document.body.getElementsByClassName('my-element')[0];
+// scrollTo(categoriesListRef, { behavior: 'smooth' });
+// scrollIntoView(categoriesListRef, { behavior: 'smooth' });
+const fetchCategories = new FetchApiBooks();
 
 fetchCategories.fetchCategoryList().then(markupCategories).then(createOnScreen);
 
-categoriesRef.addEventListener('click', onCategoryNameClick);
+categoriesListRef.addEventListener('click', onCategoryNameClick);
 
 function onCategoryNameClick(e) {
-  e.preventDefault();
+  const catList = e.target.classList.contains('cat-list');
+  if (!catList) {
+    return;
+  }
+  let currentName = e.target.textContent;
 
-  let currenName = e.target.textContent;
-  if (currenName === 'All categories') {
+
+  
+  
+  const currenUpperCaseCategory = document.querySelector(
+    '.cat-list.upper-case'
+  );
+
+  if (currenUpperCaseCategory) {
+    currenUpperCaseCategory.classList.remove('upper-case');
+  }
+  
+  const currentCat = e.target;
+  const parentCurrentCat = currentCat.closest('.cat-list')
+
+  parentCurrentCat.classList.add('upper-case');
+
+  if (currentName === 'All categories') {
     fetchCategories.fetchTopBooks();
     return;
   }
-  fetchCategories.fetchSelectedCategory(currenName).then(markupCategories);
+
+  fetchCategories.fetchSelectedCategory(currentName);
 }
 
 function markupCategories(catArray) {
