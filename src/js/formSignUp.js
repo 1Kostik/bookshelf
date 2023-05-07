@@ -34,3 +34,37 @@ window.onload = () => {
         });
     };
 }
+
+
+// let x = 0;
+// const counter = document.querySelector('.countBtn');
+// const shopList = document.querySelector('#hide');
+
+// const acum = document.querySelector('.acum');
+
+// function count() {
+// 	x++;
+
+//     if (x > 0) {
+//         shopList.classList.remove('is-hiden')
+//         console.log('спрацювало')
+//     }
+
+//     console.log(x)
+
+// 	acum.innerHTML = x;
+// }
+
+// counter.addEventListener('click', (evt) => {
+// count();
+
+// })
+
+
+
+let x = 0;
+const counter = document.querySelector('.countBtn');
+
+const acum = document.querySelector('.acum');
+
+acum.innerHTML = x;
