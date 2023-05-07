@@ -1,6 +1,6 @@
 import './js/fetchApi';
 import './js/main';
-import './shoppingList';
+import './js/shoppingList';
 import './js/categories';
 import './js/formSignUp';
 import './js/localStorage';
