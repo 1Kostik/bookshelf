@@ -182,23 +182,35 @@
 
 
 
-
 // SCROLL UP
 #scrollup {
   position: fixed;
   z-index: 99999;
-  bottom: 1px;
-  right: 50%;
+  bottom: 60;
+  right: 60;
 
-  background-color: #4F2EE8;
+  background-color: rgba(119, 174, 236, 0.767);
   border-radius: 50%;
-  padding: 20px;
+  padding: 10px;
 
   font-size: 30px;
   color: #FFFFFF;
 
+  transform: translate(50%, 50%);
+
   cursor: pointer;
-  animation: pulsing 5s infinite;
+}
+
+#scrollup:hover {
+  background: radial-gradient(ellipse at center,
+      #7f86e6,
+      #4751e7,
+      #473aff);
+  background-size: 300% 300%;
+  animation: gradient 30s ease infinite;
+
+  font-size: 60px;
+  padding: 20px;
 }
 
 .isshowbtn {

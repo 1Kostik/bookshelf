@@ -1,8 +1,11 @@
 import './js/fetchApi';
-import './js/modal';
 import './js/main';
-import './js/getBook';
+import './js/shoppingList';
 import './js/categories';
 import './js/formSignUp';
 import './js/localStorage';
 import './js/renderMarkup';
+import './js/mobileMenu';
+import './js/mobileMenu';
+import './js/themeSwitch';
+import './js/modal';
