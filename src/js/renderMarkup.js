@@ -1,4 +1,4 @@
- export function makeMarkupBook( books ) {
+export function makeMarkupBook(books) {
     const markup=  books.reduce((acc, { _id, book_image, author, title}) => {
      acc+=`<li class="book-item" id="${_id}">
     <div class="book-img-container">
@@ -12,3 +12,4 @@
     }, '')
     return markup
 }
+
