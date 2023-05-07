@@ -41,20 +41,37 @@
 .sing-up-btn {
   display: none;
 }
+.authorizated-btn {
+  display: none;
+}
 .mobile-menu-open-btn {
-  //   background-color: black;
   width: 28px;
   height: 28px;
+  cursor: pointer;
 }
 .burger-icon {
   width: 28px;
   height: 28px;
-  /* fill: white; */
+  fill: var(--text-color-title-dark);
+}
+.cross-icon.dark-theme,
+.burger-icon.dark-theme {
+  fill: var(--text-color-title-white);
+}
+.burger-icon:hover,
+.burger-icon:focus {
+  fill: var(--text-color-title-violet);
 }
 .cross-icon {
   width: 28px;
   height: 28px;
+  fill: var(--text-color-title-dark);
   display: none;
+}
+
+.cross-icon:hover,
+.cross-icon:focus {
+  fill: var(--text-color-title-violet);
 }
 .theme-switcher-input {
   appearance: none;
@@ -62,6 +79,7 @@
   width: 40px;
   height: 28px;
   margin: 0;
+  cursor: pointer;
 }
 .theme-switcher-input::before {
   content: '';
@@ -155,7 +173,7 @@
     align-items: center;
     margin-left: auto;
   }
-  .sing-up-btn {
+  .log-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -164,16 +182,57 @@
     font-size: 14px;
     line-height: 1.29;
     letter-spacing: -0.04em;
-    color: var(--text-color-title-white);
     padding: 14px;
-    background: var(--text-color-title-violet);
     border: 1.5px solid var(--text-color-title-dark);
     border-radius: 18px;
+  }
+  .sing-up-btn {
+    color: var(--text-color-title-white);
+    background: var(--text-color-title-violet);
+  }
+  .log-out-btn {
+    color: var(--text-color-title-dark);
+    background: var(--text-color-title-white);
   }
   .sing-up-icon {
     width: 20px;
     height: 20px;
     margin-left: 90px;
+    fill: rgba(234, 198, 69, 1);
+  }
+  .authorizated-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.31;
+    letter-spacing: -0.02em;
+    color: var(--text-color-title-white);
+    padding: 4px 12px;
+    background: var(--text-color-title-violet);
+    border: none;
+    border-radius: 36px;
+  }
+  .user-icon-box {
+    background-color: #f6f6f6;
+    padding: 6px;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    margin-right: 9px;
+  }
+  .user-icon {
+    width: 19px;
+    height: 19px;
+    fill: var(--text-color-title-violet);
+  }
+  .user-icon-arrow {
+    width: 23px;
+    height: 26px;
+    fill: var(--text-color-title-white);
+    margin-left: 4px;
   }
 }
 
@@ -185,3 +244,5 @@
     gap: 24px;
   }
 }
+
+

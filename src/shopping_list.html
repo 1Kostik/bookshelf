@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Shopping List</title>
-   <link rel="stylesheet" href="./sass/_index.scss" />
-   <script type="module" src="./index.js"></script>
-</head>
-<body>
-   <!-------------Header----------------->
-   <header class="header">
-      <div class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="./sass/_index.scss" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <!-------------Header----------------->
+    <header class="header">
       <include src="./partials/header.html"></include>
-      </div>
-   </header>
-   <!-------------Main----------------->
-   <div class="container">
+    </header>
+    <!-------------Main----------------->
+    <div class="container">
       <div class="support">
-         <include src="./partials/support_ukraine.html"></include>
+        <include src="./partials/support_ukraine.html"></include>
       </div>
       <div class="shopping_list">
-         <h1 class="title_shopping_list">Shopping <span class="title_shopping_list_span">List</span></h1>
-         <include src="./partials/shopping_list.html"></include>
+        <h1 class="title_shopping_list">
+          Shopping <span class="title_shopping_list_span">List</span>
+        </h1>
+        <include src="./partials/shopping_list.html"></include>
       </div>
-   </div>
-   <!----------------Modal book------------->
-   <div class="backdrop is-hidden" data-modal>
+    </div>
+    <!----------------Modal book------------->
+    <div class="backdrop is-hidden" data-modal>
       <div class="container"></div>
       <div class="modal">
-         <include src="./partials/modal_book.html"></include>
+        <include src="./partials/modal_book.html"></include>
       </div>
-   </div>
-</body>
+    </div>
+  </body>
 </html>

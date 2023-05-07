@@ -53,7 +53,7 @@ async function  makeMarkupTopBooksGallery(data) {
         <div class="bestsellers-category-item">
         <p class="bestsellers-category-name" name="${list_name}">${list_name}</p> 
         <ul class="bestsellers-book-list">
-        ${makeMarkupBook(books)}
+        ${makeMarkupBook(showCorrectNumberOfBooks(books))}
         </ul>
         <button type="button" class="bestsellers-button" name="${list_name}">see more</button>
         </div>`
@@ -108,4 +108,19 @@ function toUpperCaseCategoryName(cattegoryName) {
         listEl.classList.remove('upper-case');
     }
     document.querySelector(`li[name="${cattegoryName}"]`).classList.add('upper-case');
+}
+
+
+function showCorrectNumberOfBooks(books) {
+    if (window.outerWidth <= 375) {
+        return books.slice(0,1);
+        return 
+    }
+    if (window.outerWidth > 375 && window.outerWidth <= 768) {
+        return books.slice(0,3);
+      
+    }
+    if (window.outerWidth > 768) {
+       return books.slice(0,5);
+    }
 }

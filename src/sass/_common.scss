@@ -3,30 +3,43 @@
   --bg-white-header: #ffffff;
   --bg-dark-theme-header: #111111;
   --bg-dark-theme-body: #202024;
-  --hover-focus: #4f2ee8;
-  --hover-book: #eac645;
-  --hover-text-categori-dark-theme: #eac645;
-  --bg-current-page: #eac645;
-  --bg-pagination-btn: #eac645;
-  --bg-shoppinglist-page: #d0d0d0;
-  --bg-home-page: #d0d0d0;
-  --bg-home-page-cards-book: #b4afaf;
-  --bg-support-ukraine: radial-gradient(
-    183.6% 183.01% at 59.76% -23.42%,
-    #4f2ee8 18.03%,
-    #ffffff 100%
-  );
-  --box-shadow-bg-support: 0px 10px 10px rgba(245, 245, 247, 0.1);
-  --bg-card-book-shoppinglist-page: #ffffff;
-  --bg-card-book-shoppinglist-page-dark-theme: #111111;
-  --bg-border-card-book-shoppinglist-page: #4f2ee866;
+
+  --hover-focus: #4F2EE8;
+  --hover-book:#EAC645;
+  --hover-text-categori-dark-theme:#EAC645;
+
+  --bg-current-page: #EAC645;
+  --bg-pagination-btn:#EAC645 ;
+
+  --bg-modal-book-white-theme:#FFFFFF;
+  --bg-shoppinglist-page: #F6F6F6;
+  --bg-home-page:#F6F6F6;
+  --bg-home-page-cards-book:#F6F6F6;
+
+  --bg-support-ukraine: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
+  --box-shadow-bg-support:0px 10px 10px rgba(245, 245, 247, 0.1);
+
+  --bg-card-book-shoppinglist-page: #F6F6F6;
+  --bg-card-book-shoppinglist-page-dark-theme:#202024;
+
+  --bg-border-card-book-shoppinglist-page: #4F2EE866;
+  
   --text-color-card-book-shoppinglist-page: #111111;
-  --text-color-card-book-shoppinglist-page-dark-theme: #ffffff;
-  --text-color-title-white: #ffffff;
-  --text-color-title-dark: #111111;
-  --text-color-title-violet: #4f2ee8;
-  --text-color-categoties-dark-theme: rgba(255, 255, 255, 0.6);
-  --text-color-author-categori-dark-theme: rgba(180, 175, 175, 1);
+  --text-color-card-book-shoppinglist-page-dark-theme:#FFFFFF;
+
+  --text-color-title-white:#FFFFFF;
+  --text-color-title-dark:#111111;
+  --text-color-title-violet: #4F2EE8;
+
+  --text-color-author-category-white-theme:rgba(180, 175, 175, 1);
+  --text-color-title-category-white-theme:rgba(180, 175, 175, 1);
+  --text-color-allcategories-white-theme:rgba(17, 17, 17, 0.6);
+
+  --text-color-book-title-dark-theme:#FFFFFF;
+  --text-color-allcategories-dark-theme: rgba(255, 255, 255, 0.6);
+  --text-color-title-category-dark-theme:rgba(180, 175, 175, 1);
+  --text-color-author-category-dark-theme: rgba(180, 175, 175, 1);
+
 }
 @font-face {
   font-family: 'DM Sans';
