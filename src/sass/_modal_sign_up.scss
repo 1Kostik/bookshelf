@@ -223,12 +223,8 @@
   }
 }
 
-.signUpBtn {
-  cursor: pointer;
-  animation: pulsing 4s infinite;
-}
-
 .fa-fw {
+  display: flex;
   font-size: 10;
   text-align: center;
 }
