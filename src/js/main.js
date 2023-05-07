@@ -75,7 +75,7 @@ function changeColorStyleInTitle(category) {
 
 refs.categoriesListEl.addEventListener('click', loadCategoryBooksOnClick);
 async function loadCategoryBooksOnClick(event) {
-    if (event.target.nodeName !== 'LI' || event.target.textContent=== 'All categories') {
+    if (event.target.nodeName !== 'LI' || event.target.textContent.trim()=== 'All categories') {
         return
     }
     const nameCategory = event.target.textContent;
@@ -114,7 +114,6 @@ function toUpperCaseCategoryName(cattegoryName) {
 function showCorrectNumberOfBooks(books) {
     if (window.outerWidth <= 375) {
         return books.slice(0,1);
-        return 
     }
     if (window.outerWidth > 375 && window.outerWidth <= 768) {
         return books.slice(0,3);
@@ -126,6 +125,7 @@ function showCorrectNumberOfBooks(books) {
 }
 
 
+// console.dir(refs.allCategoriesTitleEl.classList.contains('upper-case'))
 // function showCorrectNumbersBestsellers() {
 //     if (refs.bestsellersSectionEl.firstElementChild.textContent !== 'Best Sellers Books') {
 //         return
