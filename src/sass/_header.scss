@@ -186,8 +186,6 @@ body.mobile-menu-open {
   }
   .header-container {
     z-index: 0;
-  }
-  .header {
     padding-top: 14px;
     padding-bottom: 13px;
   }
@@ -230,6 +228,11 @@ body.mobile-menu-open {
     width: 20px;
     height: 20px;
     margin-left: 4px;
+  }
+  .navigation-link.dark-theme {
+    display: flex;
+    align-items: center;
+    color: var(--text-color-title-white);
   }
   .logo-shop.dark-theme {
     fill: var(--text-color-title-white);
