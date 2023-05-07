@@ -2,6 +2,7 @@
 .bestsellers-book-list {
     display: flex;
     gap: 24px;
+    flex-wrap: wrap;
 }
 .book-item{
     cursor: pointer;
@@ -58,4 +59,7 @@ object-fit: cover;
     border:2px solid var(--text-color-title-violet);
     font-size: 14px;
     text-transform: uppercase;
+}
+.home_page_main {
+    display: flex;
 }
