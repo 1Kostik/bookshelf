@@ -124,3 +124,49 @@ function showCorrectNumberOfBooks(books) {
        return books.slice(0,5);
     }
 }
+
+
+// function showCorrectNumbersBestsellers() {
+//     if (refs.bestsellersSectionEl.firstElementChild.textContent !== 'Best Sellers Books') {
+//         return
+//     }
+//  window.addEventListener('resize', debounce(hideBooks, 200))
+// }
+
+// function hideBooks() {
+//     const listCategoriesEl = Array.from(document.querySelectorAll('.bestsellers-book-list'));
+//     if (window.outerWidth <= 375) {
+//         listCategoriesEl.forEach((item) => {
+//             console.log(item.children.length)
+//             for (let i = 0; i < item.children.length; i += 1) {
+//                 if (i === 0) {
+//                     item.children[i].hidden = false;
+//                     continue
+//                 }
+//                 item.children[i].hidden = true;
+                
+//             }
+// })
+//     }
+//     if (window.outerWidth > 375 && window.outerWidth <= 768) {
+//         listCategoriesEl.forEach((item) => {
+//             console.log(item.children.length)
+//             for (let i = 0; i < item.children.length; i += 1) {
+//                 if (i <= 2) {
+//                     item.children[i].hidden = false;
+//                     continue
+//                 }
+//                 item.children[i].hidden = true;
+                
+//             }
+// })
+//     }
+//     if (window.outerWidth > 768) {
+//         listCategoriesEl.forEach((item) => {
+//             console.log(item.children.length)
+//             for (let i = 0; i < item.children.length; i += 1){
+//                 item.children[i].hidden = false;
+//             }
+//         })
+//     }
+// }
