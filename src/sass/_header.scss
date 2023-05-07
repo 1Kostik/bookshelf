@@ -1,10 +1,12 @@
-.header {
+.header-container {
+  position: relative;
   background: var(--bg-white-header);
   border: 1.5px solid var(--text-color-title-dark);
   border-radius: 0px 0px 8px 8px;
   padding-top: 18px;
   padding-bottom: 18px;
   color: var(--text-color-title-dark);
+  z-index: 2;
 }
 .header.dark-theme {
   background: var(--bg-dark-theme-header);
@@ -50,8 +52,6 @@
   cursor: pointer;
 }
 .burger-icon {
-  width: 28px;
-  height: 28px;
   fill: var(--text-color-title-dark);
 }
 .cross-icon.dark-theme,
@@ -62,16 +62,9 @@
 .burger-icon:focus {
   fill: var(--text-color-title-violet);
 }
-.cross-icon {
-  width: 28px;
-  height: 28px;
-  fill: var(--text-color-title-dark);
-  display: none;
-}
 
-.cross-icon:hover,
-.cross-icon:focus {
-  fill: var(--text-color-title-violet);
+.burger-icon .mobile-menu-close-icon {
+  display: none;
 }
 .theme-switcher-input {
   appearance: none;
@@ -117,7 +110,83 @@
 .navigation-main {
   display: none;
 }
+.mobile-menu-container {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  background: var(--bg-support-ukraine);
+  padding: 46px 20px 0 20px;
+  height: 748px;
+  // transition: transform 1000ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  // transform: translateX(100%);
+}
+.mobile-menu-container.is-open {
+  display: block;
+  // transform: translateX(0);
+}
+.sing-up-btn-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  padding: 14px;
+  border: 1.5px solid var(--text-color-title-dark);
+  border-radius: 18px;
+  color: var(--text-color-title-white);
+  background: var(--text-color-title-violet);
+}
+.sing-up-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 90px;
+  fill: rgba(234, 198, 69, 1);
+}
+.mobile-menu-open-btn.is-open .mobile-menu-close-icon {
+  display: block;
+}
+.mobile-menu-open-btn.is-open .mobile-menu-open-icon {
+  display: none;
+}
+
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+// .mobile-menu-container {
+//   position: relative;
+//   padding: 40px;
+// }
+// .mobile-menu {
+//   display: flex;
+//   flex-direction: column;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: 999;
+//   width: 100vw;
+//   height: 100vh;
+//   transition: transform 250ms ease-in-out;
+//   transform: translateX(100%);
+//   // background-color: var(--main-background);
+// }
+// .mobile-menu.is-open {
+//   transform: translateX(0);
+// }
+
 @media screen and (min-width: 768px) {
+  .mobile-menu-container,
+  .mobile-menu-container.is-open {
+    display: none;
+  }
+  .header-container {
+    z-index: 0;
+  }
   .header {
     padding-top: 14px;
     padding-bottom: 13px;
@@ -194,12 +263,6 @@
     color: var(--text-color-title-dark);
     background: var(--text-color-title-white);
   }
-  .sing-up-icon {
-    width: 20px;
-    height: 20px;
-    margin-left: 90px;
-    fill: rgba(234, 198, 69, 1);
-  }
   .authorizated-btn {
     display: flex;
     justify-content: center;
@@ -244,5 +307,3 @@
     gap: 24px;
   }
 }
-
-
