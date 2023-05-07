@@ -1,8 +1,10 @@
 
 .bestsellers-book-list {
+  flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
     display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
+    margin-bottom: 32px;
 }
 .book-item{
     cursor: pointer;
@@ -32,6 +34,7 @@ color: #111111;
     width:180px;
     height: 256px;
     overflow: hidden;
+    margin-bottom: 14px;
 }
 
 .book-img{
@@ -59,7 +62,19 @@ object-fit: cover;
     border:2px solid var(--text-color-title-violet);
     font-size: 14px;
     text-transform: uppercase;
+        margin-bottom: 40px;
 }
 .home_page_main {
     display: flex;
+}
+.bookshelf {
+    padding-left: 40px;
+    padding-top: 40px;
+    padding-right: 24px;
+}
+.bestsellers-title {
+margin-bottom: 40px;
+}
+.bestsellers-category-name {
+    margin-bottom: 18px;
 }
