@@ -34,21 +34,3 @@ window.onload = () => {
         });
     };
 }
-
-
-
-
-
-// counter
-let x = 0;
-const counter = document.querySelector('.countBtn');
-const acum = document.querySelector('.acum');
-
-function count() {
-	x++;
-	acum.innerHTML = x;
-}
-
-counter.addEventListener('click', (evt) => {
-count();
-})

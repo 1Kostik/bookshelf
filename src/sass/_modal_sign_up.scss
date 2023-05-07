@@ -1,8 +1,7 @@
-// modal
-.bacckdrop {
+// modal bach drop
+.bacckdrop-sign {
   position: fixed;
   position: fixed;
-  z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
@@ -17,29 +16,24 @@
   animation: gradient 15s ease infinite;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
 
-  50% {
-    background-position: 100% 50%;
-  }
+// WRAPER FOR MODAL FORM SIGN
+.wrap_modal_sign {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-  100% {
-    background-position: 0% 50%;
-  }
+  background-color: #FFFFFF;
+  width: 579px;
+  height: 516px;
+  background: #F6F6F6;
+  border: 2px solid #111111;
+  border-radius: 18px;
 }
 
-.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
 
-// FORM AND ELEMENTS
-
-
+// ELEMENTS FOWM
 .form_sign {
   display: flex;
   flex-direction: column;
@@ -48,7 +42,11 @@
 }
 
 .form_sign input {
-  padding: 20px 173px 20px 40px;
+  width: 499px;
+  height: 64px;
+
+  padding-left: 40px;
+
   cursor: text;
   border-radius: 40px;
 }
@@ -57,14 +55,16 @@
   margin-top: 28px;
 }
 
-.input:hover {
-  border-color: #EAC645;
-}
+.sign-btn-on-modal {
+  width: 499px;
+  height: 64px;
 
-.input:focus {
-  border-color: #EAC645;
-}
+  font-size: 18px;
+  line-height: 24px;
 
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
 
 .form_sign button {
   margin-top: 40px;
@@ -73,6 +73,60 @@
   padding: 20px 173px;
   background: #111111;
   color: #F3F3F3;
+}
+
+.sign_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.close-modal {
+  cursor: pointer;
+
+  width: 14px;
+  height: 14px;
+
+  position: absolute;
+  right: 31px;
+  top: 31px;
+
+  display: flex;
+  align-items: center;
+  font-size: medium;
+}
+
+
+
+
+
+// icons
+.form_sign i {
+  position: absolute;
+  right: 75;
+
+  width: 24px;
+  height: 18px;
+}
+
+.email-icon-modal-sign {
+  top: 197;
+}
+
+.password-icon-modal-sign {
+  top: 285;
+}
+
+
+
+
+
+// EFECTS FOR FORM
+.close-modal:hover {
+  animation: pulsing 1s infinite;
+  color: #ff0000;
 }
 
 .form_sign button:hover {
@@ -85,72 +139,27 @@
   color: #111111;
 }
 
-.sign_list {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+.input:hover {
+  border-color: #EAC645;
 }
 
-.wrap_modal_sign {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  padding: 40px;
-
-  background-color: #FFFFFF;
-  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+.input:focus {
+  border-color: #EAC645;
 }
 
-.close-modal {
-  cursor: pointer;
-  padding: 0;
-  background-color: transparent;
-  border: transparent;
-  border-radius: 50%;
-  width: 14px;
-  height: 14px;
-  position: absolute;
-  right: 31px;
-  top: 31px;
-  border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
+// animation
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
 
-.close-modal:hover {
-  animation: pulsing 1s infinite;
-  color: #ff0000;
-}
+  50% {
+    background-position: 100% 50%;
+  }
 
-// scrol up
-#scrollup {
-  position: fixed;
-  z-index: 99999;
-  bottom: 1px;
-  right: 50%;
-
-  background-color: #4F2EE8;
-  border-radius: 50%;
-  padding: 20px;
-
-  font-size: 30px;
-  color: #FFFFFF;
-
-  cursor: pointer;
-  animation: pulsing 5s infinite;
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @-webkit-keyframes pulsing {
@@ -168,6 +177,28 @@
     -webkit-transform: scale(0.9, 0.9);
     transform: scale(0.9, 0.9);
   }
+}
+
+
+
+
+
+// SCROLL UP
+#scrollup {
+  position: fixed;
+  z-index: 99999;
+  bottom: 1px;
+  right: 50%;
+
+  background-color: #4F2EE8;
+  border-radius: 50%;
+  padding: 20px;
+
+  font-size: 30px;
+  color: #FFFFFF;
+
+  cursor: pointer;
+  animation: pulsing 5s infinite;
 }
 
 .isshowbtn {
