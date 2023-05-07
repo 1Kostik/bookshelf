@@ -1,55 +1,61 @@
-<div class="header-box">
-  <a class="logo-link" href="/src/index.html">
-    <svg class="logo-icon">
-      <use href="/src/img/symbol-defs.svg#icon-logo-icon"></use>
-    </svg>
-    <svg class="logo-name">
-      <use href="/src/img/symbol-defs.svg#icon-bookshelf"></use>
-    </svg>
-  </a>
-  <nav class="navigation-main">
-    <ul class="navigation-list">
-      <li class="navigation-item current">
-        <a class="navigation-link" href="/src/index.html">home</a>
-      </li>
-      <li class="navigation-item">
-        <a class="navigation-link" href="/src/shopping_list.html"
-          >shopping list
-          <svg class="logo-shop">
-            <use href="/src/img/symbol-defs.svg#icon-shop-list"></use>
-          </svg>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <div class="header-button-box">
-    <input
-      class="theme-switcher-input"
-      type="checkbox"
-      name="checkbox"
-      id="checkbox"
-      onchange="onChange()"
-    />
+<div class="header-container">
+  <div class="container">
+    <div class="header-box">
+      <a class="logo-link" href="/src/index.html">
+        <svg class="logo-icon">
+          <use href="/src/img/symbol-defs.svg#icon-logo-icon"></use>
+        </svg>
+        <svg class="logo-name">
+          <use href="/src/img/symbol-defs.svg#icon-bookshelf"></use>
+        </svg>
+      </a>
+      <nav class="navigation-main">
+        <ul class="navigation-list">
+          <li class="navigation-item current">
+            <a class="navigation-link" href="/src/index.html">home</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="/src/shopping_list.html"
+              >shopping list
+              <svg class="logo-shop">
+                <use href="/src/img/symbol-defs.svg#icon-shop-list"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-button-box">
+        <input
+          class="theme-switcher-input"
+          type="checkbox"
+          name="checkbox"
+          id="checkbox"
+          onchange="onChange()"
+        />
 
-    <button type="button" class="mobile-menu-open-btn">
-      <svg class="burger-icon">
-        <use href="/src/img/symbol-defs.svg#icon-burger"></use>
-      </svg>
-      <svg class="cross-icon">
-        <use href="/src/img/symbol-defs.svg#icon-close"></use>
-      </svg>
-    </button>
-    <button
-      type="button"
-      class="log-btn sing-up-btn signUpBtn"
-      data-modal-open-sign
-    >
-      Sing up
-      <svg class="sing-up-icon">
-        <use href="/src/img/symbol-defs.svg#icon-arrow-sign"></use>
-      </svg>
-    </button>
-    <!-- <button type="button" class="authorizated-btn">
+        <button type="button" class="mobile-menu-open-btn" data-mobile-menu-btn>
+          <svg class="burger-icon" width="28" height="28">
+            <use
+              class="mobile-menu-open-icon"
+              href="/src/img/symbol-defs.svg#icon-burger"
+            ></use>
+            <use
+              class="mobile-menu-close-icon"
+              href="/src/img/symbol-defs.svg#icon-close"
+            ></use>
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="log-btn sing-up-btn signUpBtn"
+          data-modal-open-sign
+        >
+          Sing up
+          <svg class="sing-up-icon">
+            <use href="/src/img/symbol-defs.svg#icon-arrow-sign"></use>
+          </svg>
+        </button>
+        <!-- <button type="button" class="authorizated-btn">
       <div class="user-icon-box">
         <svg class="user-icon">
           <use href="/src/img/symbol-defs.svg#icon-user"></use>
@@ -60,13 +66,28 @@
         <use href="/src/img/symbol-defs.svg#icon-arrow-user"></use>
       </svg>
     </button> -->
-    <!-- <button type="button" class="log-btn log-out-btn">
+        <!-- <button type="button" class="log-btn log-out-btn">
       Log out
       <svg class="sing-up-icon">
         <use href="/src/img/symbol-defs.svg#icon-arrow-sign"></use>
       </svg>
     </button> -->
+      </div>
+    </div>
   </div>
+</div>
+
+<div class="mobile-menu-container" data-mobile-menu>
+  <button
+    type="button"
+    class="sing-up-btn-mobile signUpBtn"
+    data-modal-open-sign
+  >
+    Sing up
+    <svg class="sing-up-icon">
+      <use href="/src/img/symbol-defs.svg#icon-arrow-sign"></use>
+    </svg>
+  </button>
 </div>
 <script>
   function onChange() {
@@ -76,7 +97,6 @@
     const iconShop = document.querySelector('.logo-shop');
     const current = document.querySelector('.current');
     const burgerIcon = document.querySelector('.burger-icon');
-    const crossIcon = document.querySelector('.cross-icon');
     if (checkbox.checked) {
       checkbox.classList.toggle('dark-theme');
       header.classList.toggle('dark-theme');
@@ -84,7 +104,6 @@
       iconShop.classList.toggle('dark-theme');
       current.classList.toggle('dark-theme');
       burgerIcon.classList.toggle('dark-theme');
-      crossIcon.classList.toggle('dark-theme');
     } else {
       checkbox.classList.toggle('dark-theme');
       header.classList.toggle('dark-theme');
@@ -92,7 +111,7 @@
       iconShop.classList.toggle('dark-theme');
       current.classList.toggle('dark-theme');
       burgerIcon.classList.toggle('dark-theme');
-      crossIcon.classList.toggle('dark-theme');
     }
   }
 </script>
+<!-- <script src="./js/mobileMenu.js"></script> -->
