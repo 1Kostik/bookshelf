@@ -3,13 +3,13 @@ const fetchBook = new FetchApiBooks();
 
 const refs = {
   bestsellersSectionEl: document.querySelector('.bookshelf'),
-  modalContainer: document.querySelector('.modal-window'),
-  closeButtonEl: document.querySelector('.modalClose'),
-  shopButtonEl: document.querySelector('.modalButton'),
-  cardBookWrapper: document.querySelector('.cardBookWrapper'),
-  modalNotification: document.querySelector('.modalNotification'),
+  bodyEl: document.querySelector('body'),
+  closeButtonEl: document.querySelector('.modal-close-btn'),
+  modalActionBtnEl: document.querySelector('.modal-action-btn'),
+  modalBookCardWrapEl: document.querySelector('.modal-book-card-wrapper'),
+  modalNotification: document.querySelector('.congratulations-text'),
+  backdropEl: document.querySelector('.backdrop'),
 };
-console.log(refs);
 
 const STORAGE_KEY = 'shoppingList';
 const BUTTON_TEXT_ADD = 'ADD TO SHOPPING LIST';
@@ -27,20 +27,26 @@ if (JSON.parse(localStorage.getItem(STORAGE_KEY))) {
 
 refs.bestsellersSectionEl.addEventListener('click', onCardClick);
 
+//  ----------------------- onCardClick FUNCTION------------------------------
 function onCardClick(e) {
-  refs.shopButtonEl.addEventListener('click', onModalButtonClick);
-  document.addEventListener('click', onModalClose); //change listener on backDrop!!!!
-  document.addEventListener('keydown', onModalClose);
+  refs.bodyEl.classList.add('modalIsOpen');
+  refs.backdropEl.classList.remove('is-hidden');
 
+  refs.modalActionBtnEl.addEventListener('click', onModalActionBtnClick);
+  refs.backdropEl.addEventListener('click', onModalClose);
+  document.addEventListener('keydown', onModalClose);
+  // ______ on book card click check____
   if (e.target.nodeName !== 'IMG' && e.target.parentNode.nodeName !== 'LI') {
     return;
   }
-  refs.modalContainer.classList.remove('hid');
+  // _________________________________________
+  // _______get book`s Id___________________
   if (e.target.nodeName === 'IMG') {
     bookId = e.target.parentNode.parentNode.id;
   } else {
     bookId = e.target.parentNode.id;
   }
+  //__________________________________________
   fetchBook
     .fetchBookInfo(bookId)
     .then(bookInfo => {
@@ -48,14 +54,16 @@ function onCardClick(e) {
 
       const isIdFinded = shoppingList.some(({ id }) => id === bookInfo._id);
       if (isIdFinded) {
-        refs.shopButtonEl.textContent = BUTTON_TEXT_REMOVE;
+        refs.modalActionBtnEl.textContent = BUTTON_TEXT_REMOVE;
+        refs.modalNotification.textContent = NOTIFICATION;
       } else {
-        refs.shopButtonEl.textContent = BUTTON_TEXT_ADD;
+        refs.modalActionBtnEl.textContent = BUTTON_TEXT_ADD;
       }
     })
     .catch(err => console.log(err));
 }
 
+// ------------------RENDER MODAL BOOK CARD---------------------------------------------
 function renderModalCard(bookInfo) {
   const {
     book_image: bookImg,
@@ -77,48 +85,69 @@ function renderModalCard(bookInfo) {
     id,
   };
 
-  const modalCardMarkup = `<img src="${bookImg}" width="192" hight="281"> 
-    <h4>${title}</h4> 
-    <p>${author}</p> 
-    <p>${description}</p>
-    <a href="${buyLinks[0].url}" target="_blank">Amazon</a>
-    <a href="${buyLinks[2].url}" target="_blank">Barnes and Noble</a>
-    <a href="${buyLinks[4].url}" target="_blank">Bookshop</a>`;
+  const modalCardMarkup = `<div class="modal-book-picture-wrapper">
+                 <img src="${bookImg}" class="modalBookImg"> 
+            </div>
+            <div class="modal-book-info-wrapper">
+                <h4 class="modal-book-title">${title}</h3>
+                <p class="modal-book-author">${author}</p>
+                <p class="modal-book-description">${description}</p>
+                <ul class="list modal-shop-list"> 
+                    <li>
+                    <a href="${buyLinks[0].url}" class="modal-shop-link icon-amazon">
+                    </a>
+                    </li>
+                    <li>
+                    <a href="${buyLinks[2].url}" class="modal-shop-link icon-barnesAndNoble">
+                    </a>
+                    </li>
+                    <li>
+                    <a href="${buyLinks[4].url}" class="modal-shop-link icon-bookshop">
+                    </a>
+                    </li>
+                </ul>
+            </div>`;
 
-  refs.cardBookWrapper.innerHTML = modalCardMarkup;
+  refs.modalBookCardWrapEl.innerHTML = modalCardMarkup;
 }
+// --------------------------------------------------------------------------------------
 
+// --------------------CLOSE MODAL-----------------------------------------
 function onModalClose(e) {
-  // add to if - onBackDropClose condition !!!!!!!!!!!!!!
-  if (e.target.dataset.close || e.key === 'Escape') {
-    refs.modalContainer.classList.add('hid');
+  if (e.target.hasAttribute('data-modal-close') || e.key === 'Escape') {
+    refs.backdropEl.classList.add('is-hidden');
+    refs.bodyEl.classList.remove('modalIsOpen');
 
-    document.removeEventListener('click', onModalClose);
+    refs.backdropEl.removeEventListener('click', onModalClose);
     document.removeEventListener('keydown', onModalClose);
-    refs.shopButtonEl.removeEventListener('click', onModalButtonClick);
+    refs.modalActionBtnEl.removeEventListener('click', onModalActionBtnClick);
 
-    refs.cardBookWrapper.innerHTML = ''; // if wiil be spinner - delete
-    refs.shopButtonEl.innerHTML = ''; // if wiil be spinner - delete
+    refs.modalBookCardWrapEl.innerHTML = ''; // if spinner will be  - delete
+    refs.modalActionBtnEl.textContent = ''; // if spinner will be  - delete
+    refs.modalNotification.textContent = '';
   }
 }
+// ------------------------------------------------------------------------
 
-function onModalButtonClick(e) {
-  // --------------- ADD BOOK ----------------------
+// -------------------ADD or REMOVE BOOK in SHOPPING LIST--------------------
+function onModalActionBtnClick(e) {
+  // --------------- add book ----------------------
   if (e.target.textContent === BUTTON_TEXT_ADD) {
     e.target.textContent = BUTTON_TEXT_REMOVE;
-    refs.modalNotification.innerHTML = NOTIFICATION;
+    refs.modalNotification.textContent = NOTIFICATION;
 
     shoppingList.push(shoppingBook);
     updateBookOnStorage();
   }
-  // --------------- REMOVE BOOK ----------------------
+  // --------------- remove book ----------------------
   else {
     e.target.textContent = BUTTON_TEXT_ADD;
-    refs.modalNotification.innerHTML = '';
+    refs.modalNotification.textContent = '';
     removesBookFromShoppingList();
     updateBookOnStorage();
   }
 }
+// -----------------------------------------------------------------------
 
 function removesBookFromShoppingList() {
   shoppingList = shoppingList.filter(({ id }) => id !== shoppingBook.id);
