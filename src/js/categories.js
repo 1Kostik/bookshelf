@@ -1,5 +1,3 @@
-// import { scrollTo } from 'scroll-js';
-
 import { FetchApiBooks } from './fetchApi';
 
 const categoriesRef = document.querySelector('.categories');
@@ -7,9 +5,6 @@ const categoriesRef = document.querySelector('.categories');
 const categoriesListRef = document.querySelector('.categories-list');
 const catListRef = document.querySelector('.cat-list');
 
-// var myElement = document.body.getElementsByClassName('my-element')[0];
-// scrollTo(categoriesListRef, { behavior: 'smooth' });
-// scrollIntoView(categoriesListRef, { behavior: 'smooth' });
 const fetchCategories = new FetchApiBooks();
 
 fetchCategories.fetchCategoryList().then(markupCategories).then(createOnScreen);
@@ -40,8 +35,6 @@ function onCategoryNameClick(e) {
     fetchCategories.fetchTopBooks();
     return;
   }
-
-  fetchCategories.fetchSelectedCategory(currentName);
 }
 
 function markupCategories(catArray) {
