@@ -29,8 +29,8 @@ refs.bestsellersSectionEl.addEventListener('click', onCardClick);
 
 //  ----------------------- onCardClick FUNCTION------------------------------
 function onCardClick(e) {
-  refs.bodyEl.classList.add('modalIsOpen');
-  refs.backdropEl.classList.remove('is-hidden');
+  console.dir(e.target.nodeName !== 'IMG');
+  console.dir(e.target.parentNode.nodeName !== 'LI');
 
   refs.modalActionBtnEl.addEventListener('click', onModalActionBtnClick);
   refs.backdropEl.addEventListener('click', onModalClose);
@@ -40,6 +40,9 @@ function onCardClick(e) {
     return;
   }
   // _________________________________________
+  refs.bodyEl.classList.add('modalIsOpen');
+  refs.backdropEl.classList.remove('is-hidden');
+
   // _______get book`s Id___________________
   if (e.target.nodeName === 'IMG') {
     bookId = e.target.parentNode.parentNode.id;
