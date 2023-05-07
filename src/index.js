@@ -6,3 +6,7 @@ import './js/categories';
 import './js/formSignUp';
 import './js/localStorage';
 import './js/renderMarkup';
+import './js/mobileMenu';
+import './js/mobileMenu';
+import './shoppingList';
+import './themeSwitch';
