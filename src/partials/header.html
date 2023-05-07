@@ -16,7 +16,7 @@
         <a class="navigation-link" href="/src/shopping_list.html"
           >shopping list
           <svg class="logo-shop">
-            <use href="/src/img/symbol-defs.svg#icon-book-shop"></use>
+            <use href="/src/img/symbol-defs.svg#icon-shop-list"></use>
           </svg>
         </a>
       </li>
@@ -39,12 +39,33 @@
         <use href="/src/img/symbol-defs.svg#icon-close"></use>
       </svg>
     </button>
-    <button type="button" class="sing-up-btn signUpBtn" data-modal-open-sign>
+    <button
+      type="button"
+      class="log-btn sing-up-btn signUpBtn"
+      data-modal-open-sign
+    >
       Sing up
       <svg class="sing-up-icon">
         <use href="/src/img/symbol-defs.svg#icon-arrow-sign"></use>
       </svg>
     </button>
+    <!-- <button type="button" class="authorizated-btn">
+      <div class="user-icon-box">
+        <svg class="user-icon">
+          <use href="/src/img/symbol-defs.svg#icon-user"></use>
+        </svg>
+      </div>
+      Stephen
+      <svg class="user-icon-arrow">
+        <use href="/src/img/symbol-defs.svg#icon-arrow-user"></use>
+      </svg>
+    </button> -->
+    <!-- <button type="button" class="log-btn log-out-btn">
+      Log out
+      <svg class="sing-up-icon">
+        <use href="/src/img/symbol-defs.svg#icon-arrow-sign"></use>
+      </svg>
+    </button> -->
   </div>
 </div>
 <script>
@@ -54,18 +75,24 @@
     const iconLogo = document.querySelector('.logo-name');
     const iconShop = document.querySelector('.logo-shop');
     const current = document.querySelector('.current');
+    const burgerIcon = document.querySelector('.burger-icon');
+    const crossIcon = document.querySelector('.cross-icon');
     if (checkbox.checked) {
       checkbox.classList.toggle('dark-theme');
       header.classList.toggle('dark-theme');
       iconLogo.classList.toggle('dark-theme');
       iconShop.classList.toggle('dark-theme');
       current.classList.toggle('dark-theme');
+      burgerIcon.classList.toggle('dark-theme');
+      crossIcon.classList.toggle('dark-theme');
     } else {
       checkbox.classList.toggle('dark-theme');
       header.classList.toggle('dark-theme');
       iconLogo.classList.toggle('dark-theme');
       iconShop.classList.toggle('dark-theme');
       current.classList.toggle('dark-theme');
+      burgerIcon.classList.toggle('dark-theme');
+      crossIcon.classList.toggle('dark-theme');
     }
   }
 </script>
