@@ -64,7 +64,16 @@
       margin-right: 24px;
     }
   }
+  .modal-book-info-wrapper {
+    display: block;
+  }
+  @media screen and (min-width:768px) {
+    .modal-book-info-wrapper{
+      width: 279px;
+    }
+  }
   .modal-book-title {
+    margin-top: 14px;
     font-family: 'DM Sans';
     font-style: normal;
     font-weight: 700;
@@ -80,6 +89,7 @@
     }
   }
   .modal-book-author{
+    margin-top: 4px;
     font-family: 'DM Sans';
     font-style: italic;
     font-weight: 400;
@@ -90,11 +100,13 @@
   }
   @media screen and (min-width:768px){
     .modal-book-author{
+      margin-top: 8px;
       font-size: 14px;
       line-height: 1.29;
     }
   }
   .modal-book-description{
+    margin-top: 18px;
     font-family: 'DM Sans';
     font-style: normal;
     font-weight: 400;
@@ -103,21 +115,32 @@
     letter-spacing: -0.04em;
     color: var(--text-color-title-dark);
   }
+  @media screen and (min-width:768px){
+    .modal-book-description{
+      margin-top: 20px;
+    }
+  }
 
   .modal-shop-list{
+    margin-top: 14px;
     display: flex;
     gap: 20px;
   }
+  @media screen and (min-width:768px){
+    .modal-shop-list{
+      margin-top: 20px;
+    }
+  }
   .icon-amazon::before{
-    background-image: url(../img/modal-imgs/icons-for-light-theme/amazon-light.png);
+    background-image: url(/img/modal-imgs/icons-for-light-theme/amazon-light.png);
     background-size: 62px 19px;
   }
   .icon-barnesAndNoble::before{
-    background-image: url(../img/modal-imgs/icons-for-light-theme/ban-light.png);
+    background-image: url(/img/modal-imgs/icons-for-light-theme/ban-light.png);
     background-size: 33px 32px;
   }
   .icon-bookshop::before{
-    background-image: url(../img/modal-imgs/icons-for-light-theme/bookstore-light.png);
+    background-image: url(/img/modal-imgs/icons-for-light-theme/bookstore-light.png);
     background-size: 38px 36px;
   }
   .modal-action-btn {
@@ -145,5 +168,21 @@
     padding-bottom: 20px;
     font-size: 18px;
     line-height: 1.33;
+  }
+}
+.congratulations-text{
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: rgba(17, 17, 17, 0.5);
+}
+@media screen and (min-width:768px){
+  .congratulations-text{
+    font-size: 12px;
+    line-height: 1.17;
   }
 }
