@@ -35,7 +35,7 @@
   }
 
   .shopping-list-empty-image {
-    background-image: url(../img/mobile/shopping_list/books.png);
+    background-image: url(../images/mobile/shopping_list/books.png);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     width: 265px;
@@ -46,7 +46,7 @@
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     .shopping-list-empty-image {
-      background-image: url(../img/mobile/shopping_list/books@2x.png);
+      background-image: url(../images/mobile/shopping_list/books@2x.png);
       background-size: 265px 198px;
     }
   }
@@ -91,7 +91,7 @@
   }
 
   .shopping-list-empty-image {
-    background-image: url(../img/tablet/books.png);
+    background-image: url(../images/tablet/books.png);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     width: 322px;
@@ -102,7 +102,7 @@
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     .shopping-list-empty-image {
-      background-image: url(../img/tablet/books@2x.png);
+      background-image: url(../images/tablet/books@2x.png);
       background-size: 322px 241px;
     }
   }
