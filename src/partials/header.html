@@ -42,7 +42,7 @@
           type="checkbox"
           name="checkbox"
           id="checkbox"
-          
+          onchange="onChange()"
         />
 
         <button type="button" class="mobile-menu-open-btn" data-mobile-menu-btn>
@@ -135,7 +135,7 @@
 <script>
   function onChange() {
     // const header = document.querySelector('.header-container');
-    // const checkbox = document.querySelector('.theme-switcher-input');
+    const checkbox = document.querySelector('.theme-switcher-input');
     const iconLogo = document.querySelector('.logo-name');
     const iconShop = document.querySelector('.logo-shop');
     const current = document.querySelector('.current');
