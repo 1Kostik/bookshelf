@@ -9,7 +9,7 @@
     font-size: 32px;
     line-height: 1.19;
     letter-spacing: -0.04em;
-    margin-bottom: 120px;
+    margin-bottom: 40px;
   }
 
   .title_shopping_list_span {
@@ -50,6 +50,73 @@
       background-size: 265px 198px;
     }
   }
+}
+
+// Shoplist mobile books
+
+.shoplist-book-img {
+  margin-right: 14px;
+  width: 100px;
+  height: 142px;
+  border-radius: 8px;
+}
+
+.shoplist-book-title {
+  margin-bottom: 4px;
+  width: 144px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--bg-dark-theme-header);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shoplist-book-description {
+  margin-bottom: 14px;
+  width: 193px;
+  height: 68px;
+
+  font-family: 'DM Sans';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shoplist-book-author {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: -0.04em;
+
+  color: #b4afaf;
+}
+
+.shoplist-book-genre {
+  margin-bottom: 8px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  color: #b4afaf;
+}
+
+.shoplist-book-container {
+  margin-bottom: 20px;
+  padding: 14px;
+  display: flex;
+  width: 335px;
+  height: 170px;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
 }
 
 // tablet
