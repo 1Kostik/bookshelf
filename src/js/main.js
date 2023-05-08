@@ -117,7 +117,7 @@ function toUpperCaseCategoryName(cattegoryName) {
  window.addEventListener('resize', debounce(hideBooks, 200))
 function hideBooks() {
     const listCategoriesEl = Array.from(document.querySelectorAll('.bestsellers-book-list'));
-    if (window.outerWidth < 768) {
+    if (window.innerWidth < 768) {
         listCategoriesEl.forEach((item) => {
             console.log(item.children.length)
             for (let i = 0; i < item.children.length; i += 1) {
@@ -130,7 +130,7 @@ function hideBooks() {
             }
 })
     }
-    if (window.outerWidth >= 768 && window.outerWidth < 1440) {
+    if (window.innerWidth >= 768 && window.outerWidth < 1440) {
         listCategoriesEl.forEach((item) => {
             console.log(item.children.length)
             for (let i = 0; i < item.children.length; i += 1) {
@@ -143,7 +143,7 @@ function hideBooks() {
             }
 })
     }
-    if (window.outerWidth >=1440) {
+    if (window.innerWidth >=1440) {
         listCategoriesEl.forEach((item) => {
             console.log(item.children.length)
             for (let i = 0; i < item.children.length; i += 1){
@@ -152,3 +152,4 @@ function hideBooks() {
         })
     }
 }
+
