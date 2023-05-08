@@ -9,8 +9,9 @@ const refs = {
   modalBookCardWrapEl: document.querySelector('.modal-book-card-wrapper'),
   modalNotification: document.querySelector('.congratulations-text'),
   backdropEl: document.querySelector('.backdrop'),
+  acum: document.querySelector('.acum'),
 };
-
+console.log(refs)
 const STORAGE_KEY = 'shoppingList';
 const BUTTON_TEXT_ADD = 'ADD TO SHOPPING LIST';
 const BUTTON_TEXT_REMOVE = 'REMOVE FROM THE SHOPPING LIST';
@@ -23,15 +24,13 @@ let bookId = null;
 
 if (JSON.parse(localStorage.getItem(STORAGE_KEY))) {
   shoppingList = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  refs.acum.innerHTML = shoppingList.length;
 }
 
 refs.bestsellersSectionEl.addEventListener('click', onCardClick);
 
 //  ----------------------- onCardClick FUNCTION------------------------------
 function onCardClick(e) {
-  console.dir(e.target.nodeName !== 'IMG');
-  console.dir(e.target.parentNode.nodeName !== 'LI');
-
   refs.modalActionBtnEl.addEventListener('click', onModalActionBtnClick);
   refs.backdropEl.addEventListener('click', onModalClose);
   document.addEventListener('keydown', onModalClose);
@@ -89,27 +88,48 @@ function renderModalCard(bookInfo) {
   };
 
   const modalCardMarkup = `<div class="modal-book-picture-wrapper">
-                 <img src="${bookImg}" class="modalBookImg"> 
-            </div>
-            <div class="modal-book-info-wrapper">
-                <h4 class="modal-book-title">${title}</h3>
-                <p class="modal-book-author">${author}</p>
-                <p class="modal-book-description">${description}</p>
-                <ul class="list modal-shop-list"> 
-                    <li>
-                    <a href="${buyLinks[0].url}" class="modal-shop-link icon-amazon">
-                    </a>
-                    </li>
-                    <li>
-                    <a href="${buyLinks[2].url}" class="modal-shop-link icon-barnesAndNoble">
-                    </a>
-                    </li>
-                    <li>
-                    <a href="${buyLinks[4].url}" class="modal-shop-link icon-bookshop">
-                    </a>
-                    </li>
-                </ul>
-            </div>`;
+                              <img src="${bookImg}" class="modalBookImg"> 
+                           </div>
+                          <div class="modal-book-info-wrapper">
+                              <h4 class="modal-book-title">${title}</h3>
+                              <p class="modal-book-author">${author}</p>
+                              <p class="modal-book-description">${description}</p>
+                              <ul class="list modal-shop-list"> 
+                                  <li>
+                                    <a href="${buyLinks[0].url}" class="modal-shop-link icon-amazon" target="blank">
+                                      <img
+                                        src="/src/images/modal-imgs/icons-for-light-theme/amazon-light.png"
+                                        alt="Amazon"
+                                        class="shop-image"
+                                        width="62"
+                                        height="19"
+                                      />
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="${buyLinks[2].url}" class="modal-shop-link icon-barnesAndNoble" target="blank">
+                                      <img
+                                        src="/src/images/modal-imgs/icons-for-light-theme/ban-light.png"
+                                        alt="ban-light"
+                                        class="shop-image"
+                                        width="33"
+                                        height="32"
+                                      />
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="${buyLinks[4].url}" class="modal-shop-link icon-bookshop" target="blank">
+                                      <img
+                                        src="/src/images/modal-imgs/icons-for-light-theme/bookstore-light.png"
+                                        alt="bookstore-light"
+                                        class="shop-image"
+                                        width="38"
+                                        height="36"
+                                      />
+                                    </a>
+                                  </li>
+                              </ul>
+                          </div>`;
 
   refs.modalBookCardWrapEl.innerHTML = modalCardMarkup;
 }
@@ -141,13 +161,18 @@ function onModalActionBtnClick(e) {
 
     shoppingList.push(shoppingBook);
     updateBookOnStorage();
+
+    refs.acum.innerHTML = shoppingList.length;
   }
   // --------------- remove book ----------------------
   else {
     e.target.textContent = BUTTON_TEXT_ADD;
     refs.modalNotification.textContent = '';
+
     removesBookFromShoppingList();
     updateBookOnStorage();
+
+    refs.acum.innerHTML = shoppingList.length;
   }
 }
 // -----------------------------------------------------------------------
