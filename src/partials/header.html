@@ -167,7 +167,11 @@
 <script>
   const linksAll = document.querySelectorAll('.navigation-item');
   linksAll.forEach(element => {
-    if (element.textContent.trim() === document.title) {
+    if (
+      element.textContent.trim() === document.title ||
+      (element.textContent.trim() === 'Home') &
+        (document.title === 'Book Shelf')
+    ) {
       element.classList.add('current');
     } else {
       element.classList.remove('current');
