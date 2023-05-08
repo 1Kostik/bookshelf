@@ -15,18 +15,18 @@
 }
 
  @media screen and (min-width: 1440px) {
-             .home_page_main {
-               display: flex;
-              padding-top: 40px;
-             flex-wrap: inherit;
-             }
+    .home_page_main {
+        display: flex;
+        padding-top: 40px;
+        flex-wrap: inherit;
+    }
            
-             .left_part {
-               justify-content: flex-start;
-               width: 356px;
-               display: flex;
-               flex-direction: column;
-             }
+    .left_part {
+        justify-content: flex-start;
+        width: 356px;
+        display: flex;
+        flex-direction: column;
+        }
      }
 /*-----------------------------------MOBILE------------------------*/
 
@@ -85,11 +85,28 @@ overflow: hidden;
 margin-bottom: 14px;
 }
 
+.book-img-container:hover {
+    animation: pulsare 1s ease-in-out;
+}
+
+@keyframes pulsare {
+    0% {
+        box-shadow: 0 0 25px #5ddcff,
+            0 0 50px #4e00c2;
+        background-color: rgb(102, 251, 251);
+    }
+}
+
 .book-img{
     display: block;
 height: 100%;
  width:100%;
 object-fit: cover;
+transition: transform .35s ease-in-out;
+}
+
+.book-img:hover {
+    transform: scale(1.03);
 }
 
 .book-title{
@@ -137,14 +154,22 @@ padding-top: 14px;
     letter-spacing: 0.01;
     color: var(--text-color-title-dark);
     text-transform: uppercase;
+    transition: transform .35s ease-in-out;
 }
 
-// .bestsellers-book-list, .category-book-list {
-//  justify-content: center;
-//   gap: 25px;
-//   display: flex;
-//   margin-bottom: 32px;
-// }
+.bestsellers-button:hover {
+    animation: pulsare 1s ease-in-out;
+    transform: scale(1.03);
+}
+
+@keyframes pulsare {
+    0% {
+        box-shadow: 0 0 25px #5ddcff,
+            0 0 50px #4e00c2;
+        background-color: rgb(102, 251, 251);
+    }
+}
+
 
 /*---------------------------TAB--------------------*/
 
@@ -165,7 +190,6 @@ padding-top: 14px;
     line-height: 1.71;
 }
 
-
      .bestsellers-book-list{
         display:flex;
         gap:25px;
@@ -174,9 +198,6 @@ padding-top: 14px;
     .book-img-container {
         width: 218px;
         height: 316px;
-        border-radius: 8px;
-        overflow: hidden;
-        margin-bottom: 14px;
         }
 
      .book-title{
@@ -196,7 +217,16 @@ padding-top: 14px;
     flex-direction: row;
     flex-wrap: wrap;
     column-gap:25px;
+    row-gap: 40px;
 }
+
+.category-book-list>li.book-item{
+    margin-bottom: 0px;
+}
+
+}
+
+/*----------------------DESKTOP------------------*/
 
 @media screen and (min-width: 1440px) {
     .bookshelf {
@@ -204,15 +234,27 @@ padding-top: 14px;
         padding-top: 0px;
     }
 
-  
+    .book-img-container {
+        width: 180px;
+        height: 256px;
+    }
 
+.book-title {
+    width: 180px;
 }
 
-
-
+.author-name {
+    width: 180px;
 }
 
+ .bestsellers-button {
+     margin-top: 30px;
+ }
 
+ .category-book-list {
+     column-gap: 24px;
+ }
+}
 
 
 
