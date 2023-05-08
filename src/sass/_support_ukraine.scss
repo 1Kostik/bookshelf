@@ -50,6 +50,29 @@
 .support-img {
     padding-left: 20px;
 }
+@media screen and (min-width: 768px){
+    .support {
+    background: var(--bg-support-ukraine);
+    width: 335px;
+    border-radius: 16px;
+    box-shadow: 0 10px 10px #f5f5f71a;
+}
+}
+
+
+
+@media screen and (min-width: 768px){
+.support {
+    background: var(--bg-support-ukraine);
+    width: 356px;
+    height: 490px;
+    border-radius: 16px;
+    box-shadow: 0 10px 10px #f5f5f71a;
+}
+}
+
+
+
 
 // .slider__prev,
 // .slider__next {
