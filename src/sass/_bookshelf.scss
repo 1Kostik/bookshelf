@@ -1,9 +1,11 @@
-.bestsellers-book-list {
- 
-  justify-content: center;
+
+
+.bestsellers-book-list, .category-book-list {
+ justify-content: center;
   gap: 32px;
   display: flex;
   margin-bottom: 32px;
+
 }
 .book-item {
   cursor: pointer;
@@ -46,8 +48,9 @@
   color: var(--text-color-title-violet);
 }
 
-.bestsellers-category-item {
-  position: relative;
+
+.bestsellers-category-item, .bookshelf-category-item{
+    position: relative;
 }
 
 .bestsellers-button {
@@ -63,8 +66,9 @@
   margin-bottom: 40px;
 }
 
-.bestsellers-title {
-  margin-bottom: 40px;
+.bestsellers-title, .bookshelf-category-title {
+margin-bottom: 40px;
+
 }
 .bestsellers-category-name {
   margin-bottom: 18px;

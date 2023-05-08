@@ -46,6 +46,9 @@
 .authorizated-btn {
   display: none;
 }
+.log-out-btn {
+  display: none;
+}
 .mobile-menu-open-btn {
   width: 28px;
   height: 28px;
@@ -62,7 +65,6 @@
 .burger-icon:focus {
   fill: var(--text-color-title-violet);
 }
-
 .burger-icon .mobile-menu-close-icon {
   display: none;
 }
@@ -106,27 +108,41 @@
 .theme-switcher-input.dark-theme::after {
   left: 20.5px;
 }
-
 .navigation-main {
   display: none;
 }
+/* -----------------------------------------------MOBILE-MENU------------------------------------------------------------ */
 .mobile-menu-container {
-  display: none;
   z-index: 1;
   position: absolute;
   top: 60px;
   width: 100%;
-  background: var(--bg-support-ukraine);
-  padding: 46px 20px 0 20px;
-  height: 748px;
-  // transition: transform 1000ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  // transform: translateX(100%);
+  background: url('/src/images/banner.png'), var(--bg-support-ukraine);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain;
+  padding: 26px 20px 80px 20px;
+  height: 100%;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(-100%);
 }
 .mobile-menu-container.is-open {
   display: block;
-  // transform: translateX(0);
+  transform: translateY(0);
 }
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .mobile-menu-container {
+    background: url('/src/images/banner@2x.png'), var(--bg-support-ukraine);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+  }
+}
+/* -----------------------------------------------------MOBILE-MENU-SING-UP------------------------------------------------------------ */
 .sing-up-btn-mobile {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,38 +163,105 @@
   margin-left: 90px;
   fill: rgba(234, 198, 69, 1);
 }
+/* -----------------------------------------------------MOBILE-MENU-AUTHORIZATED------------------------------------------------------------ */
+.authorizated-mobile-menu-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.authorizated-mobile-menu-user {
+  display: flex;
+  align-items: center;
+}
+.user-icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  margin-right: 9px;
+}
+.user-icon {
+  width: 19px;
+  height: 19px;
+  fill: var(--text-color-title-violet);
+}
+.user-name {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.31;
+  letter-spacing: -0.02em;
+  color: var(--text-color-title-white);
+}
+.mobile-navigation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.mobile-navigation-item {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--text-color-title-white);
+}
+.current {
+  padding: 8px 16px;
+  background-color: var(--bg-current-page);
+  font-weight: 700;
+  border-radius: 36px;
+  color: var(--text-color-title-dark);
+}
+.mobile-navigation-link {
+  display: flex;
+  align-items: center;
+  color: inherit;
+}
+.logo-shop {
+  width: 20px;
+  height: 20px;
+  margin-left: 4px;
+  fill: var(--text-color-title-white);
+}
+.log-out-mobile-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  padding: 14px;
+  border: 1.5px solid var(--text-color-title-dark);
+  border-radius: 18px;
+  color: var(--text-color-title-dark);
+  background: var(--text-color-title-white);
+  cursor: pointer;
+  margin-top: auto;
+}
+.log-out-mobile-btn .sing-up-icon {
+  margin-left: 4px;
+}
 .mobile-menu-open-btn.is-open .mobile-menu-close-icon {
   display: block;
 }
 .mobile-menu-open-btn.is-open .mobile-menu-open-icon {
   display: none;
 }
-
 body.mobile-menu-open {
   overflow: hidden;
 }
-
-// .mobile-menu-container {
-//   position: relative;
-//   padding: 40px;
-// }
-// .mobile-menu {
-//   display: flex;
-//   flex-direction: column;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   z-index: 999;
-//   width: 100vw;
-//   height: 100vh;
-//   transition: transform 250ms ease-in-out;
-//   transform: translateX(100%);
-//   // background-color: var(--main-background);
-// }
-// .mobile-menu.is-open {
-//   transform: translateX(0);
-// }
-
+/* -----------------------------------------------------TABLET------------------------------------------------------------ */
 @media screen and (min-width: 768px) {
   .mobile-menu-container,
   .mobile-menu-container.is-open {
@@ -245,7 +328,7 @@ body.mobile-menu-open {
     align-items: center;
     margin-left: auto;
   }
-  .log-btn {
+  .sing-up-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -257,43 +340,40 @@ body.mobile-menu-open {
     padding: 14px;
     border: 1.5px solid var(--text-color-title-dark);
     border-radius: 18px;
-  }
-  .sing-up-btn {
     color: var(--text-color-title-white);
     background: var(--text-color-title-violet);
+    cursor: pointer;
+  }
+  .sing-up-icon {
+    margin-left: 90px;
   }
   .log-out-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.04em;
+    padding: 14px;
+    border: 1.5px solid var(--text-color-title-dark);
+    border-radius: 18px;
     color: var(--text-color-title-dark);
     background: var(--text-color-title-white);
+    cursor: pointer;
   }
   .authorizated-btn {
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: inherit;
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 1.31;
-    letter-spacing: -0.02em;
-    color: var(--text-color-title-white);
     padding: 4px 12px;
     background: var(--text-color-title-violet);
     border: none;
     border-radius: 36px;
   }
-  .user-icon-box {
-    background-color: #f6f6f6;
-    padding: 6px;
-    width: 37px;
-    height: 37px;
-    border-radius: 50%;
-    margin-right: 9px;
-  }
-  .user-icon {
-    width: 19px;
-    height: 19px;
-    fill: var(--text-color-title-violet);
-  }
+
   .user-icon-arrow {
     width: 23px;
     height: 26px;
@@ -301,7 +381,7 @@ body.mobile-menu-open {
     margin-left: 4px;
   }
 }
-
+/* ----------------------------------------------------PC------------------------------------------------------------ */
 @media screen and (min-width: 1440px) {
   .logo-link {
     margin-right: 76px;
