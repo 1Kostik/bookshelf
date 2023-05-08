@@ -16,20 +16,7 @@
 })();
 
 
-(() => {
-    const refs = {
-        openModalBtn: document.querySelector("[data-modal-open-sign-m]"),
-        closeModalBtn: document.querySelector("[data-modal-close-sign-m]"),
-        modal: document.querySelector("[data-modal-sign-m]"),
-    };
 
-    refs.openModalBtn.addEventListener("click", toggleModal);
-    refs.closeModalBtn.addEventListener("click", toggleModal);
-
-    function toggleModal() {
-        refs.modal.classList.toggle("is-hidden");
-    }
-})();
 
 
 
