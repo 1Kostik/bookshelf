@@ -1,10 +1,7 @@
 import './js/fetchApi';
-import './js/main';
-import './js/categories';
+import './js/shoppingList';
 import './js/formSignUp';
 import './js/localStorage';
-import './js/renderMarkup';
 import './js/mobileMenu';
 import './js/themeSwitch';
-import './js/modal';
 import './js/slider';
