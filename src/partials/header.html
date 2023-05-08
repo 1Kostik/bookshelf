@@ -12,11 +12,11 @@
       <nav class="navigation-main">
         <ul class="navigation-list">
           <li class="navigation-item current">
-            <a class="navigation-link" href="/src/index.html">home</a>
+            <a class="navigation-link" href="/src/index.html">Home</a>
           </li>
           <li class="navigation-item">
             <a class="navigation-link" href="/src/shopping_list.html"
-              >shopping list
+              >Shopping List
               <svg class="logo-shop">
                 <use href="/src/images/symbol-defs.svg#icon-shop-list"></use>
               </svg>
@@ -163,4 +163,14 @@
       // });
     }
   }
+</script>
+<script>
+  const linksAll = document.querySelectorAll('.navigation-item');
+  linksAll.forEach(element => {
+    if (element.textContent.trim() === document.title) {
+      element.classList.add('current');
+    } else {
+      element.classList.remove('current');
+    }
+  });
 </script>
