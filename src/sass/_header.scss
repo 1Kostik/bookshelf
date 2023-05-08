@@ -8,10 +8,7 @@
   color: var(--text-color-title-dark);
   z-index: 2;
 }
-.header-container.dark-theme {
-  background: var(--bg-dark-theme-header);
-  border: 1.5px solid var(--text-color-title-white);
-}
+
 .header-box {
   display: flex;
   justify-content: space-between;
@@ -35,9 +32,7 @@
   width: 77px;
   height: 24px;
 }
-.logo-name.dark-theme {
-  fill: var(--text-color-title-white);
-}
+
 .header-button-box {
   position: relative;
   display: flex;
@@ -61,10 +56,7 @@
 .burger-icon {
   fill: var(--text-color-title-dark);
 }
-.cross-icon.dark-theme,
-.burger-icon.dark-theme {
-  fill: var(--text-color-title-white);
-}
+
 .burger-icon:hover,
 .burger-icon:focus {
   fill: var(--text-color-title-violet);
@@ -278,6 +270,19 @@
 body.mobile-menu-open {
   overflow: hidden;
 }
+/* -----------------------------------------------------DARK-THEME-MOBILE------------------------------------------------ */
+.header-container.dark-theme {
+  background: var(--bg-dark-theme-header);
+  color: var(--text-color-title-white);
+  border: 1.5px solid var(--text-color-title-white);
+}
+.logo-name.dark-theme {
+  fill: var(--text-color-title-white);
+}
+.cross-icon.dark-theme,
+.burger-icon.dark-theme {
+  fill: var(--text-color-title-white);
+}
 /* -----------------------------------------------------TABLET------------------------------------------------------------ */
 @media screen and (min-width: 768px) {
   .mobile-menu-container,
@@ -319,12 +324,6 @@ body.mobile-menu-open {
     align-items: center;
     color: inherit;
   }
-  .navigation-item.dark-theme {
-    color: var(--text-color-title-white);
-  }
-  .logo-shop.dark-theme {
-    fill: var(--text-color-title-white);
-  }
   .navigation-item:hover {
     color: var(--text-color-title-violet);
   }
@@ -332,9 +331,6 @@ body.mobile-menu-open {
     background-color: var(--bg-current-page);
     font-weight: 700;
     border-radius: 36px;
-    color: var(--text-color-title-dark);
-  }
-  .current.dark-theme {
     color: var(--text-color-title-dark);
   }
   .logo-shop {
@@ -404,6 +400,16 @@ body.mobile-menu-open {
     height: 26px;
     fill: var(--text-color-title-white);
     margin-left: 4px;
+  }
+  /* -----------------------------------------------------DARK-THEME-TABLET/PC----------------------------------------------- */
+  .navigation-item.dark-theme {
+    color: var(--text-color-title-white);
+  }
+  .logo-shop.dark-theme {
+    fill: var(--text-color-title-white);
+  }
+  .current.dark-theme {
+    color: var(--text-color-title-dark);
   }
 }
 /* ----------------------------------------------------PC------------------------------------------------------------ */
