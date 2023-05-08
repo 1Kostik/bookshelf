@@ -38,9 +38,12 @@
 }
 
 .support-item {
+    display: flex;
+    align-items: center;
     color: #FFFF;
     padding-left: 40px;
     padding-bottom: 20px;
+    
     
 }
 .support-item:last-child {
