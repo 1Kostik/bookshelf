@@ -44,7 +44,7 @@
   gap: 14px;
   align-items: center;
 }
-.sing-up-btn {
+.sign-up-btn {
   display: none;
 }
 .authorizated-btn {
@@ -144,8 +144,8 @@
     background-size: contain;
   }
 }
-/* -----------------------------------------------------MOBILE-MENU-SING-UP------------------------------------------------------------ */
-.sing-up-btn-mobile {
+/* -----------------------------------------------------MOBILE-MENU-sign-UP------------------------------------------------------------ */
+.sign-up-btn-mobile {
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -162,10 +162,10 @@
   background: var(--text-color-title-violet);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.sing-up-btn-mobile:hover {
+.sign-up-btn-mobile:hover {
   transform: scale(1.2);
 }
-.sing-up-icon {
+.sign-up-icon {
   width: 20px;
   height: 20px;
   margin-left: 90px;
@@ -262,7 +262,7 @@
   margin-top: auto;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.log-out-mobile-btn .sing-up-icon {
+.log-out-mobile-btn .sign-up-icon {
   margin-left: 4px;
 }
 .log-out-mobile-btn:hover {
@@ -348,7 +348,7 @@ body.mobile-menu-open {
     align-items: center;
     margin-left: auto;
   }
-  .sing-up-btn {
+  .sign-up-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -365,10 +365,10 @@ body.mobile-menu-open {
     cursor: pointer;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .sing-up-btn:hover {
+  .sign-up-btn:hover {
     transform: scale(1.1);
   }
-  .sing-up-icon {
+  .sign-up-icon {
     margin-left: 90px;
   }
   .log-out-btn {
