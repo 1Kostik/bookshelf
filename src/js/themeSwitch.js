@@ -1,5 +1,38 @@
 // 1)))
 
+
+  function onChange() {
+    // const header = document.querySelector('.header-container');
+    // const checkbox = document.querySelector('.theme-switcher-input');
+    // const iconLogo = document.querySelector('.logo-name');
+    // const iconShop = document.querySelector('.logo-shop');
+    // const current = document.querySelector('.current');
+    // const burgerIcon = document.querySelector('.burger-icon');
+    // const navItems = document.querySelectorAll('.navigation-item');
+    if (checkbox.checked) {
+      checkbox.classList.toggle('dark-theme');
+      // header.classList.toggle('dark-theme');
+      // iconLogo.classList.toggle('dark-theme');
+      // iconShop.classList.toggle('dark-theme');
+      // current.classList.toggle('dark-theme');
+      // burgerIcon.classList.toggle('dark-theme');
+      // navItems.forEach(element => {
+      //   element.classList.toggle('dark-theme');
+      // });
+    } else {
+      checkbox.classList.toggle('dark-theme');
+      // header.classList.toggle('dark-theme');
+      // iconLogo.classList.toggle('dark-theme');
+      // iconShop.classList.toggle('dark-theme');
+      // current.classList.toggle('dark-theme');
+      // burgerIcon.classList.toggle('dark-theme');
+      // navItems.forEach(element => {
+      //   element.classList.toggle('dark-theme');
+      // });
+    }
+  }
+
+
 const darkTheme = {
   header: '#111111',
   body: '#202024',
@@ -46,7 +79,7 @@ const checkbox = document.querySelector('#checkbox');
 console.log(checkbox);
 
 checkbox.addEventListener('change', themeSwitch);
-
+checkbox.addEventListener('change', onChange);
 
 // 2)))
 
