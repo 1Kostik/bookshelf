@@ -10,7 +10,6 @@
 }
 .header-container.dark-theme {
   background: var(--bg-dark-theme-header);
-  color: var(--text-color-title-white);
   border: 1.5px solid var(--text-color-title-white);
 }
 .header-box {
@@ -22,6 +21,11 @@
   cursor: pointer;
   display: flex;
   gap: 8px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.logo-link:hover,
+.logo-link:focus {
+  transform: scale(1.2);
 }
 .logo-icon {
   width: 24px;
@@ -156,6 +160,10 @@
   border-radius: 18px;
   color: var(--text-color-title-white);
   background: var(--text-color-title-violet);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.sing-up-btn-mobile:hover {
+  transform: scale(1.2);
 }
 .sing-up-icon {
   width: 20px;
@@ -213,6 +221,10 @@
   letter-spacing: -0.04em;
   text-transform: uppercase;
   color: var(--text-color-title-white);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-navigation-item:hover {
+  transform: scale(1.2);
 }
 .current {
   padding: 8px 16px;
@@ -248,9 +260,13 @@
   background: var(--text-color-title-white);
   cursor: pointer;
   margin-top: auto;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .log-out-mobile-btn .sing-up-icon {
   margin-left: 4px;
+}
+.log-out-mobile-btn:hover {
+  transform: scale(1.2);
 }
 .mobile-menu-open-btn.is-open .mobile-menu-close-icon {
   display: block;
@@ -293,33 +309,37 @@ body.mobile-menu-open {
     line-height: 1.29;
     letter-spacing: -0.04em;
     text-transform: uppercase;
-  }
-  .current {
-    background-color: var(--bg-current-page);
-    font-weight: 700;
-    border-radius: 36px;
-  }
-  .current.dark-theme {
     color: var(--text-color-title-dark);
+    cursor: pointer;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .navigation-link {
     display: flex;
     align-items: center;
     color: inherit;
   }
-  .logo-shop {
-    width: 20px;
-    height: 20px;
-    margin-left: 4px;
-  }
-  .navigation-link.dark-theme {
-    display: flex;
-    align-items: center;
+  .navigation-item.dark-theme {
     color: var(--text-color-title-white);
   }
   .logo-shop.dark-theme {
     fill: var(--text-color-title-white);
   }
+  .navigation-item:hover {
+    color: var(--text-color-title-violet);
+  }
+  .current {
+    background-color: var(--bg-current-page);
+    font-weight: 700;
+    border-radius: 36px;
+    color: var(--text-color-title-dark);
+  }
+  .current.dark-theme {
+    color: var(--text-color-title-dark);
+  }
+  .logo-shop {
+    fill: var(--text-color-title-dark);
+  }
+
   .mobile-menu-open-btn {
     display: none;
   }
@@ -343,6 +363,10 @@ body.mobile-menu-open {
     color: var(--text-color-title-white);
     background: var(--text-color-title-violet);
     cursor: pointer;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .sing-up-btn:hover {
+    transform: scale(1.1);
   }
   .sing-up-icon {
     margin-left: 90px;
