@@ -55,7 +55,9 @@ async function  makeMarkupTopBooksGallery(data) {
         <ul class="bestsellers-book-list">
         ${makeMarkupBook(books)}
         </ul>
+        <div class="bestsellers-button-container">
         <button type="button" class="bestsellers-button" name="${list_name}">see more</button>
+        </div>
         </div>`
         
         return acc
@@ -115,7 +117,7 @@ function toUpperCaseCategoryName(cattegoryName) {
  window.addEventListener('resize', debounce(hideBooks, 200))
 function hideBooks() {
     const listCategoriesEl = Array.from(document.querySelectorAll('.bestsellers-book-list'));
-    if (window.outerWidth <= 375) {
+    if (window.outerWidth < 768) {
         listCategoriesEl.forEach((item) => {
             console.log(item.children.length)
             for (let i = 0; i < item.children.length; i += 1) {
@@ -128,7 +130,7 @@ function hideBooks() {
             }
 })
     }
-    if (window.outerWidth > 375 && window.outerWidth <= 768) {
+    if (window.outerWidth >= 768 && window.outerWidth < 1440) {
         listCategoriesEl.forEach((item) => {
             console.log(item.children.length)
             for (let i = 0; i < item.children.length; i += 1) {
@@ -141,7 +143,7 @@ function hideBooks() {
             }
 })
     }
-    if (window.outerWidth > 768) {
+    if (window.outerWidth >=1440) {
         listCategoriesEl.forEach((item) => {
             console.log(item.children.length)
             for (let i = 0; i < item.children.length; i += 1){
