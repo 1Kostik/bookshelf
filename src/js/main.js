@@ -119,7 +119,6 @@ function hideBooks() {
     const listCategoriesEl = Array.from(document.querySelectorAll('.bestsellers-book-list'));
     if (window.innerWidth < 768) {
         listCategoriesEl.forEach((item) => {
-            console.log(item.children.length)
             for (let i = 0; i < item.children.length; i += 1) {
                 if (i === 0) {
                     item.children[i].hidden = false;
@@ -132,7 +131,6 @@ function hideBooks() {
     }
     if (window.innerWidth >= 768 && window.outerWidth < 1440) {
         listCategoriesEl.forEach((item) => {
-            console.log(item.children.length)
             for (let i = 0; i < item.children.length; i += 1) {
                 if (i <= 2) {
                     item.children[i].hidden = false;
@@ -145,7 +143,6 @@ function hideBooks() {
     }
     if (window.innerWidth >=1440) {
         listCategoriesEl.forEach((item) => {
-            console.log(item.children.length)
             for (let i = 0; i < item.children.length; i += 1){
                 item.children[i].hidden = false;
             }
