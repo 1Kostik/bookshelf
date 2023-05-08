@@ -53,7 +53,7 @@ async function  makeMarkupTopBooksGallery(data) {
         <div class="bestsellers-category-item">
         <p class="bestsellers-category-name" name="${list_name}">${list_name}</p> 
         <ul class="bestsellers-book-list">
-        ${makeMarkupBook(showCorrectNumberOfBooks(books))}
+        ${makeMarkupBook(books)}
         </ul>
         <button type="button" class="bestsellers-button" name="${list_name}">see more</button>
         </div>`
@@ -61,6 +61,7 @@ async function  makeMarkupTopBooksGallery(data) {
         return acc
     }, `<h2 class="bestsellers-title">${changeColorStyleInTitle('Best Sellers Books')}</h2>`);
     refs.bestsellersSectionEl.innerHTML = markup;
+    hideBooks()
 }
 
 
@@ -95,7 +96,7 @@ async function loadCategoryBooksOnClick(event) {
 function makeMarkupCategoryShelf(data, nameCategory) {
     refs.bestsellersSectionEl.innerHTML= `<h2 class="bestsellers-title">${changeColorStyleInTitle(nameCategory)}</h2>
         <div class="bestsellers-category-item" name="${nameCategory}">
-        <ul class="bestsellers-book-list">
+        <ul class="category-book-list">
        ${makeMarkupBook(data)}
         </ul>
         </div>`
@@ -111,62 +112,41 @@ function toUpperCaseCategoryName(cattegoryName) {
 }
 
 
-function showCorrectNumberOfBooks(books) {
+ window.addEventListener('resize', debounce(hideBooks, 200))
+function hideBooks() {
+    const listCategoriesEl = Array.from(document.querySelectorAll('.bestsellers-book-list'));
     if (window.outerWidth <= 375) {
-        return books.slice(0,1);
+        listCategoriesEl.forEach((item) => {
+            console.log(item.children.length)
+            for (let i = 0; i < item.children.length; i += 1) {
+                if (i === 0) {
+                    item.children[i].hidden = false;
+                    continue
+                }
+                item.children[i].hidden = true;
+                
+            }
+})
     }
     if (window.outerWidth > 375 && window.outerWidth <= 768) {
-        return books.slice(0,3);
-      
+        listCategoriesEl.forEach((item) => {
+            console.log(item.children.length)
+            for (let i = 0; i < item.children.length; i += 1) {
+                if (i <= 2) {
+                    item.children[i].hidden = false;
+                    continue
+                }
+                item.children[i].hidden = true;
+                
+            }
+})
     }
     if (window.outerWidth > 768) {
-       return books.slice(0,5);
+        listCategoriesEl.forEach((item) => {
+            console.log(item.children.length)
+            for (let i = 0; i < item.children.length; i += 1){
+                item.children[i].hidden = false;
+            }
+        })
     }
 }
-
-
-// console.dir(refs.allCategoriesTitleEl.classList.contains('upper-case'))
-// function showCorrectNumbersBestsellers() {
-//     if (refs.bestsellersSectionEl.firstElementChild.textContent !== 'Best Sellers Books') {
-//         return
-//     }
-//  window.addEventListener('resize', debounce(hideBooks, 200))
-// }
-
-// function hideBooks() {
-//     const listCategoriesEl = Array.from(document.querySelectorAll('.bestsellers-book-list'));
-//     if (window.outerWidth <= 375) {
-//         listCategoriesEl.forEach((item) => {
-//             console.log(item.children.length)
-//             for (let i = 0; i < item.children.length; i += 1) {
-//                 if (i === 0) {
-//                     item.children[i].hidden = false;
-//                     continue
-//                 }
-//                 item.children[i].hidden = true;
-                
-//             }
-// })
-//     }
-//     if (window.outerWidth > 375 && window.outerWidth <= 768) {
-//         listCategoriesEl.forEach((item) => {
-//             console.log(item.children.length)
-//             for (let i = 0; i < item.children.length; i += 1) {
-//                 if (i <= 2) {
-//                     item.children[i].hidden = false;
-//                     continue
-//                 }
-//                 item.children[i].hidden = true;
-                
-//             }
-// })
-//     }
-//     if (window.outerWidth > 768) {
-//         listCategoriesEl.forEach((item) => {
-//             console.log(item.children.length)
-//             for (let i = 0; i < item.children.length; i += 1){
-//                 item.children[i].hidden = false;
-//             }
-//         })
-//     }
-// }

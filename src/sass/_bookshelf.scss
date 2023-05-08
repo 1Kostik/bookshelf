@@ -1,5 +1,5 @@
 
-.bestsellers-book-list {
+.bestsellers-book-list, .category-book-list {
   flex-wrap: wrap;
     justify-content: center;
     gap: 32px;
@@ -47,7 +47,7 @@ object-fit: cover;
     color:var(--text-color-title-violet);
 }
 
-.bestsellers-category-item{
+.bestsellers-category-item, .bookshelf-category-item{
     position: relative;
 
 }
@@ -72,7 +72,7 @@ object-fit: cover;
     padding-top: 40px;
     padding-right: 24px;
 }
-.bestsellers-title {
+.bestsellers-title, .bookshelf-category-title {
 margin-bottom: 40px;
 }
 .bestsellers-category-name {
