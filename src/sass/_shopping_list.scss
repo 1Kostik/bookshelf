@@ -54,6 +54,16 @@
 
 // Shoplist mobile books
 
+.shoplist-book-container {
+  margin-bottom: 20px;
+  padding: 14px;
+  display: flex;
+  width: 335px;
+  height: 170px;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+}
+
 .shoplist-book-img {
   margin-right: 14px;
   width: 100px;
@@ -78,24 +88,27 @@
 .shoplist-book-description {
   margin-bottom: 14px;
   width: 193px;
-  height: 68px;
 
   font-family: 'DM Sans';
   font-weight: 400;
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.04em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .shoplist-book-author {
+  align-self: flex-end;
+
   font-style: italic;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: -0.04em;
-
   color: #b4afaf;
 }
 
@@ -109,14 +122,10 @@
   color: #b4afaf;
 }
 
-.shoplist-book-container {
-  margin-bottom: 20px;
-  padding: 14px;
-  display: flex;
-  width: 335px;
-  height: 170px;
-  border: 2px solid rgba(79, 46, 232, 0.4);
-  border-radius: 16px;
+.shoplist-trash {
+  background-image: url(../images/symbol-defs.svg#icon-trash);
+  width: 28px;
+  height: 28px;
 }
 
 // tablet
