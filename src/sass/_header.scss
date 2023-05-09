@@ -136,6 +136,11 @@
     background-size: contain;
   }
 }
+@media screen and (min-width: 490px) {
+  .mobile-menu-container {
+    background-size: cover;
+  }
+}
 /* -----------------------------------------------------MOBILE-MENU-sign-UP------------------------------------------------------------ */
 .sign-up-btn-mobile {
   margin-top: 20px;
@@ -232,10 +237,8 @@
   color: inherit;
 }
 .logo-shop {
-  width: 20px;
-  height: 20px;
   margin-left: 4px;
-  fill: var(--text-color-title-white);
+  fill: currentColor;
 }
 .log-out-mobile-btn {
   display: flex;
@@ -334,9 +337,11 @@ body.mobile-menu-open {
     color: var(--text-color-title-dark);
   }
   .logo-shop {
-    fill: var(--text-color-title-dark);
+    color: inherit;
   }
-
+  .logo-shop-path {
+    fill: currentColor;
+  }
   .mobile-menu-open-btn {
     display: none;
   }
