@@ -4,19 +4,21 @@ const fetchBook = new FetchApiBooks();
 const refs = {
   bestsellersSectionEl: document.querySelector('.bookshelf'),
   bodyEl: document.querySelector('body'),
+  modalEl: document.querySelector('.modal'),
+  modalShoopLinks: document.querySelectorAll('.modal-shop-link'),
   closeButtonEl: document.querySelector('.modal-close-btn'),
   modalActionBtnEl: document.querySelector('.modal-action-btn'),
-  modalBookCardWrapEl: document.querySelector('.modal-book-card-wrapper'),
+  modalBookPictureWrapEl: document.querySelector('.modal-book-picture-wrapper'),
+  modalBookInfoWrapEl: document.querySelector('.modal-book-info-wrapper'),
   modalNotification: document.querySelector('.congratulations-text'),
   backdropEl: document.querySelector('.backdrop'),
   acum: document.querySelector('.acum'),
 };
-console.log(refs)
+console.log(refs.modalShoopLinks);
 const STORAGE_KEY = 'shoppingList';
 const BUTTON_TEXT_ADD = 'ADD TO SHOPPING LIST';
 const BUTTON_TEXT_REMOVE = 'REMOVE FROM THE SHOPPING LIST';
-const NOTIFICATION =
-  'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
+const NOTIFICATION = `Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.`;
 
 let shoppingList = [];
 let shoppingBook = {};
@@ -53,6 +55,7 @@ function onCardClick(e) {
     .fetchBookInfo(bookId)
     .then(bookInfo => {
       renderModalCard(bookInfo);
+      refs.modalEl.classList.remove('is-hidden');
 
       const isIdFinded = shoppingList.some(({ id }) => id === bookInfo._id);
       if (isIdFinded) {
@@ -86,52 +89,18 @@ function renderModalCard(bookInfo) {
     title,
     id,
   };
+  console.log(buyLinks);
+  const modalImgMarkup = `<img src="${bookImg}" class="modalBookImg">`;
+  const modalInfoMarkup = `<h4 class="modal-book-title">${title}</h3>
+                          <p class="modal-book-author">${author}</p>
+                          <p class="modal-book-description">${description}</p>`;
 
-  const modalCardMarkup = `<div class="modal-book-picture-wrapper">
-                              <img src="${bookImg}" class="modalBookImg"> 
-                           </div>
-                          <div class="modal-book-info-wrapper">
-                              <h4 class="modal-book-title">${title}</h3>
-                              <p class="modal-book-author">${author}</p>
-                              <p class="modal-book-description">${description}</p>
-                              <ul class="list modal-shop-list"> 
-                                  <li>
-                                    <a href="${buyLinks[0].url}" class="modal-shop-link icon-amazon" target="blank">
-                                      <img
-                                        src="/src/images/modal-imgs/icons-for-light-theme/amazon-light.png"
-                                        alt="Amazon"
-                                        class="shop-image"
-                                        width="62"
-                                        height="19"
-                                      />
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="${buyLinks[2].url}" class="modal-shop-link icon-barnesAndNoble" target="blank">
-                                      <img
-                                        src="/src/images/modal-imgs/icons-for-light-theme/ban-light.png"
-                                        alt="ban-light"
-                                        class="shop-image"
-                                        width="33"
-                                        height="32"
-                                      />
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="${buyLinks[4].url}" class="modal-shop-link icon-bookshop" target="blank">
-                                      <img
-                                        src="/src/images/modal-imgs/icons-for-light-theme/bookstore-light.png"
-                                        alt="bookstore-light"
-                                        class="shop-image"
-                                        width="38"
-                                        height="36"
-                                      />
-                                    </a>
-                                  </li>
-                              </ul>
-                          </div>`;
-
-  refs.modalBookCardWrapEl.innerHTML = modalCardMarkup;
+  refs.modalBookPictureWrapEl.innerHTML = modalImgMarkup;
+  refs.modalBookInfoWrapEl.innerHTML = modalInfoMarkup;
+  refs.modalShoopLinks[0].setAttribute('href', buyLinks[0]);
+  refs.modalShoopLinks[1].setAttribute('href', buyLinks[1]);
+  refs.modalShoopLinks[2].setAttribute('href', buyLinks[4]);
+  console.dir(refs.modalShoopLinks[0]);
 }
 // --------------------------------------------------------------------------------------
 
@@ -144,9 +113,8 @@ function onModalClose(e) {
     refs.backdropEl.removeEventListener('click', onModalClose);
     document.removeEventListener('keydown', onModalClose);
     refs.modalActionBtnEl.removeEventListener('click', onModalActionBtnClick);
+    refs.modalEl.classList.add('is-hidden');
 
-    refs.modalBookCardWrapEl.innerHTML = ''; // if spinner will be  - delete
-    refs.modalActionBtnEl.textContent = ''; // if spinner will be  - delete
     refs.modalNotification.textContent = '';
   }
 }
@@ -154,10 +122,13 @@ function onModalClose(e) {
 
 // -------------------ADD or REMOVE BOOK in SHOPPING LIST--------------------
 function onModalActionBtnClick(e) {
+  const selectedEl = document.getElementById(`${shoppingBook.id}`);
   // --------------- add book ----------------------
   if (e.target.textContent === BUTTON_TEXT_ADD) {
     e.target.textContent = BUTTON_TEXT_REMOVE;
     refs.modalNotification.textContent = NOTIFICATION;
+
+    selectedEl.style.setProperty('background-color', '#4f2ee8');
 
     shoppingList.push(shoppingBook);
     updateBookOnStorage();
@@ -173,6 +144,8 @@ function onModalActionBtnClick(e) {
     updateBookOnStorage();
 
     refs.acum.innerHTML = shoppingList.length;
+
+    selectedEl.style.setProperty('background-color', '#ffffff');
   }
 }
 // -----------------------------------------------------------------------
@@ -186,6 +159,3 @@ function updateBookOnStorage() {
 }
 
 export { shoppingList, updateBookOnStorage, removesBookFromShoppingList };
-
-// import shoppingList from './modal';  // to shopping LIST
-// console.log(shoppingList);
