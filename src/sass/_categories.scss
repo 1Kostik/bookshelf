@@ -1,35 +1,38 @@
-ul {
-  list-style-type: none;
-}
-
 .categories {
-  height: 472px;
-  width: 300px;
+  height: 228px;
+  width: 335px;
+  margin-bottom: 40px;
+  padding-right: 28px;
   overflow: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;
-  margin-top: 30px;
-  margin-bottom: 30px;
+}
+
+.cat-list {
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.cat-list:last-child {
+  margin-bottom: 0;
+}
+
+.cat-list:focus {
+  text-transform: uppercase;
+}
+.cat-list:hover {
+  color: #4f2ee8;
+  text-shadow: 1px 1px 2px grey;
 }
 
 .cat-text {
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-
-  letter-spacing: 133%;
-
+  font-size: 16px;
+  line-height: 112%;
+  letter-spacing: -0.02em;
   color: rgba(17, 17, 17, 0.6);
-}
-
-.cat-list {
-  cursor: pointer;
-  margin-bottom: 32px;
-}
-.cat-list:focus {
-  text-transform: uppercase;
 }
 
 .upper-case {
@@ -37,18 +40,15 @@ ul {
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 24px;
-
-  letter-spacing: 133%;
+  font-size: 16px;
+  line-height: 112%;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
-
   color: #4f2ee8;
 }
 
 .categories::-webkit-scrollbar {
   width: 8px;
-  height: 167px;
 }
 
 .categories::-webkit-scrollbar-thumb {
@@ -63,24 +63,24 @@ ul {
   .categories {
     height: 472px;
     width: 337px;
-    scroll-behavior: smooth;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-}
+    margin-right: 32px;
+    margin-bottom: 0;
+  }
+  .cat-text,
+  .upper-case {
+    font-size: 18px;
+    line-height: 133%;
+  }
 
+  .cat-list {
+    cursor: pointer;
+    margin-bottom: 32px;
+  }
+}
 
 @media screen and (min-width: 1440px) {
-.categories {
-    height: 472px;
+  .categories {
     width: 356px;
-    scroll-behavior: smooth;
-    margin-top: 30px;
-    margin-bottom: 86px;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    margin-right: 0;
+  }
 }
-}
-
