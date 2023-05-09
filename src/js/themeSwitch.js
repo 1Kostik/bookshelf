@@ -42,12 +42,12 @@ const darkTheme = {
 }
 
 const lightTheme = {
-   header: '#FFFFFF',
-   body: '#D0D0D0', 
-   hoverFocus: '#4F2EE8',
-   bgCardBookShoppingList: '#F6F6F6',
-   textCardBookShoppingList: '#111111',
-}
+  header: '#FFFFFF',
+  body: '#F6F6F6',
+  hoverFocus: '#4F2EE8',
+  bgCardBookShoppingList: '#F6F6F6',
+  textCardBookShoppingList: '#111111',
+};
 
 let currentTheme = 'light';
 
