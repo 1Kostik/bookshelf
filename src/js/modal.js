@@ -60,7 +60,7 @@ function onCardClick(e) {
       const isIdFinded = shoppingList.some(({ id }) => id === bookInfo._id);
       if (isIdFinded) {
         refs.modalActionBtnEl.textContent = BUTTON_TEXT_REMOVE;
-        refs.modalNotification.textContent = NOTIFICATION;
+        refs.modalNotification.textContent.innerHTML = NOTIFICATION;
       } else {
         refs.modalActionBtnEl.textContent = BUTTON_TEXT_ADD;
       }
@@ -115,7 +115,7 @@ function onModalClose(e) {
     refs.modalActionBtnEl.removeEventListener('click', onModalActionBtnClick);
     refs.modalEl.classList.add('is-hidden');
 
-    refs.modalNotification.textContent = '';
+    refs.modalNotification.innerHTML = '';
   }
 }
 // ------------------------------------------------------------------------
@@ -126,8 +126,7 @@ function onModalActionBtnClick(e) {
   // --------------- add book ----------------------
   if (e.target.textContent === BUTTON_TEXT_ADD) {
     e.target.textContent = BUTTON_TEXT_REMOVE;
-    refs.modalNotification.textContent = NOTIFICATION;
-
+    refs.modalNotification.innerHTML = `<p class="congratulations-text">${NOTIFICATION}</p>`;
     selectedEl.style.setProperty('background-color', '#4f2ee8');
 
     shoppingList.push(shoppingBook);
@@ -138,7 +137,7 @@ function onModalActionBtnClick(e) {
   // --------------- remove book ----------------------
   else {
     e.target.textContent = BUTTON_TEXT_ADD;
-    refs.modalNotification.textContent = '';
+    refs.modalNotification.innerHTML = '';
 
     removesBookFromShoppingList();
     updateBookOnStorage();
