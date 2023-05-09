@@ -2,25 +2,26 @@
 
 (() => {
     const refs = {
-        openModalBtn: document.querySelector("[data-modal-open-sign]"),
-        closeModalBtn: document.querySelector("[data-modal-close-sign]"),
-        modal: document.querySelector("[data-modal-sign]"),
+      openModalBtn: document.querySelector('[data-modal-open-sign]'),
+      closeModalBtn: document.querySelector('[data-modal-close-sign]'),
+      modal: document.querySelector('[data-modal-sign]'),
+      openModalBtnMob: document.querySelector('[data-modal-open-sign-mobile]'),
+      mobileMenuBtn: document.querySelector('[data-mobile-menu-btn]'),
+      mobileMenu: document.querySelector('[data-mobile-menu]'),
+      body: document.querySelector('body'),
     };
-
-    refs.openModalBtn.addEventListener("click", toggleModal);
-    refs.closeModalBtn.addEventListener("click", toggleModal);
-
+  
+    refs.openModalBtn.addEventListener('click', toggleModal);
+    refs.closeModalBtn.addEventListener('click', toggleModal);
+    refs.openModalBtnMob.addEventListener('click', toggleModal);
+  
     function toggleModal() {
-        refs.modal.classList.toggle("is-hidden");
+      refs.modal.classList.toggle('is-hidden');
+      refs.mobileMenu.classList.remove('is-open');
+      refs.mobileMenuBtn.classList.remove('is-open');
+      refs.body.classList.remove('mobile-menu-open');
     }
-})();
-
-
-
-
-
-
-
+  })();
 
 
 // scrol
