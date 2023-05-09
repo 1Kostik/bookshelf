@@ -1,3 +1,18 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  
+  outline: 0;
+  outline-offset: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 .modal {
     position: fixed;
     z-index: 20;
@@ -71,14 +86,15 @@
   }
   .modal-book-info-wrapper {
     display: block;
+    margin-top: 14px;
   }
   @media screen and (min-width:768px) {
     .modal-book-info-wrapper{
       width: 279px;
+      margin-top: 0;
     }
   }
   .modal-book-title {
-    margin-top: 14px;
     font-family: 'DM Sans';
     font-style: normal;
     font-weight: 700;
@@ -182,6 +198,11 @@
   }
 }
 .congratulations-text{
+  text-align: center;
+  width: 242px;
+  padding-top: 8px;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
@@ -193,6 +214,8 @@
 }
 @media screen and (min-width:768px){
   .congratulations-text{
+    width: 324px;
+   
     font-size: 12px;
     line-height: 1.17;
   }
