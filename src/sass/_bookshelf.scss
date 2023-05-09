@@ -128,7 +128,6 @@ position: absolute;
 .book-item:hover .books-overlay,
 .book-item:focus .books-overlay {
     transform: translateY(0%);
-    z-index: 100;
 }
 
 .books-overlay-text{
