@@ -24,7 +24,7 @@
     margin-right: auto;
     margin-left: auto;
     padding: 40px 24px;
-    width: 335px;
+    width: 339px;
     border: 2px solid #111111;
     border-radius: 18px;  
     background-color: var(--bg-card-book-shoppinglist-page);
@@ -32,13 +32,14 @@
   @media screen and (min-width: 768px){
     .modal {
       width: 579px;
+      padding: 40px;
     }
   }
   .modal-close-btn{
     cursor: pointer;
     position: absolute;
-    top: 18px;
-    right: 18px;
+    top: 12px;
+    right: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,11 +49,17 @@
     background-color: transparent;
     border: none;
   }
+  @media screen and (min-width: 768px){
+    .modal-close-btn {
+      top: 24px;
+      right: 24px;
+    }
+  }
   .modal-close-btn-icon{
     fill: var(--text-color-title-dark);
     background-color: transparent;
-    width: 12px;
-    height: 12px;
+    width: 24px;
+    height: 24px;
     transition: 
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     .modal-close-btn:hover &{
@@ -61,21 +68,29 @@
   }
   @media screen and (min-width: 768px){
     .modal-close-btn-icon{
-      width: 14px;
-      height: 14px;
+      width: 28px;
+      height: 28px;
     } 
   }
   @media screen and (min-width:768px){
-    .modal-book-card-wrapper{
+   
+  .modal-book-card-wrapper{
       display: flex;
     } 
+  }
+  @media screen and (min-width: 768px) {
+    .modal-book-card-wrapper {
+      width: 495px;
+      height: 281px;
+      display: flex;
+      flex-flow: column wrap; ///////
+    }
   }
   .modal-book-picture-wrapper{
     border-radius: 8px;
     width: 287px;
     height: 408px;
-    display: block;
-    border: 2px solid #111111;
+    overflow: hidden;
   }
   @media screen and (min-width:768px) {
     .modal-book-picture-wrapper{
@@ -83,6 +98,11 @@
       height: 281px;
       margin-right: 24px;
     }
+  }
+  .modalBookImg {
+    width: 100%;///
+    height: 100%; //
+    object-fit: fill; //
   }
   .modal-book-info-wrapper {
     display: block;
@@ -146,24 +166,20 @@
     margin-top: 14px;
     display: flex;
     gap: 20px;
+    align-items: center;
   }
   @media screen and (min-width:768px){
     .modal-shop-list{
       margin-top: 20px;
     }
   }
-  .icon-amazon::before{
-    background-image: url(/src/images/modal-imgs/icons-for-light-theme/amazon-light.png);
-    background-size: 62px 19px;
+  .shop-image:hover,
+  .shop-image:focus {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
   }
-  .icon-barnesAndNoble::before{
-    background-image: url(/src/images/modal-imgs/icons-for-light-theme/ban-light.png);
-    background-size: 33px 32px;
-  }
-  .icon-bookshop::before{
-    background-image: url(/src/images/modal-imgs/icons-for-light-theme/bookstore-light.png);
-    background-size: 38px 36px;
-  }
+  // .shop-image.dark-theme {
+  //   filter: brightness(100) contrast(100%);
+  // }
   .modal-action-btn {
     display: block;
     font-family: 'DM Sans';
@@ -178,7 +194,10 @@
     box-sizing: border-box;
     border: 2px solid #4F2EE8;
     border-radius: 40px;
-    padding: 14px 28px;
+    padding: 14px 24px;
+    // padding-top: 14px;
+    // padding-bottom: 14px;
+    text-align: center;
     margin: auto;
     margin-top: 40px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -200,9 +219,9 @@
 .congratulations-text{
   text-align: center;
   width: 242px;
-  padding-top: 8px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 8px;
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
