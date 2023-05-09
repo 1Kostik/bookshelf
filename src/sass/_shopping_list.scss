@@ -1,4 +1,7 @@
 @media screen and (max-width: 767px) {
+  .support {
+    display: none;
+  }
   .shopping_list {
     margin-top: 40px;
   }
@@ -17,6 +20,7 @@
   }
 
   .shopping-list-empty-page {
+    margin-top: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,87 +54,173 @@
       background-size: 265px 198px;
     }
   }
+
+  // Shoplist MOBILE books
+
+  .shoplist-book-container {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    width: 335px;
+    height: 170px;
+    border: 2px solid rgba(79, 46, 232, 0.4);
+    border-radius: 16px;
+    background-color: var(--bg-white-header);
+  }
+
+  .shoplist-book-img {
+    margin: 14px;
+    width: 100px;
+    height: 142px;
+    border-radius: 8px;
+  }
+
+  .shoplist-book-title {
+    margin-top: 14px;
+    margin-bottom: 4px;
+    width: 144px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--bg-dark-theme-header);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .shoplist-book-genre {
+    margin-bottom: 8px;
+    height: 14px;
+    max-width: 165px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    color: var(--text-color-title-category-white-theme);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .shoplist-book-description {
+    margin-bottom: 28px;
+    width: 193px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.04em;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .shoplist-book-author {
+    margin-bottom: 14px;
+    align-self: flex-end;
+    width: 97px;
+
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: -0.04em;
+    color: var(--text-color-title-category-white-theme);
+  }
+
+  .shoplist-trash {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    margin-top: 14px;
+    margin-right: 14px;
+    width: 28px;
+    height: 28px;
+
+    background-image: url(../images/svg-from-maket/trash.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    background-color: var(--hover-focus);
+    border-radius: 100%;
+
+    transition: all 0.2s ease-in-out;
+  }
+
+  .shoplist-trash:hover {
+    transform: scale(1.2);
+  }
+
+  .shoplist-icons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    height: 16px;
+    margin-bottom: 10px;
+    margin-right: 14px;
+  }
+
+  .shoplist-icons-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .shoplist-icon-amazon {
+    background-image: url(../images/modal-imgs/icons-for-light-theme/amazon-light.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 32px;
+    height: 11px;
+  }
+
+  // .shoplist-icon-amazon:hover {
+  //   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+  // }
+
+  .shoplist-icon-barnesAndNoble {
+    background-image: url(../images/modal-imgs/icons-for-light-theme/appleBooks.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 16px;
+    height: 16px;
+  }
+
+  .shoplist-icon-barnesAndNoble:hover {
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+  }
+
+  .shoplist-icon-bookshop {
+    background-image: url(../images/modal-imgs/icons-for-light-theme/bookShop.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 16px;
+    height: 16px;
+  }
+
+  .shoplist-icon-bookshop:hover {
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+  }
 }
 
-// Shoplist mobile books
-
-.shoplist-book-container {
-  margin-bottom: 20px;
-  padding: 14px;
-  display: flex;
-  width: 335px;
-  height: 170px;
-  border: 2px solid rgba(79, 46, 232, 0.4);
-  border-radius: 16px;
-}
-
-.shoplist-book-img {
-  margin-right: 14px;
-  width: 100px;
-  height: 142px;
-  border-radius: 8px;
-}
-
-.shoplist-book-title {
-  margin-bottom: 4px;
-  width: 144px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.12;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  color: var(--bg-dark-theme-header);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.shoplist-book-description {
-  margin-bottom: 14px;
-  width: 193px;
-
-  font-family: 'DM Sans';
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.29;
-  letter-spacing: -0.04em;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.shoplist-book-author {
-  align-self: flex-end;
-
-  font-style: italic;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: -0.04em;
-  color: #b4afaf;
-}
-
-.shoplist-book-genre {
-  margin-bottom: 8px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.03em;
-  color: #b4afaf;
-}
-
-.shoplist-trash {
-  background-image: url(../images/symbol-defs.svg#icon-trash);
-  width: 28px;
-  height: 28px;
-}
-
-// tablet
+// TABLET
 
 @media screen and (min-width: 768px) {
+  .support {
+    display: none;
+  }
+
   .shopping_list {
     margin-top: 40px;
   }
@@ -141,7 +231,7 @@
     font-size: 48px;
     line-height: 1.08;
     letter-spacing: -0.04em;
-    margin-bottom: 140px;
+    margin-bottom: 40px;
   }
 
   .title_shopping_list_span {
@@ -149,6 +239,7 @@
   }
 
   .shopping-list-empty-page {
+    margin-top: 140px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -182,9 +273,177 @@
       background-size: 322px 241px;
     }
   }
+
+  // Shoplist TABLET books
+
+  .shoplist-book-container {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    width: 704px;
+    height: 213px;
+    border: 2px solid rgba(79, 46, 232, 0.4);
+    border-radius: 16px;
+    background-color: var(--bg-white-header);
+  }
+
+  .shoplist-book-img {
+    margin: 24px;
+    width: 116px;
+    height: 165px;
+    border-radius: 8px;
+  }
+
+  .shoplist-book-title {
+    margin-top: 24px;
+    margin-bottom: 4px;
+    height: 18px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--bg-dark-theme-header);
+  }
+
+  .shoplist-book-genre {
+    margin-bottom: 8px;
+    height: 14px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    color: var(--text-color-title-category-white-theme);
+  }
+
+  .shoplist-book-description {
+    margin-bottom: 48px;
+    width: 508px;
+    height: 53px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.04em;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .shoplist-book-author {
+    height: 14px;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: -0.04em;
+    color: var(--text-color-title-category-white-theme);
+  }
+
+  .shoplist-trash {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    margin-top: 24px;
+    margin-right: 24px;
+    width: 34px;
+    height: 34px;
+
+    background-image: url(../images/svg-from-maket/trash.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    background-color: var(--hover-focus);
+    border-radius: 100%;
+
+    transition: all 0.2s ease-in-out;
+  }
+
+  .shoplist-trash:hover {
+    transform: scale(1.2);
+  }
+
+  .shoplist-icons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 140px;
+    height: 30px;
+    margin-bottom: 24px;
+    margin-right: 24px;
+  }
+
+  .shoplist-icons-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .shoplist-icon-amazon {
+    background-image: url(../images/modal-imgs/icons-for-light-theme/amazon-light.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 48px;
+    height: 15px;
+  }
+
+  // .shoplist-icon-amazon:hover {
+  //   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+  // }
+
+  .shoplist-icon-barnesAndNoble {
+    background-image: url(../images/modal-imgs/icons-for-light-theme/appleBooks.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 28px;
+    height: 27px;
+  }
+
+  .shoplist-icon-barnesAndNoble:hover {
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+  }
+
+  .shoplist-icon-bookshop {
+    background-image: url(../images/modal-imgs/icons-for-light-theme/bookShop.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    width: 32px;
+    height: 30px;
+  }
+
+  .shoplist-icon-bookshop:hover {
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+  }
 }
 
-// Desktop
+// DESKTOP
 
 @media screen and (min-width: 1200px) {
+  .support {
+    display: block;
+    margin-right: 40px;
+    margin-top: 40px;
+  }
+
+  .shopping_list_page {
+    display: flex;
+  }
+  .shoplist-book-container {
+    width: 996px;
+    height: 213px;
+  }
+
+  .shopping-list-empty-page {
+    align-items: center;
+    margin-top: 140px;
+    margin-left: 315px;
+  }
 }
