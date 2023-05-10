@@ -85,10 +85,11 @@ function changeColorStyleInTitle(category) {
 
 refs.categoriesListEl.addEventListener('click', loadCategoryBooksOnClick);
 async function loadCategoryBooksOnClick(event) {
-    refs.spinnerEl.classList.remove('spinner-hidden');
+    
     if (event.target.nodeName !== 'LI' || event.target.textContent.trim()=== 'All categories') {
         return
     }
+    refs.spinnerEl.classList.remove('spinner-hidden');
     const nameCategory = event.target.textContent;
  try {
      const data = await fetchApiBooks.fetchSelectedCategory(nameCategory);
