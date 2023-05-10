@@ -1,5 +1,8 @@
+.support {
+  display: block;
+}
 @media screen and (max-width: 767px) {
-  .support {
+  #shopping-list .shoplist-support {
     display: none;
   }
   .shopping_list {
@@ -217,7 +220,7 @@
 // TABLET
 
 @media screen and (min-width: 768px) {
-  .support {
+  #shopping-list .shoplist-support {
     display: none;
   }
 
@@ -427,7 +430,7 @@
 // DESKTOP
 
 @media screen and (min-width: 1200px) {
-  .support {
+  .shoplist-support {
     display: block;
     margin-right: 40px;
     margin-top: 40px;
