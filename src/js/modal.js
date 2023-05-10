@@ -14,7 +14,7 @@ const refs = {
   backdropEl: document.querySelector('.backdrop'),
   acum: document.querySelector('.acum'),
 };
-console.log(refs.modalShoopLinks);
+
 const STORAGE_KEY = 'shoppingList';
 const BUTTON_TEXT_ADD = 'ADD TO SHOPPING LIST';
 const BUTTON_TEXT_REMOVE = 'REMOVE FROM THE SHOPPING LIST';
@@ -31,36 +31,52 @@ if (JSON.parse(localStorage.getItem(STORAGE_KEY))) {
 
 refs.bestsellersSectionEl.addEventListener('click', onCardClick);
 
-//  ----------------------- onCardClick FUNCTION------------------------------
+//  ----------------------- ON CARD CLICK FUNCTION------------------------------
 function onCardClick(e) {
+  e.preventDefault();
+
   refs.modalActionBtnEl.addEventListener('click', onModalActionBtnClick);
   refs.backdropEl.addEventListener('click', onModalClose);
   document.addEventListener('keydown', onModalClose);
-  // ______ on book card click check____
-  if (e.target.nodeName !== 'IMG' && e.target.parentNode.nodeName !== 'LI') {
+
+  // ______ on book-card click check____
+  if (
+    e.target.nodeName !== 'IMG' &&
+    e.target.nodeName !== 'A' &&
+    e.target.nodeName !== 'P'
+  ) {
     return;
   }
+
   // _________________________________________
   refs.bodyEl.classList.add('modalIsOpen');
   refs.backdropEl.classList.remove('is-hidden');
 
   // _______get book`s Id___________________
+
   if (e.target.nodeName === 'IMG') {
-    bookId = e.target.parentNode.parentNode.id;
-  } else {
+    bookId = e.target.parentNode.parentNode.parentNode.id;
+  } else if (e.target.nodeName === 'A') {
     bookId = e.target.parentNode.id;
+  } else {
+    bookId = e.target.parentNode.parentNode.id;
   }
   //__________________________________________
+
   fetchBook
     .fetchBookInfo(bookId)
     .then(bookInfo => {
       renderModalCard(bookInfo);
+
       refs.modalEl.classList.remove('is-hidden');
 
-      const isIdFinded = shoppingList.some(({ id }) => id === bookInfo._id);
-      if (isIdFinded) {
+      const isShoppingListIncludeId = shoppingList.some(
+        ({ id }) => id === bookInfo._id
+      );
+
+      if (isShoppingListIncludeId) {
         refs.modalActionBtnEl.textContent = BUTTON_TEXT_REMOVE;
-        refs.modalNotification.textContent.innerHTML = NOTIFICATION;
+        refs.modalNotification.innerHTML = NOTIFICATION;
       } else {
         refs.modalActionBtnEl.textContent = BUTTON_TEXT_ADD;
       }
@@ -89,7 +105,7 @@ function renderModalCard(bookInfo) {
     title,
     id,
   };
-  console.log(buyLinks);
+
   const modalImgMarkup = `<img src="${bookImg}" class="modalBookImg">`;
   const modalInfoMarkup = `<h4 class="modal-book-title">${title}</h3>
                           <p class="modal-book-author">${author}</p>
@@ -97,10 +113,10 @@ function renderModalCard(bookInfo) {
 
   refs.modalBookPictureWrapEl.innerHTML = modalImgMarkup;
   refs.modalBookInfoWrapEl.innerHTML = modalInfoMarkup;
-  refs.modalShoopLinks[0].setAttribute('href', buyLinks[0]);
-  refs.modalShoopLinks[1].setAttribute('href', buyLinks[1]);
-  refs.modalShoopLinks[2].setAttribute('href', buyLinks[4]);
-  console.dir(refs.modalShoopLinks[0]);
+
+  refs.modalShoopLinks[0].setAttribute('href', buyLinks[0].url);
+  refs.modalShoopLinks[1].setAttribute('href', buyLinks[1].url);
+  refs.modalShoopLinks[2].setAttribute('href', buyLinks[4].url);
 }
 // --------------------------------------------------------------------------------------
 
@@ -144,7 +160,7 @@ function onModalActionBtnClick(e) {
 
     refs.acum.innerHTML = shoppingList.length;
 
-    selectedEl.style.setProperty('background-color', '#ffffff');
+    selectedEl.style.setProperty('background-color', '');
   }
 }
 // -----------------------------------------------------------------------
