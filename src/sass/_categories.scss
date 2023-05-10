@@ -22,7 +22,7 @@
 }
 .cat-list:hover {
   color:var(--hover-focus);
-  text-shadow: 1px 1px 2px grey;
+  
 }
 
 .cat-text {
@@ -32,7 +32,7 @@
   font-size: 16px;
   line-height: 112%;
   letter-spacing: -0.02em;
-  color: var(--text-color-card-book-shoppinglist-page-dark-theme);
+  color: var(--text-color-allcategories-dark-theme);
 }
 
 .upper-case {
@@ -82,5 +82,8 @@
   .categories {
     width: 356px;
     margin-right: 0;
+  }
+  .cat-list:hover {
+    text-shadow: 1px 1px 2px grey;
   }
 }
