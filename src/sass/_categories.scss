@@ -21,7 +21,7 @@
   text-transform: uppercase;
 }
 .cat-list:hover {
-  color: #4f2ee8;
+  color:var(--hover-focus);
   text-shadow: 1px 1px 2px grey;
 }
 
@@ -44,7 +44,7 @@
   line-height: 112%;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  color: #4f2ee8;
+  color:var(--hover-focus);
 }
 
 .categories::-webkit-scrollbar {
