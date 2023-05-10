@@ -23,9 +23,12 @@
 const mobileMenuBtn = document.querySelector('[data-mobile-menu-btn]');
 const mobileMenu = document.querySelector('[data-mobile-menu]');
 const body = document.querySelector('body');
+const autorizatedBtn = document.querySelector('.authorizated-btn');
+const logOutBtn = document.querySelector('.log-out-btn');
 
-mobileMenuBtn.addEventListener('click', onOpenMobileMenu);
-function onOpenMobileMenu() {
+mobileMenuBtn.addEventListener('click', openMobileMenu);
+
+function openMobileMenu() {
   mobileMenuBtn.classList.toggle('is-open');
   mobileMenu.classList.toggle('is-open');
   body.classList.toggle('mobile-menu-open');
@@ -39,3 +42,9 @@ window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
   body.classList.remove('mobile-menu-open');
   // bodyScrollLock.enableBodyScroll(document.body);
 });
+
+autorizatedBtn.addEventListener('click', openLogOutBtn);
+function openLogOutBtn(e) {
+  e.preventDefault();
+  logOutBtn.classList.toggle('visually-hidden');
+}
