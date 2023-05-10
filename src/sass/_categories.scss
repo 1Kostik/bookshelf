@@ -22,7 +22,6 @@
 }
 .cat-list:hover {
   color:var(--hover-focus);
-  text-shadow: 1px 1px 2px grey;
 }
 
 .cat-text {
@@ -82,5 +81,9 @@
   .categories {
     width: 356px;
     margin-right: 0;
+  }
+
+  .cat-list {
+    text-shadow: 1px 1px 2px grey;
   }
 }
