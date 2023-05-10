@@ -201,14 +201,14 @@ padding-top: 14px;
 
 .bestsellers-button:hover, .bestsellers-button:focus {
     animation: pulsare 1s ease-in-out;
-    transform: scale(1.03);
+    background-color:var(--hover-focus);
+    color:var(--text-color-title-white);
 }
 
 @keyframes pulsare {
     0% {
         box-shadow: 0 0 25px #5ddcff,
             0 0 50px #4e00c2;
-        background-color: rgb(102, 251, 251);
     }
 }
 
@@ -322,13 +322,13 @@ padding-top: 14px;
     text-align: center;
     pointer-events: none;
     position: fixed;
-        bottom: 40px;
+        bottom: 50%;
         left: 50%;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    border: 4px solid rgba(58, 245, 89, 0.393);
-    border-top-color: #f40808;
+    border: 10px solid rgba(36, 3, 251, 0.408);
+    border-top-color: #fffb00;
     animation: spin 1s ease-in-out infinite;
     margin: auto;
     margin-top: 50px;
