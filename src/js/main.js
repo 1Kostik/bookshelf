@@ -2,7 +2,9 @@ const refs = {
     bestsellersSectionEl: document.querySelector('.bookshelf'),
     categoriesListEl: document.querySelector('.categories-list'),
     allCategoriesTitleEl: document.querySelector('.cat-list'),
-    bestsellersButton:document.querySelector('.bestsellers-button'),
+    bestsellersButton: document.querySelector('.bestsellers-button'),
+    // spinnerEl:document.querySelector('.spinner-more'),
+
 }
 var debounce = require('lodash.debounce');
 import { makeMarkupBook } from './renderMarkup';
@@ -16,12 +18,14 @@ refs.allCategoriesTitleEl.addEventListener("click",  loadTopBooksOnClick);
 
 async function  loadTopBooksOnClick(event) {
     try {
+        // refs.spinnerEl.classList.remove('spinner-hidden');
         const data = await fetchApiBooks.fetchTopBooks();
         if (data.length === 0 || data === undefined) {
             Notiflix.Notify.failure("Sorry, we didn't find anything according to your request.");
            return
-       }
-        makeMarkupTopBooksGallery(data);
+        }
+          //    refs.spinnerEl.classList.add('spinner-hidden');
+     makeMarkupTopBooksGallery(data);
     } catch (error) {
         console.log(error.message)
     }
@@ -32,6 +36,7 @@ async function onCattegoryButtonElClick(event) {
     if (event.target.nodeName !== 'BUTTON') {
         return
     }
+    // refs.spinnerEl.classList.remove('spinner-hidden');
     const cattegoryName = event.target.name;
      try {
          const data = await fetchApiBooks.fetchSelectedCategory(cattegoryName);
@@ -41,6 +46,7 @@ async function onCattegoryButtonElClick(event) {
          }
          toUpperCaseCategoryName(cattegoryName);
         document.querySelector('.bestsellers-title').innerHTML = changeColorStyleInTitle(cattegoryName);
+         //  refs.spinnerEl.classList.add('spinner-hidden');
          makeMarkupCategoryShelf(data, cattegoryName);
     } catch (error) {
         console.log(error.message)
@@ -78,6 +84,7 @@ function changeColorStyleInTitle(category) {
 
 refs.categoriesListEl.addEventListener('click', loadCategoryBooksOnClick);
 async function loadCategoryBooksOnClick(event) {
+    // refs.spinnerEl.classList.remove('spinner-hidden');
     if (event.target.nodeName !== 'LI' || event.target.textContent.trim()=== 'All categories') {
         return
     }
@@ -89,6 +96,7 @@ async function loadCategoryBooksOnClick(event) {
            return
        }
     document.querySelector('.bestsellers-title').innerHTML = changeColorStyleInTitle(nameCategory);
+      //   refs.spinnerEl.classList.add('spinner-hidden');
      makeMarkupCategoryShelf(data, nameCategory);
     } catch (error) {
      console.log(error.message);

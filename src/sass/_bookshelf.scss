@@ -84,6 +84,11 @@ cursor: pointer;
 }
 
 .book-img-container{
+    background-image: url('../images/svg-from-maket/plug.svg');
+        background-color: inherit;
+        background-repeat: no-repeat;
+        background-position: 123px 205px;
+            background-size: 88px 80px;
     position: relative;
 width:335px;
 height: 485px;
@@ -225,6 +230,8 @@ padding-top: 14px;
         } 
 
     .book-img-container {
+        background-position: 79px 133px;
+            background-size: 60px 54px;
         width: 218px;
         height: 316px;
         }
@@ -264,6 +271,8 @@ padding-top: 14px;
     }
 
     .book-img-container {
+        background-position: 68px 110px;
+        background-size: 44px 40px;
         width: 180px;
         height: 256px;
     }
@@ -284,3 +293,43 @@ padding-top: 14px;
      column-gap: 24px;
  }
 }
+
+
+/*---------------------------------SPINNER---------------------*/
+
+.spinner-hidden {
+    position: absolute;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+}
+
+.spinner-more {
+    text-align: center;
+    pointer-events: none;
+    position: fixed;
+        bottom: 40px;
+        left: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 4px solid rgba(58, 245, 89, 0.393);
+    border-top-color: #f40808;
+    animation: spin 1s ease-in-out infinite;
+    margin: auto;
+    margin-top: 50px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
