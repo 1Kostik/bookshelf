@@ -396,9 +396,9 @@
     height: 15px;
   }
 
-  // .shoplist-icon-amazon:hover {
-  //   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
-  // }
+  .shoplist-icon-amazon:hover {
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+  }
 
   .shoplist-icon-barnesAndNoble {
     background-image: url(../images/modal-imgs/icons-for-light-theme/appleBooks.png);
@@ -430,7 +430,7 @@
 // DESKTOP
 
 @media screen and (min-width: 1200px) {
-  .shoplist-support {
+  #shopping-list .shoplist-support {
     display: block;
     margin-right: 40px;
     margin-top: 40px;
