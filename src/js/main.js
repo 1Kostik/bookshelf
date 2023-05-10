@@ -47,8 +47,8 @@ async function onCattegoryButtonElClick(event) {
          }
          toUpperCaseCategoryName(cattegoryName);
         document.querySelector('.bestsellers-title').innerHTML = changeColorStyleInTitle(cattegoryName);
-          refs.spinnerEl.classList.add('spinner-hidden');
          makeMarkupCategoryShelf(data, cattegoryName);
+          refs.spinnerEl.classList.add('spinner-hidden');
     } catch (error) {
         console.log(error.message)
     }
@@ -98,8 +98,8 @@ async function loadCategoryBooksOnClick(event) {
            return
        }
     document.querySelector('.bestsellers-title').innerHTML = changeColorStyleInTitle(nameCategory);
-        refs.spinnerEl.classList.add('spinner-hidden');
      makeMarkupCategoryShelf(data, nameCategory);
+     refs.spinnerEl.classList.add('spinner-hidden');
     } catch (error) {
      console.log(error.message);
     }
@@ -159,9 +159,6 @@ function hideBooks() {
         })
     }
 }
-
-
-
 
 
 window.addEventListener('resize', showPicture);
