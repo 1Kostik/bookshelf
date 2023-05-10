@@ -80,6 +80,9 @@ flex-direction: column;
 
 .book-item{
 cursor: pointer;
+text-decoration: none;
+color: inherit;
+border: none;
 }
 
 @keyframes pulsare {
@@ -104,8 +107,8 @@ overflow: hidden;
 margin-bottom: 14px;
 }
 
-.book-item:hover .book-img-container,
-.book-item:focus .book-img-container {
+.bookshelf-bool-link:hover .book-img-container,
+.bookshelf-bool-link:focus .book-img-container {
     animation: pulsare 1s ease-in-out;
 }
 
@@ -118,7 +121,7 @@ object-fit: cover;
 transition: transform .35s ease-in-out;
 }
 
- .book-item:hover .book-img, .book-item:focus .book-img {
+ .bookshelf-bool-link:hover .book-img, .bookshelf-bool-link:focus .book-img {
     transform: scale(1.03);
 }
 
@@ -137,8 +140,8 @@ position: absolute;
     pointer-events: none;
 }
 
-.book-item:hover .books-overlay,
-.book-item:focus .books-overlay {
+.bookshelf-bool-link:hover .books-overlay,
+.bookshelf-bool-link:focus .books-overlay {
     transform: translateY(0%);
 }
 
@@ -319,16 +322,14 @@ padding-top: 14px;
 }
 
 .spinner-more {
-    text-align: center;
+align-items: center;
     pointer-events: none;
-    position: fixed;
-        bottom: 50%;
-        left: 50%;
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 10px solid rgba(36, 3, 251, 0.408);
-    border-top-color: #fffb00;
+    border: 10px solid;
+    border-color:  var(--bg-border-card-book-shoppinglist-page);
+    border-top-color: var(--hover-book);
     animation: spin 1s ease-in-out infinite;
     margin: auto;
     margin-top: 50px;
@@ -340,3 +341,10 @@ padding-top: 14px;
     }
 }
 
+@media screen and (min-width: 1400px) {
+    .spinner-more{
+position: fixed;
+    bottom: 40%;
+    left: 50%;
+    }
+}
