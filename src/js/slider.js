@@ -4,7 +4,6 @@ const swiper = new Swiper('.swiper', {
   loop: true,
   loopSlides: 4,
   slidesPerView: 4,
-  freeMode: true,
   
   // Navigation arrows
   navigation: {
@@ -14,13 +13,9 @@ const swiper = new Swiper('.swiper', {
   breakpoints:{
     768:{
         slidesPerView: 6,
-        loop: true,
-        loopSlides: 6,
     },
-    1024:{
+    1440:{
         slidesPerView:6,
-        loop: true,
-        loopSlides: 6,
     }
  }
 });
