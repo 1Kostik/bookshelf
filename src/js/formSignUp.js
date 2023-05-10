@@ -1,28 +1,30 @@
+import Notiflix from "notiflix";
+
 // modal
 
 (() => {
     const refs = {
-      openModalBtn: document.querySelector('[data-modal-open-sign]'),
-      closeModalBtn: document.querySelector('[data-modal-close-sign]'),
-      modal: document.querySelector('[data-modal-sign]'),
-      openModalBtnMob: document.querySelector('[data-modal-open-sign-mobile]'),
-      mobileMenuBtn: document.querySelector('[data-mobile-menu-btn]'),
-      mobileMenu: document.querySelector('[data-mobile-menu]'),
-      body: document.querySelector('body'),
+        openModalBtn: document.querySelector('[data-modal-open-sign]'),
+        closeModalBtn: document.querySelector('[data-modal-close-sign]'),
+        modal: document.querySelector('[data-modal-sign]'),
+        openModalBtnMob: document.querySelector('[data-modal-open-sign-mobile]'),
+        mobileMenuBtn: document.querySelector('[data-mobile-menu-btn]'),
+        mobileMenu: document.querySelector('[data-mobile-menu]'),
+        body: document.querySelector('body'),
     };
-  
+
     refs.openModalBtn.addEventListener('click', toggleModal);
     refs.closeModalBtn.addEventListener('click', toggleModal);
     refs.openModalBtnMob.addEventListener('click', toggleModal);
-  
+
     function toggleModal() {
-      refs.modal.classList.toggle('is-hidden');
-      refs.mobileMenu.classList.remove('is-open');
-      refs.mobileMenuBtn.classList.remove('is-open');
-      refs.body.classList.remove('mobile-menu-open');
+        refs.modal.classList.toggle('is-hidden');
+        refs.mobileMenu.classList.remove('is-open');
+        refs.mobileMenuBtn.classList.remove('is-open');
+        refs.body.classList.remove('mobile-menu-open');
     }
-  })();
- 
+})();
+
 
 
 
@@ -50,7 +52,7 @@ window.onload = () => {
             top: 0,
             behavior: "smooth"
         });
-   
+
     };
 }
 
@@ -81,9 +83,45 @@ window.onload = () => {
 
 
 
-let x = 0;
-const counter = document.querySelector('.countBtn');
+// let x = 0;
+// const counter = document.querySelector('.countBtn');
 
-const acum = document.querySelector('.acum');
+// const acum = document.querySelector('.acum');
 
-acum.innerHTML = x;
+// acum.innerHTML = x;
+
+if (acum ==='') {
+    acum.classList.add("visibility");
+}
+
+
+
+
+const refs = {
+    btnSign: document.querySelector('.sign-btn-on-modal'),
+
+    signUp: document.querySelector(".sign-up"),
+    signIn: document.querySelector('.sign-in'),
+
+    name: document.querySelector('.name'),
+}
+
+refs.btnSign.addEventListener('click', (evt) => {
+    evt.preventDefault()
+    Notiflix.Notify.info('We are glad you to welcome on our site!')
+});
+
+refs.signIn.addEventListener('click', (evt) => {
+    evt.preventDefault()
+    Notiflix.Notify.info('Hello! Nice to see you again')
+    refs.btnSign.innerHTML = 'sign in';
+
+    refs.name.classList.add("visibility");
+});
+
+refs.signUp.addEventListener('click', (evt) => {
+    evt.preventDefault()
+    Notiflix.Notify.info(`Hello! let&#39;s get to know each other`)
+    refs.btnSign.innerHTML = 'sign up';
+    refs.name.classList.remove("visibility");
+})
