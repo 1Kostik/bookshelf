@@ -27,7 +27,7 @@
     width: 339px;
     border: 2px solid #111111;
     border-radius: 18px;  
-    background-color: var(--bg-card-book-shoppinglist-page);
+    background-color: var(--bg-modal-book-white-theme);
   }
   @media screen and (min-width: 768px){
     .modal {
@@ -63,7 +63,7 @@
     transition: 
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     .modal-close-btn:hover &{
-        fill: var(--hover-focus);
+        fill: var(--text-color-title-violet);
     }
   }
   @media screen and (min-width: 768px){
@@ -91,12 +91,18 @@
     width: 287px;
     height: 408px;
     overflow: hidden;
+    background-image: url('../images/svg-from-maket/plug.svg');
+    background-color: inherit;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60px 54px;
   }
   @media screen and (min-width:768px) {
     .modal-book-picture-wrapper{
       width: 192px;
       height: 281px;
       margin-right: 24px;
+      background-size: 88px 80px;
     }
   }
   .modalBookImg {
@@ -177,9 +183,9 @@
   .shop-image:focus {
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
   }
-  // .shop-image.dark-theme {
-  //   filter: brightness(100) contrast(100%);
-  // }
+  .shop-image_amazon{ 
+      filter: brightness(100) contrast(100%);
+  }
   .modal-action-btn {
     display: block;
     font-family: 'DM Sans';
@@ -203,7 +209,7 @@
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
         &:hover{
-            background-color: var(--hover-focus);
+            background-color: var(--text-color-title-violet);
             color: var(--text-color-title-white);
         }
   }
