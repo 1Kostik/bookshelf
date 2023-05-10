@@ -22,7 +22,6 @@
 }
 .cat-list:hover {
   color:var(--hover-focus);
-  
 }
 
 .cat-text {
@@ -32,7 +31,7 @@
   font-size: 16px;
   line-height: 112%;
   letter-spacing: -0.02em;
-  color: var(--text-color-allcategories-dark-theme);
+  color: var(--text-color-allcategories-white-theme);
 }
 
 .upper-case {
@@ -83,7 +82,8 @@
     width: 356px;
     margin-right: 0;
   }
+
   .cat-list:hover {
-    text-shadow: 1px 1px 2px grey;
+   text-shadow: 1px 1px 2px grey;
   }
 }
