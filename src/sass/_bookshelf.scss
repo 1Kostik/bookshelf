@@ -1,9 +1,17 @@
 /*-------------------------home_page_main-------------------*/
+
+    .home_page_main {
+        padding-top: 40px;
+        // display: flex;
+        // flex-wrap: wrap;
+    }
+
+
 @media screen and (min-width: 768px) {
     .left_part {
         display: flex;
         width: 704px;
-        row-gap: 0;
+        row-gap: 32px;
         justify-content: space-between;
     }
 
@@ -11,7 +19,6 @@
         padding-top: 40px;
         display: flex;
         flex-wrap: wrap;
-        padding-top: 40px;
     }
 }
 
