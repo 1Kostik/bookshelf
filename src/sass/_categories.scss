@@ -31,7 +31,7 @@
   font-size: 16px;
   line-height: 112%;
   letter-spacing: -0.02em;
-  color: var(--text-color-card-book-shoppinglist-page-dark-theme);
+  color: var(--text-color-allcategories-white-theme);
 }
 
 .upper-case {
@@ -83,7 +83,7 @@
     margin-right: 0;
   }
 
-  .cat-list {
-    text-shadow: 1px 1px 2px grey;
+  .cat-list:hover {
+   text-shadow: 1px 1px 2px grey;
   }
 }
