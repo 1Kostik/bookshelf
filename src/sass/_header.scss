@@ -292,6 +292,7 @@ body.mobile-menu-open {
 .burger-icon.dark-theme {
   fill: var(--text-color-title-white);
 }
+
 /* -----------------------------------------------------TABLET------------------------------------------------------------ */
 @media screen and (min-width: 768px) {
   .mobile-menu-container,
@@ -318,6 +319,7 @@ body.mobile-menu-open {
     align-items: center;
   }
   .navigation-item {
+    position: relative;
     padding: 8px 16px;
     font-weight: 500;
     font-size: 14px;
@@ -443,6 +445,22 @@ body.mobile-menu-open {
   }
   .current.dark-theme {
     color: var(--text-color-title-dark);
+  }
+  /* -----------------------------------------------------books-counter------------------------------------------------ */
+  .books-counter {
+    position: absolute;
+    right: 4px;
+    top: 5px;
+    background-color: var(--text-color-title-violet);
+    padding: 2px;
+    border-radius: 50%;
+  }
+  .books-counter-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-color-title-white);
   }
 }
 /* ----------------------------------------------------PC------------------------------------------------------------ */

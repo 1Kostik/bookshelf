@@ -1,6 +1,7 @@
 .support {
   display: block;
 }
+
 @media screen and (max-width: 767px) {
   #shopping-list .shoplist-support {
     display: none;
@@ -8,7 +9,6 @@
   .shopping_list {
     margin-top: 40px;
   }
-
   .title_shopping_list {
     width: 193px;
     font-weight: 700;
@@ -435,7 +435,6 @@
     margin-right: 40px;
     margin-top: 40px;
   }
-
   .shopping_list_page {
     display: flex;
   }
