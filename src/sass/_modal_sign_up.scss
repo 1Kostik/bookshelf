@@ -311,3 +311,28 @@ height: 80px;
 .visibility {
   visibility: hidden;
 }
+
+
+
+.sign_list {
+
+
+}
+
+.sign_list a {
+
+font-weight: 700;
+font-size: 18px;
+line-height: 24px;
+
+letter-spacing: -0.01em;
+text-transform: uppercase;
+
+color: rgba(17, 17, 17, 0.5);
+text-decoration: none;
+}
+
+.sign_list .is-current-sign {
+  text-decoration-line: underline;
+  color: #4F2EE8;
+}
