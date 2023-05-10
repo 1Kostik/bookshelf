@@ -80,6 +80,9 @@ flex-direction: column;
 
 .book-item{
 cursor: pointer;
+text-decoration: none;
+color: inherit;
+border: none;
 }
 
 @keyframes pulsare {
@@ -319,11 +322,8 @@ padding-top: 14px;
 }
 
 .spinner-more {
-    text-align: center;
+align-items: center;
     pointer-events: none;
-    position: fixed;
-        bottom: 50%;
-        left: 50%;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -341,3 +341,10 @@ padding-top: 14px;
     }
 }
 
+@media screen and (min-width: 1400px) {
+    .spinner-more{
+position: fixed;
+    bottom: 40%;
+    left: 50%;
+    }
+}

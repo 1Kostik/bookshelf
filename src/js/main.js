@@ -160,3 +160,28 @@ function hideBooks() {
     }
 }
 
+
+
+
+
+window.addEventListener('resize', showPicture);
+async function showPicture() {
+    const width = window.innerWidth;
+    const data = await getBestsellersBooks();
+    console.log(data[1]);
+    data.map(item => {
+        console.log(item.books)
+    })
+       if (width <= 375) {
+           const correctArrey = data.slice(0, 1);
+           console.log(correctArrey,"ok")
+        return makeMarkupBook(correctArrey);
+       
+       } else if (width > 375 && width <= 768) {
+           const correctArrey = data.slice(0, 3)
+           console.log(correctArrey)
+        return makeMarkupBook(correctArrey);
+       
+       }
+   return makeMarkupBook(data);
+}
