@@ -16,10 +16,11 @@
     line-height: 1.19;
     letter-spacing: -0.04em;
     margin-bottom: 40px;
+    color: var(--text-color-title-dark);
   }
 
   .title_shopping_list_span {
-    color: var(--hover-focus);
+    color: var(--text-color-title-violet);
   }
 
   .shopping-list-empty-page {
@@ -38,7 +39,7 @@
     line-height: 1.29;
     text-align: center;
     letter-spacing: -0.02em;
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--text-empty-shoplist);
   }
 
   .shopping-list-empty-image {
@@ -87,7 +88,7 @@
     line-height: 1.12;
     letter-spacing: -0.04em;
     text-transform: uppercase;
-    color: var(--bg-dark-theme-header);
+    color: var(--text-color-title-dark);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -111,7 +112,7 @@
   .shoplist-book-description {
     margin-bottom: 28px;
     width: 193px;
-
+    color: var(--text-color-title-dark);
     font-weight: 400;
     font-size: 14px;
     line-height: 1.29;
@@ -151,7 +152,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
-    background-color: var(--hover-focus);
+    background-color: var(--text-color-title-violet);
     border-radius: 100%;
 
     transition: all 0.2s ease-in-out;
@@ -235,10 +236,11 @@
     line-height: 1.08;
     letter-spacing: -0.04em;
     margin-bottom: 40px;
+    color: var(--text-color-title-dark);
   }
 
   .title_shopping_list_span {
-    color: var(--hover-focus);
+    color: var(--text-color-title-violet);
   }
 
   .shopping-list-empty-page {
@@ -306,7 +308,7 @@
     line-height: 1.12;
     letter-spacing: -0.04em;
     text-transform: uppercase;
-    color: var(--bg-dark-theme-header);
+    color: var(--text-color-title-dark);
   }
 
   .shoplist-book-genre {
@@ -324,7 +326,7 @@
     margin-bottom: 48px;
     width: 508px;
     height: 53px;
-
+    color: var(--text-color-title-dark);
     font-weight: 400;
     font-size: 14px;
     line-height: 1.29;
@@ -361,7 +363,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
-    background-color: var(--hover-focus);
+    background-color: var(--text-color-title-violet);
     border-radius: 100%;
 
     transition: all 0.2s ease-in-out;

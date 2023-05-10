@@ -10,6 +10,7 @@ const lightTheme = {
   categoryText: 'rgba(17, 17, 17, 0.6)',
   categoryHover: '#4F2EE8',
   modalBookBg: '#FFFFFF',
+  textShopList: 'rgba(0, 0, 0, 0.6)',
 };
 
 const darkTheme = {
@@ -19,6 +20,7 @@ const darkTheme = {
   categoryText: 'rgba(255, 255, 255, 0.6)',
   categoryHover: '#EAC645',
   modalBookBg: '#202024',
+  textShopList: 'rgba(255, 255, 255, 0.6)',
 };
 
 checkbox.addEventListener('change', onChange);
@@ -51,6 +53,7 @@ function themeSwitch() {
       '--bg-modal-book-white-theme',
       darkTheme.modalBookBg
     );
+    element.style.setProperty('--text-empty-shoplist', darkTheme.textShopList);
 
     currentTheme = 'dark';
     localStorage.setItem('data-theme', 'dark');
@@ -67,6 +70,7 @@ function themeSwitch() {
       '--bg-modal-book-white-theme',
       lightTheme.modalBookBg
     );
+    element.style.setProperty('--text-empty-shoplist', lightTheme.textShopList);
 
     currentTheme = 'light';
     localStorage.setItem('data-theme', 'light');
