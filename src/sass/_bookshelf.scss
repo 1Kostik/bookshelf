@@ -104,8 +104,8 @@ overflow: hidden;
 margin-bottom: 14px;
 }
 
-.book-item:hover .book-img-container,
-.book-item:focus .book-img-container {
+.bookshelf-bool-link:hover .book-img-container,
+.bookshelf-bool-link:focus .book-img-container {
     animation: pulsare 1s ease-in-out;
 }
 
@@ -118,7 +118,7 @@ object-fit: cover;
 transition: transform .35s ease-in-out;
 }
 
- .book-item:hover .book-img, .book-item:focus .book-img {
+ .bookshelf-bool-link:hover .book-img, .bookshelf-bool-link:focus .book-img {
     transform: scale(1.03);
 }
 
@@ -137,8 +137,8 @@ position: absolute;
     pointer-events: none;
 }
 
-.book-item:hover .books-overlay,
-.book-item:focus .books-overlay {
+.bookshelf-bool-link:hover .books-overlay,
+.bookshelf-bool-link:focus .books-overlay {
     transform: translateY(0%);
 }
 

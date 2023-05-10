@@ -1,6 +1,7 @@
 export function makeMarkupBook(books) {
     const markup=  books.reduce((acc, { _id, book_image, author, title}) => {
-     acc+=`<li class="book-item" id="${_id}">
+        acc += `<li class="book-item" id="${_id}">
+     <a class="bookshelf-bool-link" href="#">
     <div class="book-img-container">
      <img class="book-img" loading="lazy" src="${book_image}" alt="${title}"  width="180px" height="256px"/>
      <div class="books-overlay">
@@ -10,6 +11,7 @@ export function makeMarkupBook(books) {
      </div>
      <p class="book-title">${title}</p>
         <p class="author-name">${author}</p>
+        </a>
         </li>
     `
         return acc
