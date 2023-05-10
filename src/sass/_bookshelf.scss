@@ -322,20 +322,20 @@ padding-top: 14px;
 }
 
 .spinner-more {
-    position:absolute;
-    top: 60px;
-    left:41%;
-// align-items: center;
+    position:fixed;
+    top: 50%;
+    left:46%;
+    z-index: 20;
     pointer-events: none;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+        height: 40px;
     border-radius: 50%;
-    border: 10px solid;
+    border: 5px solid;
     border-color: var(--bg-border-card-book-shoppinglist-page);
     border-top-color: var(--hover-book);
     animation: spin 1s ease-in-out infinite;
     margin: auto;
-    margin-top: 50px;
+   
 }
 
 @keyframes spin {
@@ -346,16 +346,20 @@ padding-top: 14px;
 
 @media screen and (min-width: 768px) {
     .spinner-more {
+        border: 10px solid;
+        border-color: var(--bg-border-card-book-shoppinglist-page);
+        border-top-color: var(--hover-book);
         position: fixed;
-        top: 750px;
-        left: 48vw;
+        top: 40%;
+        left: 46%;
+        width: 60px;
+        height: 60px;
     }
 }
 
 @media screen and (min-width: 1400px) {
     .spinner-more{
-position: fixed;
-    bottom: 40%;
+    top: 50%;
     left: 50%;
     }
 }
