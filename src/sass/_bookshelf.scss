@@ -322,7 +322,10 @@ padding-top: 14px;
 }
 
 .spinner-more {
-align-items: center;
+    position:absolute;
+    top: 60px;
+    left:41%;
+// align-items: center;
     pointer-events: none;
     width: 60px;
     height: 60px;
@@ -338,6 +341,14 @@ align-items: center;
 @keyframes spin {
     to {
         transform: rotate(360deg);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .spinner-more {
+        position: fixed;
+        top: 750px;
+        left: 48vw;
     }
 }
 
