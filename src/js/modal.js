@@ -13,6 +13,8 @@ const refs = {
   modalNotification: document.querySelector('.congratulations-text'),
   backdropEl: document.querySelector('.backdrop'),
   acum: document.querySelector('.acum'),
+  spinnerEl: document.querySelector('.spinner-more'),
+  errContainerEl: document.querySelector('.errContainer'),
 };
 
 const STORAGE_KEY = 'shoppingList';
@@ -35,6 +37,7 @@ refs.bestsellersSectionEl.addEventListener('click', onCardClick);
 function onCardClick(e) {
   e.preventDefault();
 
+  refs.spinnerEl.classList.remove('spinner-hidden');
   refs.modalActionBtnEl.addEventListener('click', onModalActionBtnClick);
   refs.backdropEl.addEventListener('click', onModalClose);
   document.addEventListener('keydown', onModalClose);
@@ -66,6 +69,8 @@ function onCardClick(e) {
   fetchBook
     .fetchBookInfo(bookId)
     .then(bookInfo => {
+      refs.spinnerEl.classList.add('spinner-hidden');
+
       renderModalCard(bookInfo);
 
       refs.modalEl.classList.remove('is-hidden');
@@ -81,7 +86,11 @@ function onCardClick(e) {
         refs.modalActionBtnEl.textContent = BUTTON_TEXT_ADD;
       }
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+      console.log('sd', err);
+      refs.errContainerEl.classList.remove('is-hidden');
+      refs.errContainerEl.innerHTML = `<p class="errText">${err}</p>`;
+    });
 }
 
 // ------------------RENDER MODAL BOOK CARD---------------------------------------------
@@ -125,11 +134,12 @@ function onModalClose(e) {
   if (e.target.hasAttribute('data-modal-close') || e.key === 'Escape') {
     refs.backdropEl.classList.add('is-hidden');
     refs.bodyEl.classList.remove('modalIsOpen');
+    refs.modalEl.classList.add('is-hidden');
+    refs.errContainerEl.classList.add('is-hidden');
 
     refs.backdropEl.removeEventListener('click', onModalClose);
     document.removeEventListener('keydown', onModalClose);
     refs.modalActionBtnEl.removeEventListener('click', onModalActionBtnClick);
-    refs.modalEl.classList.add('is-hidden');
 
     refs.modalNotification.innerHTML = '';
   }
