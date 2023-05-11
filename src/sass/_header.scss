@@ -237,7 +237,7 @@
   background-color: var(--bg-current-page);
   font-weight: 700;
   border-radius: 36px;
-  color: var(--text-color-title-dark);
+  color: #111111;
 }
 .mobile-navigation-link {
   display: flex;
@@ -261,7 +261,7 @@
   border: 1.5px solid var(--text-color-title-dark);
   border-radius: 18px;
   color: var(--text-color-title-dark);
-  background: var(--text-color-title-white);
+  background: var(--bg-white-header);
   cursor: pointer;
   margin-top: auto;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -393,7 +393,7 @@ body.mobile-menu-open {
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .authorizated-btn:hover {
-    box-shadow: 2px 2px 4px grey;
+    box-shadow: 2px 2px 2px var(--text-color-allcategories-white-theme);
   }
   .log-out-btn {
     position: absolute;
@@ -411,7 +411,7 @@ body.mobile-menu-open {
     border: 1.5px solid var(--text-color-title-dark);
     border-radius: 18px;
     color: var(--text-color-title-dark);
-    background: var(--text-color-title-white);
+    background: var(--bg-white-header);
     cursor: pointer;
     transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
       color 250ms cubic-bezier(0.4, 0, 0.2, 1);
