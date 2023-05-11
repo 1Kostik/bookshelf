@@ -344,7 +344,9 @@ body.mobile-menu-open {
     background-color: var(--bg-current-page);
     font-weight: 700;
     border-radius: 36px;
-    color: var(--text-color-title-dark);
+  }
+  .current.navigation-item {
+    color: #111111;
   }
   .logo-shop {
     color: inherit;
@@ -451,18 +453,21 @@ body.mobile-menu-open {
   /* -----------------------------------------------------books-counter------------------------------------------------ */
   .books-counter {
     position: absolute;
-    right: 4px;
-    top: 5px;
-    background-color: var(--text-color-title-violet);
+    right: 1px;
+    top: 2px;
+    background-color: var(--hover-focus);
     padding: 2px;
     border-radius: 50%;
   }
   .books-counter-number {
+    color: var(--text-color-title-white);
+  }
+  .fa-fw {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--text-color-title-white);
+    font-size: 13;
   }
 }
 /* ----------------------------------------------------PC------------------------------------------------------------ */

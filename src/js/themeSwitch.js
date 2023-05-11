@@ -2,6 +2,9 @@ let currentTheme = 'light';
 
 const element = document.documentElement;
 const checkbox = document.querySelector('#checkbox');
+const shopListAmazon = document.querySelectorAll('.shoplist-icon-amazon');
+const modalAmazon = document.querySelector('.shop-image_amazon');
+const modalSingUpForm = document.querySelector('.wrap_modal_sign');
 
 const lightTheme = {
   headerBg: '#FFFFFF',
@@ -11,6 +14,7 @@ const lightTheme = {
   categoryHover: '#4F2EE8',
   modalBookBg: '#FFFFFF',
   textShopList: 'rgba(0, 0, 0, 0.6)',
+  textSingUpBtn: '#f3f3f3',
 };
 
 const darkTheme = {
@@ -21,6 +25,7 @@ const darkTheme = {
   categoryHover: '#EAC645',
   modalBookBg: '#202024',
   textShopList: 'rgba(255, 255, 255, 0.6)',
+  textSingUpBtn: '#202024',
 };
 
 checkbox.addEventListener('change', onChange);
@@ -28,11 +33,20 @@ checkbox.addEventListener('change', onChange);
 function onChange() {
   if (checkbox.checked) {
     checkbox.classList.toggle('dark-theme');
+    modalAmazon.classList.toggle('dark-theme');
+    modalSingUpForm.classList.toggle('dark-theme');
+    shopListAmazon.forEach(element => {
+      element.classList.toggle('shoplist-icon-amazon-dark-theme');
+    });
   } else {
     checkbox.classList.toggle('dark-theme');
+    modalAmazon.classList.toggle('dark-theme');
+    modalSingUpForm.classList.toggle('dark-theme');
+    shopListAmazon.forEach(element => {
+      element.classList.toggle('shoplist-icon-amazon-dark-theme');
+    });
   }
   themeSwitch();
-  console.log(localStorage.getItem('data-theme'));
 }
 
 if (localStorage.getItem('data-theme') === 'dark') {
@@ -54,6 +68,7 @@ function themeSwitch() {
       darkTheme.modalBookBg
     );
     element.style.setProperty('--text-empty-shoplist', darkTheme.textShopList);
+    element.style.setProperty('--text-singup-btn', darkTheme.textSingUpBtn);
 
     currentTheme = 'dark';
     localStorage.setItem('data-theme', 'dark');
@@ -71,6 +86,7 @@ function themeSwitch() {
       lightTheme.modalBookBg
     );
     element.style.setProperty('--text-empty-shoplist', lightTheme.textShopList);
+    element.style.setProperty('--text-singup-btn', lightTheme.textSingUpBtn);
 
     currentTheme = 'light';
     localStorage.setItem('data-theme', 'light');
