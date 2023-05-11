@@ -281,20 +281,6 @@
 body.mobile-menu-open {
   overflow: hidden;
 }
-/* -----------------------------------------------------DARK-THEME-MOBILE------------------------------------------------ */
-.header-container.dark-theme {
-  background: var(--bg-dark-theme-header);
-  color: var(--text-color-title-white);
-  border: 1.5px solid var(--text-color-title-white);
-}
-.logo-name.dark-theme {
-  fill: var(--text-color-title-white);
-}
-.cross-icon.dark-theme,
-.burger-icon.dark-theme {
-  fill: var(--text-color-title-white);
-}
-
 /* -----------------------------------------------------TABLET------------------------------------------------------------ */
 @media screen and (min-width: 768px) {
   .mobile-menu-container,
@@ -440,34 +426,24 @@ body.mobile-menu-open {
     fill: var(--text-color-title-white);
     margin-left: 4px;
   }
-  /* -----------------------------------------------------DARK-THEME-TABLET/PC----------------------------------------------- */
-  .navigation-item.dark-theme {
-    color: var(--text-color-title-white);
-  }
-  .logo-shop.dark-theme {
-    fill: var(--text-color-title-white);
-  }
-  .current.dark-theme {
-    color: var(--text-color-title-dark);
-  }
   /* -----------------------------------------------------books-counter------------------------------------------------ */
   .books-counter {
     position: absolute;
-    right: 1px;
+    right: 0px;
     top: 2px;
     background-color: var(--hover-focus);
     padding: 2px;
     border-radius: 50%;
   }
   .books-counter-number {
-    color: var(--text-color-title-white);
+    color: var(--bg-white-header);
   }
   .fa-fw {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 13;
+    font-size: 13.5;
   }
 }
 /* ----------------------------------------------------PC------------------------------------------------------------ */

@@ -73,8 +73,8 @@ function themeSwitch() {
     currentTheme = 'dark';
     localStorage.setItem('data-theme', 'dark');
   } else {
-    element.style.setProperty('--bg-white-header', lightTheme.header);
-    element.style.setProperty('--bg-home-page', lightTheme.body);
+    element.style.setProperty('--bg-white-header', lightTheme.headerBg);
+    element.style.setProperty('--bg-home-page', lightTheme.bodyBg);
     element.style.setProperty('--text-color-title-dark', lightTheme.mainText);
     element.style.setProperty(
       '--text-color-allcategories-white-theme',
