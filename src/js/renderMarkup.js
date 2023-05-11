@@ -3,6 +3,7 @@ export function makeMarkupBook(books) {
         acc += `<li class="book-item" id="${_id}">
      <a class="bookshelf-bool-link" href="#">
     <div class="book-img-container">
+    <div class="book-shoppingcart is-hidden"></div>
      <img class="book-img" loading="lazy" src="${book_image}" alt="${title}"  width="180px" height="256px"/>
      <div class="books-overlay">
      <p class="books-overlay-text">quick view 

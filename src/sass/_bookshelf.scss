@@ -107,11 +107,17 @@ overflow: hidden;
 margin-bottom: 14px;
 }
 
-// .book-basket-icon{
-//     position:absolute;
-//     top: 5px;
-//     right: 5px;
-// }
+.book-shoppingcart{
+    background-image: url('../images/svg-from-maket/shoppingcart.svg');
+        background-color: inherit;
+        background-repeat: no-repeat;
+        background-size:36px 40px;
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 45px;
+        height: 45px;
+}
 
 .bookshelf-bool-link:hover .book-img-container,
 .bookshelf-bool-link:focus .book-img-container {
@@ -251,6 +257,15 @@ padding-top: 14px;
         width: 218px;
         height: 316px;
         }
+
+    .book-shoppingcart{
+background-size: 30px 32px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    }
 
      .book-title{
         width: 218px;
