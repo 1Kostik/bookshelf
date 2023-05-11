@@ -89,8 +89,8 @@
     background-image: url('../images/svg-from-maket/plug.svg');
     background-color: inherit;
     background-repeat: no-repeat;
-    background-position: 100%;
-    background-size: 100px 142px;
+    background-position: center;
+    background-size: 32px 30px;
   }
 
   .shoplist-book-title {
@@ -202,6 +202,15 @@
     height: 11px;
   }
 
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .shoplist-icon-amazon {
+      background-image: url(../images/modal-imgs/icons-for-light-theme/amazonLight@2x.png);
+      background-size: 32px 11px;
+    }
+  }
+
   .shoplist-icon-amazon:hover,
   .shoplist-icon-amazon:focus {
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
@@ -216,10 +225,18 @@
     filter: brightness(100) contrast(100%);
   }
 
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .shoplist-icon-amazon-dark-theme {
+      background-image: url(../images/modal-imgs/icons-for-light-theme/amazonLight@2x.png);
+      background-size: 32px 11px;
+    }
+  }
+
   .shoplist-icon-amazon-dark-theme:hover,
   .shoplist-icon-amazon-dark-theme:focus {
-    filter: brightness(100) contrast(100%);
-    // filter: drop-shadow(0px 3px 3px #4f2ee8);
+    filter: brightness(100) contrast(100%) drop-shadow(0px 2px 2px #4f2ee8);
   }
 
   .shoplist-icon-barnesAndNoble {
@@ -229,6 +246,15 @@
     background-size: 100%;
     width: 16px;
     height: 16px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .shoplist-icon-barnesAndNoble {
+      background-image: url(../images/modal-imgs/icons-for-light-theme/appleBooks@2x.png);
+      background-size: 16px 16px;
+    }
   }
 
   .shoplist-icon-barnesAndNoble:hover,
@@ -245,15 +271,24 @@
     height: 16px;
   }
 
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .shoplist-icon-bookshop {
+      background-image: url(../images/modal-imgs/icons-for-light-theme/bookShop@2x.png);
+      background-size: 16px 16px;
+    }
+  }
+
   .shoplist-icon-bookshop:hover,
   .shoplist-icon-bookshop:focus {
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
   }
 
-  // .shoplist-icon-dark-theme:hover,
-  // .shoplist-icon-dark-theme:focus {
-  //   filter: drop-shadow(0px 3px 3px #4f2ee8);
-  // }
+  .shoplist-icon-dark-theme:hover,
+  .shoplist-icon-dark-theme:focus {
+    filter: drop-shadow(0px 2px 2px #4f2ee8);
+  }
 
   // ---------------------------------PAGINATION MOBILE------------------------------------------
 
@@ -437,8 +472,8 @@
     background-image: url('../images/svg-from-maket/plug.svg');
     background-color: inherit;
     background-repeat: no-repeat;
-    background-position: 100%;
-    background-size: 116px 165px;
+    background-position: center;
+    background-size: 44px 40px;
   }
 
   .shoplist-book-title {
@@ -540,6 +575,15 @@
     height: 15px;
   }
 
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .shoplist-icon-amazon {
+      background-image: url(../images/modal-imgs/icons-for-light-theme/amazonLight@2x.png);
+      background-size: 48px 15px;
+    }
+  }
+
   .shoplist-icon-amazon:hover,
   .shoplist-icon-amazon:focus {
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
@@ -554,10 +598,18 @@
     filter: brightness(100) contrast(100%);
   }
 
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .shoplist-icon-amazon-dark-theme {
+      background-image: url(../images/modal-imgs/icons-for-light-theme/amazonLight@2x.png);
+      background-size: 48px 15px;
+    }
+  }
+
   .shoplist-icon-amazon-dark-theme:hover,
   .shoplist-icon-amazon-dark-theme:focus {
-    filter: brightness(100) contrast(100%);
-    // filter: drop-shadow(0px 3px 3px #4f2ee8);
+    filter: brightness(100) contrast(100%) drop-shadow(0px 2px 2px #4f2ee8);
   }
 
   .shoplist-icon-barnesAndNoble {
@@ -567,6 +619,15 @@
     background-size: 100%;
     width: 28px;
     height: 27px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .shoplist-icon-barnesAndNoble {
+      background-image: url(../images/modal-imgs/icons-for-light-theme/appleBooks@2x.png);
+      background-size: 28px 27px;
+    }
   }
 
   .shoplist-icon-barnesAndNoble:hover,
@@ -583,15 +644,24 @@
     height: 30px;
   }
 
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .shoplist-icon-bookshop {
+      background-image: url(../images/modal-imgs/icons-for-light-theme/bookShop@2x.png);
+      background-size: 32px 30px;
+    }
+  }
+
   .shoplist-icon-bookshop:hover,
   .shoplist-icon-bookshop:focus {
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
   }
 
-  // .shoplist-icon-dark-theme:hover,
-  // .shoplist-icon-dark-theme:focus {
-  //   filter: drop-shadow(0px 3px 3px #4f2ee8);
-  // }
+  .shoplist-icon-dark-theme:hover,
+  .shoplist-icon-dark-theme:focus {
+    filter: drop-shadow(0px 2px 2px #4f2ee8);
+  }
 
   // ---------------------------------PAGINATION TABLET------------------------------------------
 
