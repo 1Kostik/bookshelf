@@ -164,7 +164,7 @@ function hideBooks() {
       }
     });
   }
-  if (window.innerWidth >= 768 && window.outerWidth < 1440) {
+  if (window.innerWidth >= 768 && window.innerWidth < 1440) {
     listCategoriesEl.forEach(item => {
       for (let i = 0; i < item.children.length; i += 1) {
         if (i <= 2) {
