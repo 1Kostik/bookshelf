@@ -6,6 +6,11 @@
   #shopping-list .shoplist-support {
     display: none;
   }
+
+  #shopping-list .shoplist-books-counter {
+    visibility: hidden;
+  }
+
   .shopping_list {
     margin-top: 40px;
   }
@@ -77,6 +82,11 @@
     width: 100px;
     height: 142px;
     border-radius: 8px;
+    background-image: url('../images/svg-from-maket/plug.svg');
+    background-color: inherit;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: 100px 142px;
   }
 
   .shoplist-book-title {
@@ -120,7 +130,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    overflow: hidden;
+    overflow-y: auto;
     text-overflow: ellipsis;
   }
 
@@ -154,11 +164,13 @@
     background-size: 50%;
     background-color: var(--text-color-title-violet);
     border-radius: 100%;
+    cursor: pointer;
 
     transition: all 0.2s ease-in-out;
   }
 
-  .shoplist-trash:hover {
+  .shoplist-trash:hover,
+  .shoplist-trash:focus {
     transform: scale(1.2);
   }
 
@@ -179,17 +191,31 @@
   }
 
   .shoplist-icon-amazon {
-    background-image: url(../images/modal-imgs/icons-for-light-theme/amazon-light.png);
+    background-image: url(../images/modal-imgs/icons-for-light-theme/amazonLight.png);
     background-repeat: no-repeat;
-    background-position: center;
     background-size: 100%;
     width: 32px;
     height: 11px;
   }
 
-  // .shoplist-icon-amazon:hover {
-  //   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
-  // }
+  .shoplist-icon-amazon:hover,
+  .shoplist-icon-amazon:focus {
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+  }
+
+  .shoplist-icon-amazon-dark-theme {
+    background-image: url(../images/modal-imgs/icons-for-light-theme/amazonLight.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 32px;
+    height: 11px;
+    filter: brightness(100) contrast(100%);
+  }
+
+  .shoplist-icon-amazon-dark-theme:hover,
+  .shoplist-icon-amazon-dark-theme:focus {
+    filter: drop-shadow(0px 3px 3px #4f2ee8);
+  }
 
   .shoplist-icon-barnesAndNoble {
     background-image: url(../images/modal-imgs/icons-for-light-theme/appleBooks.png);
@@ -200,7 +226,8 @@
     height: 16px;
   }
 
-  .shoplist-icon-barnesAndNoble:hover {
+  .shoplist-icon-barnesAndNoble:hover,
+  .shoplist-icon-barnesAndNoble:focus {
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
   }
 
@@ -213,8 +240,14 @@
     height: 16px;
   }
 
-  .shoplist-icon-bookshop:hover {
+  .shoplist-icon-bookshop:hover,
+  .shoplist-icon-bookshop:focus {
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+  }
+
+  .shoplist-icon-dark-theme:hover,
+  .shoplist-icon-dark-theme:focus {
+    filter: drop-shadow(0px 3px 3px #4f2ee8);
   }
 }
 
@@ -223,6 +256,10 @@
 @media screen and (min-width: 768px) {
   #shopping-list .shoplist-support {
     display: none;
+  }
+
+  #shopping-list .shoplist-books-counter {
+    visibility: hidden;
   }
 
   .shopping_list {
@@ -259,7 +296,7 @@
     line-height: 1.33;
     text-align: center;
     letter-spacing: -0.02em;
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--text-empty-shoplist);
   }
 
   .shopping-list-empty-image {
@@ -297,6 +334,11 @@
     width: 116px;
     height: 165px;
     border-radius: 8px;
+    background-image: url('../images/svg-from-maket/plug.svg');
+    background-color: inherit;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: 116px 165px;
   }
 
   .shoplist-book-title {
@@ -334,7 +376,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    overflow: hidden;
+    overflow-y: auto;
     text-overflow: ellipsis;
   }
 
@@ -365,11 +407,13 @@
     background-size: 50%;
     background-color: var(--text-color-title-violet);
     border-radius: 100%;
+    cursor: pointer;
 
     transition: all 0.2s ease-in-out;
   }
 
-  .shoplist-trash:hover {
+  .shoplist-trash:hover,
+  .shoplist-trash:focus {
     transform: scale(1.2);
   }
 
@@ -390,16 +434,30 @@
   }
 
   .shoplist-icon-amazon {
-    background-image: url(../images/modal-imgs/icons-for-light-theme/amazon-light.png);
+    background-image: url(../images/modal-imgs/icons-for-light-theme/amazonLight.png);
     background-repeat: no-repeat;
-    background-position: center;
     background-size: 100%;
     width: 48px;
     height: 15px;
   }
 
-  .shoplist-icon-amazon:hover {
+  .shoplist-icon-amazon:hover,
+  .shoplist-icon-amazon:focus {
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+  }
+
+  .shoplist-icon-amazon-dark-theme {
+    background-image: url(../images/modal-imgs/icons-for-light-theme/amazonLight.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 48px;
+    height: 15px;
+    filter: brightness(100) contrast(100%);
+  }
+
+  .shoplist-icon-amazon-dark-theme:hover,
+  .shoplist-icon-amazon-dark-theme:focus {
+    filter: drop-shadow(0px 3px 3px #4f2ee8);
   }
 
   .shoplist-icon-barnesAndNoble {
@@ -411,7 +469,8 @@
     height: 27px;
   }
 
-  .shoplist-icon-barnesAndNoble:hover {
+  .shoplist-icon-barnesAndNoble:hover,
+  .shoplist-icon-barnesAndNoble:focus {
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
   }
 
@@ -424,14 +483,20 @@
     height: 30px;
   }
 
-  .shoplist-icon-bookshop:hover {
+  .shoplist-icon-bookshop:hover,
+  .shoplist-icon-bookshop:focus {
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+  }
+
+  .shoplist-icon-dark-theme:hover,
+  .shoplist-icon-dark-theme:focus {
+    filter: drop-shadow(0px 3px 3px #4f2ee8);
   }
 }
 
 // DESKTOP
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1440px) {
   #shopping-list .shoplist-support {
     display: block;
     margin-right: 40px;
