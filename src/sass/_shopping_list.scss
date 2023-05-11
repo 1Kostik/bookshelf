@@ -250,6 +250,96 @@
   // .shoplist-icon-dark-theme:focus {
   //   filter: drop-shadow(0px 3px 3px #4f2ee8);
   // }
+
+  // ---------------------------------PAGINATION MOBILE------------------------------------------
+
+  .pagination-container {
+    margin-top: 20px;
+    width: 335px;
+    display: flex;
+    justify-content: center;
+  }
+  .pagination-button {
+    width: 38px;
+    height: 38px;
+    border-radius: 100%;
+  }
+
+  .pag-left-pointer,
+  .pag-left-pointer-double {
+    background-color: #111111;
+  }
+
+  .pag-left-pointer {
+    margin-right: 14px;
+    background-image: url(../images/svg-from-maket/arrow-left.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 7px 13px;
+  }
+
+  .pag-left-pointer-double {
+    margin-right: 8px;
+    background-image: url(../images/svg-from-maket/arrow-left.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 7px 13px;
+
+    background-image: url(../images/svg-from-maket/arrow-left.png),
+      url(../images/svg-from-maket/arrow-left.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 40%, 60%;
+    background-size: 7px 13px, 7px 13px;
+  }
+
+  .pag-number-pointer,
+  .pag-pt {
+    border: 1px solid #111111;
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.22;
+    color: #000000;
+  }
+
+  .pag-number-pointer {
+    margin-right: 8px;
+  }
+
+  .pag-pt {
+    margin-right: 14px;
+  }
+
+  .pag-right-pointer,
+  .pag-right-pointer-double {
+    border: 1px solid #111111;
+    background-color: #eac645;
+  }
+
+  .pag-right-pointer {
+    margin-right: 8px;
+    background-image: url(../images/svg-from-maket/arrow-right.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 7px 13px;
+  }
+
+  .pag-right-pointer-double {
+    background-image: url(../images/svg-from-maket/arrow-right.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 7px 13px;
+
+    background-image: url(../images/svg-from-maket/arrow-right.png),
+      url(../images/svg-from-maket/arrow-right.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 40%, 60%;
+    background-size: 7px 13px, 7px 13px;
+  }
+
+  .pag-number-pointer-hidden {
+    display: none;
+  }
 }
 
 // TABLET
@@ -494,6 +584,98 @@
   // .shoplist-icon-dark-theme:focus {
   //   filter: drop-shadow(0px 3px 3px #4f2ee8);
   // }
+
+  // ---------------------------------PAGINATION TABLET------------------------------------------
+
+  .pagination-container {
+    margin-top: 40px;
+    width: 446px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pagination-button {
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+  }
+
+  .pag-left-pointer,
+  .pag-left-pointer-double {
+    background-color: #111111;
+  }
+
+  .pag-left-pointer {
+    margin-right: 14px;
+    background-image: url(../images/svg-from-maket/arrow-left.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 7px 14px;
+  }
+
+  .pag-left-pointer-double {
+    margin-right: 8px;
+    background-image: url(../images/svg-from-maket/arrow-left.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 7px 14px;
+
+    background-image: url(../images/svg-from-maket/arrow-left.png),
+      url(../images/svg-from-maket/arrow-left.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 40%, 60%;
+    background-size: 7px 14px, 7px 14px;
+  }
+
+  .pag-number-pointer,
+  .pag-pt {
+    border: 1px solid #111111;
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.22;
+    color: #000000;
+  }
+
+  .pag-number-pointer {
+    margin-right: 8px;
+  }
+
+  .pag-pt {
+    margin-right: 14px;
+  }
+
+  .pag-right-pointer,
+  .pag-right-pointer-double {
+    border: 1px solid #111111;
+    background-color: #eac645;
+  }
+
+  .pag-right-pointer {
+    margin-right: 8px;
+    background-image: url(../images/svg-from-maket/arrow-right.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 7px 14px;
+  }
+
+  .pag-right-pointer-double {
+    background-image: url(../images/svg-from-maket/arrow-right.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 7px 14px;
+
+    background-image: url(../images/svg-from-maket/arrow-right.png),
+      url(../images/svg-from-maket/arrow-right.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 40%, 60%;
+    background-size: 7px 14px, 7px 14px;
+  }
+
+  .pag-number-pointer-hidden {
+    display: none;
+  }
 }
 
 // DESKTOP
