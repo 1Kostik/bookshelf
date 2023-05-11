@@ -13,7 +13,8 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.modal {
+.modal,
+.errContainer {
   position: fixed;
   z-index: 20;
   /* overflow: scroll; */

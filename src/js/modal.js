@@ -149,16 +149,19 @@ function onModalClose(e) {
 // -------------------ADD or REMOVE BOOK in SHOPPING LIST--------------------
 function onModalActionBtnClick(e) {
   const selectedEl = document.getElementById(`${shoppingBook.id}`);
+  const cartEl = selectedEl.querySelector('a div.book-shoppingcart');
+
   // --------------- add book ----------------------
   if (e.target.textContent === BUTTON_TEXT_ADD) {
     e.target.textContent = BUTTON_TEXT_REMOVE;
     refs.modalNotification.innerHTML = `<p class="congratulations-text">${NOTIFICATION}</p>`;
-    selectedEl.style.setProperty('background-color', '#4f2ee8');
 
     shoppingList.push(shoppingBook);
     updateBookOnStorage();
 
     refs.acum.innerHTML = shoppingList.length;
+
+    cartEl.classList.remove('is-hidden');
   }
   // --------------- remove book ----------------------
   else {
@@ -170,7 +173,7 @@ function onModalActionBtnClick(e) {
 
     refs.acum.innerHTML = shoppingList.length;
 
-    selectedEl.style.setProperty('background-color', '');
+    cartEl.classList.add('is-hidden');
   }
 }
 // -----------------------------------------------------------------------
@@ -184,55 +187,3 @@ function updateBookOnStorage() {
 }
 
 export { shoppingList, updateBookOnStorage, removesBookFromShoppingList };
-
-const listEl = document.querySelector('.numberList');
-const bookArr = [
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-  '6',
-  '7',
-  '8',
-  '9',
-  '10',
-  '11',
-  '12',
-  '13',
-  '14',
-];
-
-const ikonArr = ['<<', '<', '1', '2', '3', '...', '>', '>>'];
-const booksLenght = bookArr.length;
-let markup = '';
-
-let page = Math.floor(booksLenght / 3) + 1;
-let begin = page * 3;
-let end = begin + 4;
-
-// function rend(begin, end) {
-//   for (let i = begin; i < end; i++) {
-//     console.log(bookArr[i]);
-//   }
-// }
-
-if (booksLenght > 3 && booksLenght < 7) {
-  markup = `<li>${ikonArr[2]}</li><li>${ikonArr[3]}</li>`;
-} else if (booksLenght > 6 && booksLenght < 10) {
-  markup = `<li>${ikonArr[2]}</li><li>${ikonArr[3]}</li><li>${ikonArr[4]}</li>`;
-} else if (booksLenght > 9) {
-  markup = `<li>${ikonArr[0]}</li><li>${ikonArr[1]}</li><li>${ikonArr[2]}</li><li>${ikonArr[3]}</li><li>${ikonArr[4]}</li><li>${ikonArr[5]}</li><li>${ikonArr[6]}</li><li>${ikonArr[7]}</li>`;
-}
-listEl.innerHTML = markup;
-
-// if (booksLenght < 4) {
-//   rend(begin, end);
-// }
-console.log(bookArr);
-console.log(begin);
-console.log(page);
-function qq(arr) {
-  console.log(arr.slice(begin, -4));
-}
-qq(bookArr);
