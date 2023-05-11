@@ -23,7 +23,7 @@
     right: calc(50% - 20px);
     top: unset;
     bottom: 30px;
-    background-size: 18px 18px;
+    background-size: 18px 10px;
 }
 
 .swiper-button-next::after {
@@ -41,7 +41,7 @@
     top: unset;
     bottom: 30px;
     position: absolute;
-    background-size: 18px 18px;
+    background-size: 18px 10px;
 }
 .swiper-button-go-to-start::after {
     display: none;
@@ -85,7 +85,8 @@
 
 .support-img {
     padding-left: 20px;
-    width: 129px;
+    width: 130px;
+    height: 35px;
 }
 
 @media screen and (max-width: 768px){
