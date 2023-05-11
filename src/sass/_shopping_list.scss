@@ -344,6 +344,11 @@
   .pag-number-pointer-hidden {
     display: none;
   }
+
+  .pag-number-pointer-active {
+    background-color: #111111;
+    color: #ffffff;
+  }
 }
 
 // TABLET
@@ -678,6 +683,11 @@
 
   .pag-number-pointer-hidden {
     display: none;
+  }
+
+  .pag-number-pointer-active {
+    background-color: #111111;
+    color: #ffffff;
   }
 }
 
