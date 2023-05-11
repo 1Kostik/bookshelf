@@ -380,9 +380,10 @@ body.mobile-menu-open {
   }
 
   .authorizated-btn {
+    min-width: 184px;
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-family: inherit;
     padding: 4px 12px;
@@ -396,6 +397,7 @@ body.mobile-menu-open {
     box-shadow: 2px 2px 2px var(--text-color-allcategories-white-theme);
   }
   .log-out-btn {
+    width: 184px;
     position: absolute;
     display: flex;
     justify-content: center;
