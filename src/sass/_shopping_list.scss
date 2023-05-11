@@ -2,6 +2,10 @@
   display: block;
 }
 
+.pagination-hidden {
+  visibility: hidden;
+}
+
 @media screen and (max-width: 767px) {
   #shopping-list .shoplist-support {
     display: none;
@@ -467,7 +471,6 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    overflow-y: auto;
     text-overflow: ellipsis;
   }
 

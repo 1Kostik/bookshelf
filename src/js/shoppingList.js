@@ -71,6 +71,7 @@ function removesBookFromShoppingList(event) {
 
   if (shoppingList.length === 0) {
     newShoppingListContainer.replaceWith(shoppingListContainer);
+    paginationContainer.classList.add('pagination-hidden');
   }
 }
 
@@ -83,4 +84,14 @@ if (shoppingList.length === 0) {
     document.body.appendChild(newShoppingListContainer);
   }
   newShoppingListContainer.replaceWith(shoppingListContainer);
+}
+
+const paginationContainer = document.querySelector('.pagination-container');
+
+if (paginationContainer) {
+  if (shoppingList.length === 0) {
+    paginationContainer.classList.add('pagination-hidden');
+  } else {
+    paginationContainer.classList.remove('pagination-hidden');
+  }
 }
