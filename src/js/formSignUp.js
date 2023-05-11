@@ -30,11 +30,6 @@ import Notiflix from "notiflix";
 
 
 
-
-
-
-
-
 // scrol
 window.onload = () => {
     const scrolbtn = document.querySelector('.isshowbtn');
@@ -55,6 +50,11 @@ window.onload = () => {
 
     };
 }
+
+
+
+
+
 
 
 // let x = 0;
@@ -123,6 +123,8 @@ refs.signIn.addEventListener('click', (evt) => {
     refs.name.classList.add("visibility");
 });
 
+refs.signUp.classList.add("is-current-sign");
+
 refs.signUp.addEventListener('click', (evt) => {
     evt.preventDefault()
     Notiflix.Notify.info(`Hello! let&#39;s get to know each other`)
@@ -139,6 +141,7 @@ refs.backdropEl.addEventListener('click', onModalClose);
   document.addEventListener('keydown', onModalClose);
 
   function onModalClose(e) {
+
     if (e.target.hasAttribute('data-modal-close-sign') || e.key === 'Escape') {
       refs.backdropEl.classList.add('is-hidden');
     //   refs.bodyEl.classList.remove('modalIsOpen');
