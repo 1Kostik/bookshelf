@@ -37,19 +37,19 @@ refs.bestsellersSectionEl.addEventListener('click', onCardClick);
 function onCardClick(e) {
   e.preventDefault();
 
-  refs.spinnerEl.classList.remove('spinner-hidden');
   refs.modalActionBtnEl.addEventListener('click', onModalActionBtnClick);
   refs.backdropEl.addEventListener('click', onModalClose);
   document.addEventListener('keydown', onModalClose);
-
+  
   // ______ on book-card click check____
   if (
     e.target.nodeName !== 'IMG' &&
     e.target.nodeName !== 'A' &&
     e.target.nodeName !== 'P'
-  ) {
-    return;
-  }
+    ) {
+      return;
+    }
+  refs.spinnerEl.classList.remove('spinner-hidden');
 
   // _________________________________________
   refs.bodyEl.classList.add('modalIsOpen');
