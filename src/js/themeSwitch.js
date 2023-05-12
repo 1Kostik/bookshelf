@@ -5,6 +5,10 @@ const checkbox = document.querySelector('#checkbox');
 const shopListAmazon = document.querySelectorAll('.shoplist-icon-amazon');
 const modalAmazon = document.querySelector('.shop-image_amazon');
 const modalSingUpForm = document.querySelector('.wrap_modal_sign');
+const shopListNobel = document.querySelectorAll(
+  '.shoplist-icon-barnesAndNoble'
+);
+const shopListBook = document.querySelectorAll('.shoplist-icon-bookshop');
 
 const lightTheme = {
   headerBg: '#FFFFFF',
@@ -38,12 +42,24 @@ function onChange() {
     shopListAmazon.forEach(element => {
       element.classList.toggle('shoplist-icon-amazon-dark-theme');
     });
+    shopListNobel.forEach(element => {
+      element.classList.toggle('shoplist-icon-dark-theme');
+    });
+    shopListBook.forEach(element => {
+      element.classList.toggle('shoplist-icon-dark-theme');
+    });
   } else {
     checkbox.classList.toggle('dark-theme');
     modalAmazon.classList.toggle('dark-theme');
     modalSingUpForm.classList.toggle('dark-theme');
     shopListAmazon.forEach(element => {
       element.classList.toggle('shoplist-icon-amazon-dark-theme');
+    });
+    shopListNobel.forEach(element => {
+      element.classList.toggle('shoplist-icon-dark-theme');
+    });
+    shopListBook.forEach(element => {
+      element.classList.toggle('shoplist-icon-dark-theme');
     });
   }
   themeSwitch();
