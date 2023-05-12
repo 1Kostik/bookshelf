@@ -50,8 +50,9 @@ font-weight: 700;
 letter-spacing: 0.04;
 }
 
-.bestsellers-category-item{
-padding-top: 40px;
+.bestsellers-category-item {
+    overflow: hidden;
+    padding-top: 40px;
 }
 
 .bestsellers-category-name{
