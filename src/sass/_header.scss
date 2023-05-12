@@ -1,3 +1,10 @@
+// ----------------добавил класс-------
+
+.is-out{
+  display: none;
+}
+// --------------------------------------------------------
+
 .header-container {
   position: relative;
   background: var(--bg-white-header);
@@ -375,9 +382,22 @@ body.mobile-menu-open {
   // .sign-up-box {
   //   display: none;
   // }
-  .authorizated-box {
-    display: none;
-  }
+
+  // ----------------------поменял на блок---------
+  // .authorizated-box {
+  //   display: block;
+  // }
+// --------------------------------------------------------
+
+
+//  --------- добавил класс-------
+.sign-authorizated-box{
+display:block;
+}
+
+// --------------------------------------------------------
+
+
 
   .authorizated-btn {
     min-width: 184px;

@@ -8,3 +8,4 @@ import './js/mobileMenu';
 import './js/themeSwitch';
 import './js/modal';
 import './js/slider';
+import './js/formFirebase';
