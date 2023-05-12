@@ -4,32 +4,38 @@ import Notiflix from "notiflix";
 
 (() => {
     const refs = {
+      closeModalBtn: document.querySelector('[data-modal-close-sign]'),
         openModalBtn: document.querySelector('[data-modal-open-sign]'),
-        closeModalBtn: document.querySelector('[data-modal-close-sign]'),
-        modal: document.querySelector('[data-modal-sign]'),
+      
+      modal: document.querySelector('[data-modal-sign]'),
         openModalBtnMob: document.querySelector('[data-modal-open-sign-mobile]'),
-        mobileMenuBtn: document.querySelector('[data-mobile-menu-btn]'),
+      
+      mobileMenuBtn: document.querySelector('[data-mobile-menu-btn]'),
         mobileMenu: document.querySelector('[data-mobile-menu]'),
-        body: document.querySelector('body'),
-
-        btnSign: document.querySelector('.sign-btn-on-modal'),
-
-        signUp: document.querySelector(".sign-up"),
-        signIn: document.querySelector('.sign-in'),
-
+      
+      body: document.querySelector('body'),
+        wrapmodalsign: document.querySelector('.wrap_modal_sign'),
+      
+      btnSign: document.querySelector('.sign-btn-on-modal'),
+        signUp: document.querySelector('.sign-up'),
+      
+      signIn: document.querySelector('.sign-in'),
         name: document.querySelector('.name'),
-        backdropEl: document.querySelector('.bacckdrop-sign'),
+      
+      backdropEl: document.querySelector('.bacckdrop-sign'),
     };
 
     refs.openModalBtn.addEventListener('click', toggleModal);
     refs.closeModalBtn.addEventListener('click', toggleModal);
     refs.openModalBtnMob.addEventListener('click', toggleModal);
-
+    refs.closeModalBtn.addEventListener('click', toggleModal);
     function toggleModal() {
         refs.modal.classList.toggle('is-hidden');
         refs.mobileMenu.classList.remove('is-open');
         refs.mobileMenuBtn.classList.remove('is-open');
         refs.body.classList.remove('mobile-menu-open');
+        refs.wrapmodalsign.classList.toggle('is-hidden');
+        // refs.closeModalBtn.classList.toggle('is-hidden'); //----
     };
 
     refs.btnSign.addEventListener('click', (evt) => {
@@ -64,47 +70,29 @@ import Notiflix from "notiflix";
 
     // close
     refs.backdropEl.addEventListener('click', closeModal);
-
-    document.addEventListener("keydown", event => {
-        closeModal()
-    });
-
-    function closeModal() {
-
-        if (key === 'Escape') {
-            refs.modal.classList.add('is-hidden');
+ 
+    // refs.modal.classList.add('is-hidden');
+    function closeModal(event) {
+        const clickOnBackdropEl = event.target
+        // console.log(clickOnBackdropEl)
+        if (
+          clickOnBackdropEl.hasAttribute('data-modal-sign')) {
+          refs.backdropEl.classList.add('is-hidden');          
         }
+        return
     }
+    document.addEventListener("keydown", event => {        
+      
+        if (event.key === 'Escape') {
+            refs.backdropEl.classList.add('is-hidden')
+            refs.wrapmodalsign.classList.toggle('is-hidden');
+           
+        }
+    
+    });
+    
 
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -144,3 +132,7 @@ acum.innerHTML = x;
 if (acum === '') {
     acum.classList.add("visibility");
 }
+// window.addEventListener('keydown', keypress)
+// function keypress(e) {
+//     console.dir(e.key)
+// }
