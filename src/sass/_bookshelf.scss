@@ -51,6 +51,7 @@ letter-spacing: 0.04;
 }
 
 .bestsellers-category-item{
+    overflow: hidden;
 padding-top: 40px;
 }
 
@@ -383,5 +384,18 @@ background-size: 30px 32px;
     .spinner-more{
     top: 50%;
     left: 50%;
+    }
+}
+
+
+.bookshelf-tablet {
+    li:nth-child(n + 4) {
+        display: none;
+    }
+}
+
+.bookshelf-mobile {
+    li:nth-child(n + 2) {
+        display: none;
     }
 }
