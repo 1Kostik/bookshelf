@@ -77,7 +77,8 @@ import Notiflix from "notiflix";
         // console.log(clickOnBackdropEl)
         if (
           clickOnBackdropEl.hasAttribute('data-modal-sign')) {
-          refs.backdropEl.classList.add('is-hidden');          
+          refs.backdropEl.classList.add('is-hidden'); 
+           refs.wrapmodalsign.classList.toggle('is-hidden');
         }
         return
     }
