@@ -13,9 +13,10 @@ const fetchApiBooks = new FetchApiBooks();
 
 
 function findAndMarkCartBook(shoppingList) {
-  console.log(shoppingList)
+  if (shoppingList.length === 0 || shoppingList===undefined) {
+  return
+  }
   shoppingList.forEach(({ id }) => {
-    console.log(id)
     let findEl = document.querySelector(`._${id}`);
     if (!findEl) {
       return
