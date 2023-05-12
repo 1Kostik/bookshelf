@@ -26,17 +26,17 @@ function makeShoplistMarkup(shoppingList) {
         <div class="shoplist-icons">
     <ul class="shoplist-icons-list">
       <li class="shoplist-icons-li">
-        <a href="${buyLinks[0].url}">
+        <a href="${buyLinks[0].url}" target="blank">
           <div class="shoplist-icon-amazon"></div>
         </a>
       </li>
       <li class="shoplist-icons-li">
-        <a href="${buyLinks[2].url}">
+        <a href="${buyLinks[2].url}" target="blank">
           <div class="shoplist-icon-barnesAndNoble"></div>
         </a>
       </li>
       <li class="shoplist-icons-li">
-        <a href="${buyLinks[4].url}">
+        <a href="${buyLinks[4].url}" target="blank">
           <div class="shoplist-icon-bookshop"></div>
         </a>
       </li>
