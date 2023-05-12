@@ -6,6 +6,8 @@ let shoppingList = JSON.parse(shoppingListJSON);
 
 const shoplistBooks = shoppingList.map(makeShoplistMarkup);
 
+// CreateMarkup
+
 function makeShoplistMarkup(shoppingList) {
   const { bookImg, author, listName, description, title, buyLinks, id } =
     shoppingList;
@@ -48,6 +50,8 @@ function makeShoplistMarkup(shoppingList) {
   return shoplistBookContainer;
 }
 
+// Create new container and replace markup
+
 const newShoppingListContainer = document.createElement('div');
 newShoppingListContainer.classList.add('shopping-list-container');
 shoplistBooks.forEach(book => {
@@ -56,10 +60,14 @@ shoplistBooks.forEach(book => {
 
 shoppingListContainer.replaceWith(newShoppingListContainer);
 
+// Add trash to each element
+
 const shoplistTrash = document.querySelectorAll('.shoplist-trash');
 shoplistTrash.forEach(trash => {
   trash.addEventListener('click', removesBookFromShoppingList);
 });
+
+// Update Local Storage
 
 function removesBookFromShoppingList(event) {
   const id = event.target.closest('.shoplist-book-container').dataset.id;
@@ -69,8 +77,11 @@ function removesBookFromShoppingList(event) {
     event.target.closest('.shoplist-book-container')
   );
 
+  // Fix updating on the page
+
   if (shoppingList.length === 0) {
     newShoppingListContainer.replaceWith(shoppingListContainer);
+    paginationContainer.classList.add('pagination-hidden');
   }
 }
 
@@ -83,4 +94,16 @@ if (shoppingList.length === 0) {
     document.body.appendChild(newShoppingListContainer);
   }
   newShoppingListContainer.replaceWith(shoppingListContainer);
+}
+
+// Pagination
+
+const paginationContainer = document.querySelector('.pagination-container');
+
+if (paginationContainer) {
+  if (shoppingList.length === 0) {
+    paginationContainer.classList.add('pagination-hidden');
+  } else {
+    paginationContainer.classList.remove('pagination-hidden');
+  }
 }
