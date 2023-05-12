@@ -9,7 +9,7 @@
           <use href="/src/images/symbol-defs.svg#icon-bookshelf"></use>
         </svg>
       </a>
-      <nav class="navigation-main">
+      <nav class="navigation-main is-hidden" id="navMain">
         <ul class="navigation-list">
           <li class="navigation-item current">
             <a class="navigation-link" href="/src/index.html">Home</a>
@@ -61,7 +61,7 @@
           </svg>
         </button>
 
-        <div class="sign-up-box">
+        <div class="sign-up-box" id="signUpBox">
           <button
             type="button"
             class="sign-up-btn signUpBtn"
@@ -74,7 +74,7 @@
           </button>
         </div>
 
-        <div class="authorizated-box">
+        <div class="authorizated-box is-out" id="authBox">
           <button type="button" class="authorizated-btn">
             <div class="user-icon-box">
               <svg class="user-icon">
@@ -86,7 +86,7 @@
               <use href="/src/images/symbol-defs.svg#icon-arrow-user"></use>
             </svg>
           </button>
-          <button type="button" class="log-out-btn visually-hidden">
+          <button type="button" class="log-out-btn visually-hidden" id="logOutBtn">
             Log out
             <svg class="sign-up-icon">
               <use href="/src/images/symbol-defs.svg#icon-arrow-sign"></use>

@@ -96,8 +96,34 @@ import Notiflix from "notiflix";
 })();
 
 
+// ----------------------------код для firebase--------------------------
+  const signIn = document.getElementById('signIn');
+  const signUp = document.getElementById('signUp');
 
+  signIn.addEventListener('click', onBtnSignInClick);
+  function onBtnSignInClick() {
+    const btnEnter = document.getElementById('btnEnter');
+    if (btnEnter.classList.contains('btnUp')) {
+      btnEnter.classList.remove('btnUp');
+      btnEnter.classList.add('btnIn');
+    } else {
+      return;
+    }
+  }
 
+  signUp.addEventListener('click', onBtnSignUpClick);
+
+  function onBtnSignUpClick() {
+    const btnEnter = document.getElementById('btnEnter');
+    if (btnEnter.classList.contains('btnIn')) {
+      btnEnter.classList.remove('btnIn');
+      btnEnter.classList.add('btnUp');
+    } else {
+      return;
+    }
+  }
+
+// ------------------------------------------------------------------
 
 // scrol
 window.onload = () => {
