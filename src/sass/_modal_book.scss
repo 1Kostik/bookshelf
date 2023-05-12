@@ -117,6 +117,8 @@
   .modal-book-info-wrapper {
     width: 279px;
     margin-top: 0;
+    overflow: auto;
+    max-height: 219px;
   }
 }
 .modal-book-title {
