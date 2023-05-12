@@ -11,13 +11,17 @@ import { FetchApiBooks } from './fetchApi';
 import Notiflix from 'notiflix';
 const fetchApiBooks = new FetchApiBooks();
 
-const shoppingList = JSON.parse(localStorage.getItem('shoppingList'));
 
-function findAndMarkCartBook(shopList) {
-  shopList.forEach(({ id }) => {
-    const findEl = document.getElementById(`${id}`);
+function findAndMarkCartBook(shoppingList) {
+  console.log(shoppingList)
+  shoppingList.forEach(({ id }) => {
+    console.log(id)
+    let findEl = document.querySelector(`._${id}`);
+    if (!findEl) {
+      return
+    }
     findEl
-      .querySelector('a div.book-shoppingcart')
+      .querySelector('.book-shoppingcart')
       .classList.remove('is-hidden');
   });
 }
@@ -36,7 +40,8 @@ async function loadTopBooksOnClick(event) {
       return;
     }
     refs.spinnerEl.classList.add('spinner-hidden');
-    await makeMarkupTopBooksGallery(data);
+    const markup = await makeMarkupTopBooksGallery(data);
+    const shoppingList = await JSON.parse(localStorage.getItem('shoppingList'));
     findAndMarkCartBook(shoppingList);
   } catch (error) {
     console.log(error.message);
@@ -48,7 +53,7 @@ async function onCattegoryButtonElClick(event) {
   if (event.target.nodeName !== 'BUTTON') {
     return;
   }
-
+const shoppingList = await JSON.parse(localStorage.getItem('shoppingList'));
   refs.spinnerEl.classList.remove('spinner-hidden');
   const cattegoryName = event.target.name;
   try {
@@ -62,7 +67,10 @@ async function onCattegoryButtonElClick(event) {
     toUpperCaseCategoryName(cattegoryName);
     document.querySelector('.bestsellers-title').innerHTML =
       changeColorStyleInTitle(cattegoryName);
-    makeMarkupCategoryShelf(data, cattegoryName);
+    const markup= await makeMarkupCategoryShelf(data, cattegoryName);
+    const shoppingList =await JSON.parse(localStorage.getItem('shoppingList'));
+    findAndMarkCartBook(shoppingList);
+    
     refs.spinnerEl.classList.add('spinner-hidden');
   } catch (error) {
     console.log(error.message);
@@ -120,7 +128,9 @@ async function loadCategoryBooksOnClick(event) {
     }
     document.querySelector('.bestsellers-title').innerHTML =
       changeColorStyleInTitle(nameCategory);
-    makeMarkupCategoryShelf(data, nameCategory);
+   makeMarkupCategoryShelf(data, nameCategory);
+    const shoppingList = await JSON.parse(localStorage.getItem('shoppingList'));
+    findAndMarkCartBook(shoppingList);
     refs.spinnerEl.classList.add('spinner-hidden');
   } catch (error) {
     console.log(error.message);
