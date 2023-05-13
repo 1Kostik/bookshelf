@@ -35,21 +35,26 @@ const database = getDatabase(app);
 // listner for auth status changes
 auth.onAuthStateChanged(user => {
   if (user) {
-    const loggedUserName = localStorage.getItem('name');
-    const blueBtn = document.querySelector('.user-name');
-    blueBtn.textContent = loggedUserName;
-    console.log(loggedUserName);
     const signUpBox = document.getElementById('signUpBox');
     signUpBox.classList.add('is-out');
     const navMain = document.getElementById('navMain');
     navMain.classList.toggle('is-hidden');
     const authBox = document.getElementById('authBox');
     authBox.classList.remove('is-out');
+    
+    const loggedUserName = localStorage.getItem('name');
+    const blueBtn = document.querySelector('.user-name');
+    blueBtn.textContent = loggedUserName;
+    // console.log(loggedUserName);
 
     //покажи шоплист и добавь имя на кнопку в хедере и покажи иконку випадающего окна(при клике выведи кнопку логаут)
 
     console.log('user loggged in');
   } else {
+    // window.location.replace('./index.html');
+    // window.location.href = './index.html';
+    // localStorage.removeItem('shoppingList');
+
     //убери шоплист и убери имя на кнопку в хедере и убери иконку випадающего окна
 
     console.log('user loggged out');
@@ -77,7 +82,7 @@ async function createLoginEmailPassword(e) {
 
       set(ref(database, 'users/' + user.uid), {
         name: loginName,
-        books: 1,
+        books: [0],
       });
 
       Notify.info('Sign up is successful, please Sign in to continue!');
@@ -123,9 +128,12 @@ const loginEmailPassword = async e => {
         snapshot => {
           const username = snapshot.val().name;
           const userBooks = snapshot.val().books;
+          if (userBooks) {
+            localStorage.setItem('shoppingList', JSON.stringify(userBooks));
+          };
 
           localStorage.setItem('name', username);
-          localStorage.setItem('shoppingList', JSON.stringify(userBooks));
+          
           const loggedUserName = localStorage.getItem('name');
           const blueBtn = document.querySelector('.user-name');
           blueBtn.textContent = loggedUserName;
@@ -159,7 +167,7 @@ logOutBtn.addEventListener('click', onBtnLogout);
 
 //функция выхода
 
-function onBtnLogout(event) {
+async function onBtnLogout(event) {
   event.preventDefault();
 
   // localStorage.getItem('shoppingList');
@@ -167,7 +175,7 @@ function onBtnLogout(event) {
   let currentBooks = JSON.parse(shoppingListJSON);
   const currentName = localStorage.getItem('name');
 
-  function writeUserData() {
+  async function writeUserData() {
     const database = getDatabase();
     const userId = auth.currentUser.uid;
     set(ref(database, 'users/' + userId), {
@@ -175,9 +183,11 @@ function onBtnLogout(event) {
       name: currentName,
     });
   }
-  writeUserData();
+  const wD = await writeUserData();
 
-  auth.signOut().then(() => {
+  const signOut = await auth.signOut().then(() => {
+    // window.location.replace('./index.html');
+    // location.reload();
     // window.location.href = './index.html';
     // localStorage.removeItem('shoppingList');
 
