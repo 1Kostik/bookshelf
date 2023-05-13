@@ -167,7 +167,7 @@ logOutBtn.addEventListener('click', onBtnLogout);
 
 //функция выхода
 
-async function onBtnLogout(event) {
+ function onBtnLogout(event) {
   event.preventDefault();
 
   // localStorage.getItem('shoppingList');
@@ -175,7 +175,7 @@ async function onBtnLogout(event) {
   let currentBooks = JSON.parse(shoppingListJSON);
   const currentName = localStorage.getItem('name');
 
-  async function writeUserData() {
+  function writeUserData() {
     const database = getDatabase();
     const userId = auth.currentUser.uid;
     set(ref(database, 'users/' + userId), {
@@ -183,9 +183,9 @@ async function onBtnLogout(event) {
       name: currentName,
     });
   }
-  const wD = await writeUserData();
+   writeUserData();
 
-  const signOut = await auth.signOut().then(() => {
+ auth.signOut().then(() => {
     // window.location.replace('./index.html');
     // location.reload();
     // window.location.href = './index.html';
