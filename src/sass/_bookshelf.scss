@@ -48,7 +48,7 @@ font-weight: 700;
  font-size: 32px;
  line-height: 1.18;
 letter-spacing: 0.04;
-padding-bottom: 40px;
+padding-bottom: 20px;
 }
 
 
@@ -70,6 +70,7 @@ margin-bottom: 18px;
 .category-book-list{
 display: flex;
 flex-direction: column;
+padding-top: 20px;
 }
 
 .category-book-list>li:not(:last-child){
@@ -393,7 +394,7 @@ background-size: 30px 32px;
 
 .bestsellers-button-container {
     padding-right: 0px;
-        padding-bottom: 0px;
+        padding-bottom: 20px;
 }
 
 .bestsellers-button {
