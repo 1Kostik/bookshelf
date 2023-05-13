@@ -48,12 +48,9 @@ font-weight: 700;
  font-size: 32px;
  line-height: 1.18;
 letter-spacing: 0.04;
+padding-bottom: 20px;
 }
 
-.bestsellers-category-item {
-    overflow: hidden;
-    padding-top: 40px;
-}
 
 .bestsellers-category-name{
 margin-bottom: 18px;
@@ -73,6 +70,7 @@ margin-bottom: 18px;
 .category-book-list{
 display: flex;
 flex-direction: column;
+padding-top: 20px;
 }
 
 .category-book-list>li:not(:last-child){
@@ -125,7 +123,6 @@ margin-bottom: 14px;
 .bookshelf-bool-link:focus .book-img-container {
     animation: pulsare 1s ease-in-out;
 }
-
 
 .book-img{
     display: block;
@@ -196,6 +193,7 @@ color:#B4AFAF;
 .bestsellers-button-container{
 display: flex;
 justify-content: end;
+    padding-bottom: 40px;
 }
 
 .bestsellers-button{
@@ -243,6 +241,19 @@ padding-top: 14px;
         line-height: 1.08;
         letter-spacing: 0.04;
             }
+
+    .bestsellers-category-item {
+    overflow: hidden;
+    padding-left: 10px;
+}
+
+.category-book-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    row-gap: 40px;
+}
             
 .bestsellers-category-name {
     line-height: 1.71;
@@ -250,7 +261,7 @@ padding-top: 14px;
 
      .bestsellers-book-list{
         display:flex;
-        gap:25px;
+        gap:15px;
         } 
 
     .book-img-container {
@@ -281,16 +292,51 @@ background-size: 30px 32px;
         margin-top: 18px;
     }
 
-.category-book-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap:25px;
-    row-gap: 40px;
-}
-
 .category-book-list>li.book-item{
     margin-bottom: 0px;
+}
+
+@keyframes pulsare {
+    0% {
+        box-shadow: 0 0 11px #5ddcff,
+            0 0 22px #4e00c2;
+    }
+}
+
+.bestsellers-button-container {
+    padding-right: 24px;
+}
+
+.bestsellers-button {
+    padding-top: 14px;
+    padding-right: 28px;
+    padding-bottom: 14px;
+    padding-left: 28px;
+    margin-top: 6px;
+    display: flex;
+    border-radius: 40px;
+    border: 2px solid var(--text-color-title-violet);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.29;
+    letter-spacing: 0.01;
+    color: var(--text-color-title-dark);
+    text-transform: uppercase;
+    transition: transform .35s ease-in-out;
+}
+
+.bestsellers-button:hover,
+.bestsellers-button:focus {
+    animation: pulsare 1s ease-in-out;
+    background-color: var(--hover-focus);
+    color: var(--text-color-title-white);
+}
+
+@keyframes pulsare {
+    0% {
+        box-shadow: 0 0 12px #5ddcff,
+            0 0 24px #4e00c2;
+    }
 }
 
 }
@@ -302,6 +348,19 @@ background-size: 30px 32px;
         padding-left: 40px;
         padding-top: 0px;
     }
+
+    .bestsellers-category-item {
+    overflow:visible;
+    padding-left: 0px;
+}
+
+ .bestsellers-book-list {
+     gap: 25px;
+ }
+
+ .category-book-list {
+     column-gap: 25px;
+ }
 
     .book-img-container {
         background-position: 68px 110px;
@@ -325,8 +384,51 @@ background-size: 30px 32px;
  .category-book-list {
      column-gap: 24px;
  }
+
+@keyframes pulsare {
+    0% {
+        box-shadow: 0 0 25px #5ddcff,
+            0 0 50px #4e00c2;
+    }
 }
 
+.bestsellers-button-container {
+    padding-right: 0px;
+        padding-bottom: 20px;
+}
+
+.bestsellers-button {
+    padding-top: 14px;
+    padding-right: 28px;
+    padding-bottom: 14px;
+    padding-left: 28px;
+    margin-top: 6px;
+    display: flex;
+    border-radius: 40px;
+    border: 2px solid var(--text-color-title-violet);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.29;
+    letter-spacing: 0.01;
+    color: var(--text-color-title-dark);
+    text-transform: uppercase;
+    transition: transform .35s ease-in-out;
+}
+
+.bestsellers-button:hover,
+.bestsellers-button:focus {
+    animation: pulsare 1s ease-in-out;
+    background-color: var(--hover-focus);
+    color: var(--text-color-title-white);
+}
+
+@keyframes pulsare {
+    0% {
+        box-shadow: 0 0 25px #5ddcff,
+            0 0 50px #4e00c2;
+    }
+}
+}
 
 /*---------------------------------SPINNER---------------------*/
 
