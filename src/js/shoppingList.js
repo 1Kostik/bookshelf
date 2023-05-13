@@ -1,22 +1,23 @@
 const shoppingListContainer = document.querySelector(
   '.shopping-list-empty-page'
 );
-const shoppingListJSON = localStorage.getItem('shoppingList');
-let shoppingList = JSON.parse(shoppingListJSON);
+if (localStorage.getItem('shoppingList')) {
+  const shoppingListJSON = localStorage.getItem('shoppingList');
+  let shoppingList = JSON.parse(shoppingListJSON);
 
-const shoplistBooks = shoppingList.map(makeShoplistMarkup);
+  const shoplistBooks = shoppingList.map(makeShoplistMarkup);
 
-// CreateMarkup
+  // CreateMarkup
 
-function makeShoplistMarkup(shoppingList) {
-  const { bookImg, author, listName, description, title, buyLinks, id } =
-    shoppingList;
+  function makeShoplistMarkup(shoppingList) {
+    const { bookImg, author, listName, description, title, buyLinks, id } =
+      shoppingList;
 
-  const shoplistBookContainer = document.createElement('div');
-  shoplistBookContainer.classList.add('shoplist-book-container');
-  shoplistBookContainer.dataset.id = id;
+    const shoplistBookContainer = document.createElement('div');
+    shoplistBookContainer.classList.add('shoplist-book-container');
+    shoplistBookContainer.dataset.id = id;
 
-  const shoplistMarkup = `<img src="${bookImg}" class="shoplist-book-img">
+    const shoplistMarkup = `<img src="${bookImg}" class="shoplist-book-img">
         <div class="shoplist-desc-container">
           <h4 class="shoplist-book-title">${title}</h4>
           <p class="shoplist-book-genre">${listName}</p>
@@ -45,65 +46,66 @@ function makeShoplistMarkup(shoppingList) {
         <div class="shoplist-trash"></div>
 `;
 
-  shoplistBookContainer.innerHTML = shoplistMarkup;
+    shoplistBookContainer.innerHTML = shoplistMarkup;
 
-  return shoplistBookContainer;
-}
+    return shoplistBookContainer;
+  }
 
-// Create new container and replace markup
+  // Create new container and replace markup
 
-const newShoppingListContainer = document.createElement('div');
-newShoppingListContainer.classList.add('shopping-list-container');
-shoplistBooks.forEach(book => {
-  newShoppingListContainer.appendChild(book);
-});
+  const newShoppingListContainer = document.createElement('div');
+  newShoppingListContainer.classList.add('shopping-list-container');
+  shoplistBooks.forEach(book => {
+    newShoppingListContainer.appendChild(book);
+  });
 
-shoppingListContainer.replaceWith(newShoppingListContainer);
+  shoppingListContainer.replaceWith(newShoppingListContainer);
 
-// Add trash to each element
+  // Add trash to each element
 
-const shoplistTrash = document.querySelectorAll('.shoplist-trash');
-shoplistTrash.forEach(trash => {
-  trash.addEventListener('click', removesBookFromShoppingList);
-});
+  const shoplistTrash = document.querySelectorAll('.shoplist-trash');
+  shoplistTrash.forEach(trash => {
+    trash.addEventListener('click', removesBookFromShoppingList);
+  });
 
-// Update Local Storage
+  // Update Local Storage
 
-function removesBookFromShoppingList(event) {
-  const id = event.target.closest('.shoplist-book-container').dataset.id;
-  shoppingList = shoppingList.filter(book => book.id !== id);
-  localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
-  newShoppingListContainer.removeChild(
-    event.target.closest('.shoplist-book-container')
-  );
+  function removesBookFromShoppingList(event) {
+    const id = event.target.closest('.shoplist-book-container').dataset.id;
+    shoppingList = shoppingList.filter(book => book.id !== id);
+    localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
+    newShoppingListContainer.removeChild(
+      event.target.closest('.shoplist-book-container')
+    );
 
-  // Fix updating on the page
+    // Fix updating on the page
+
+    if (shoppingList.length === 0) {
+      newShoppingListContainer.replaceWith(shoppingListContainer);
+      paginationContainer.classList.add('pagination-hidden');
+    }
+  }
+
+  function updateBookOnStorage() {
+    localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
+  }
 
   if (shoppingList.length === 0) {
+    if (!document.querySelector('.shopping-list-container')) {
+      document.body.appendChild(newShoppingListContainer);
+    }
     newShoppingListContainer.replaceWith(shoppingListContainer);
-    paginationContainer.classList.add('pagination-hidden');
   }
-}
 
-function updateBookOnStorage() {
-  localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
-}
+  // Pagination
 
-if (shoppingList.length === 0) {
-  if (!document.querySelector('.shopping-list-container')) {
-    document.body.appendChild(newShoppingListContainer);
-  }
-  newShoppingListContainer.replaceWith(shoppingListContainer);
-}
+  const paginationContainer = document.querySelector('.pagination-container');
 
-// Pagination
-
-const paginationContainer = document.querySelector('.pagination-container');
-
-if (paginationContainer) {
-  if (shoppingList.length === 0) {
-    paginationContainer.classList.add('pagination-hidden');
-  } else {
-    paginationContainer.classList.remove('pagination-hidden');
+  if (paginationContainer) {
+    if (shoppingList.length === 0) {
+      paginationContainer.classList.add('pagination-hidden');
+    } else {
+      paginationContainer.classList.remove('pagination-hidden');
+    }
   }
 }
