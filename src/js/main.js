@@ -1,3 +1,6 @@
+import { isAuthUser } from './isAuthUser';
+isAuthUser()
+
 const refs = {
   bestsellersSectionEl: document.querySelector('.bookshelf'),
   categoriesListEl: document.querySelector('.categories-list'),

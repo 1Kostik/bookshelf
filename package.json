@@ -5,22 +5,25 @@
   "homepage": "https://1Kostik.github.io/bookshelf",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /bookshelf/"
+    "build": "parcel build src/*.html"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/goitacademy/parcel-project-template.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Konstantin Sorochan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "dependencies": {
+    "dotenv": "^16.3.1",
+    "firebase": "^10.5.2",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "modern-normalize": "^1.1.0",
+    "netlify-cli": "^17.2.2",
     "notiflix": "^3.2.6",
     "scroll-js": "^3.5.2",
     "swiper": "^9.3.0"
@@ -29,9 +32,16 @@
     "@parcel/packager-raw-url": "^2.6.0",
     "@parcel/transformer-sass": "^2.6.0",
     "@parcel/transformer-webmanifest": "^2.6.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "events": "^3.3.0",
+    "os-browserify": "^0.3.0",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
-    "posthtml-include": "^1.7.4"
+    "path-browserify": "^1.0.1",
+    "posthtml-include": "^1.7.4",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
 }

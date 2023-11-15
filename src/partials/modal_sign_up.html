@@ -8,16 +8,16 @@
       <i class="fa-solid fa-xmark fa-xl"></i>
     </button>
     
-      <form action="submit" class="form_sign">
-        <input placeholder="NAME" class="name input" type="text">
+      <form class="form_sign">
+        <input placeholder="NAME" class="name input" type="text" maxlength="12" required pattern=".{1,}">
         
-        <input placeholder="EMAIL" class="email input" type="email" name="email" />
+        <input placeholder="EMAIL" class="email input" type="email" name="email" required/>
         <i class="fa-regular fa-envelope email-icon-modal-sign"></i>
         
-        <input placeholder="PASSWORD" class="pass input" type="password" name="password">
+        <input placeholder="PASSWORD" class="pass input" type="password" name="password" required>
         <i class="fa-solid fa-lock password-icon-modal-sign"></i>
         
-        <button class="sign-btn-on-modal" data-modal-cls>Sign up</button>
+        <button class="sign-btn-on-modal" data-modal-cls type="submit">Sign up</button>
         
       </form>
     

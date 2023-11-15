@@ -14,7 +14,7 @@
           <li class="navigation-item current">
             <a class="navigation-link" href="/src/index.html">Home</a>
           </li>
-          <li class="navigation-item">
+          <li class="navigation-item is-hidden" data-link-to-shoppingList>
             <a class="navigation-link" href="/src/shopping_list.html"
               >Shopping List
               <svg
@@ -81,16 +81,18 @@
                 <use href="/src/images/symbol-defs.svg#icon-user"></use>
               </svg>
             </div>
-            <p class="user-name">Stephen</p>
+            <p class="user-name"></p>
             <svg class="user-icon-arrow">
               <use href="/src/images/symbol-defs.svg#icon-arrow-user"></use>
             </svg>
           </button>
           <button type="button" class="log-out-btn visually-hidden">
-            Log out
+           <div class="logout-container">
+            <p>Log out</p>
             <svg class="sign-up-icon">
               <use href="/src/images/symbol-defs.svg#icon-arrow-sign"></use>
             </svg>
+           </div>
           </button>
         </div>
       </div>
@@ -119,13 +121,13 @@
           <use href="/src/images/symbol-defs.svg#icon-user"></use>
         </svg>
       </div>
-      <p class="user-name">Stephen</p>
+      <p class="user-name mobile-user-name"></p>
     </div>
     <ul class="mobile-navigation-list">
-      <li class="mobile-navigation-item current">
+      <li class="mobile-navigation-item mobile-navigation-item-home">
         <a class="mobile-navigation-link" href="/src/index.html">home</a>
       </li>
-      <li class="mobile-navigation-item">
+      <li class="mobile-navigation-item mobile-navigation-item-shopping">
         <a class="mobile-navigation-link" href="/src/shopping_list.html"
           >shopping list
           <svg
@@ -144,10 +146,12 @@
       </li>
     </ul>
     <button type="button" class="log-out-mobile-btn">
-      Log out
+      <div class="mobile-logout-container">
+      <p class="mobile-logout-text">Log out</p>
       <svg class="sign-up-icon">
         <use href="/src/images/symbol-defs.svg#icon-arrow-sign"></use>
       </svg>
+    </div>
     </button>
   </div>
 </div>

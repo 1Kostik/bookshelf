@@ -1,3 +1,6 @@
+import { isAuthUser } from './isAuthUser';
+isAuthUser()
+
 const shoppingListContainer = document.querySelector(
   '.shopping-list-empty-page'
 );
@@ -82,7 +85,7 @@ if (localStorage.getItem('shoppingList')) {
 
     if (shoppingList.length === 0) {
       newShoppingListContainer.replaceWith(shoppingListContainer);
-      paginationContainer.classList.add('pagination-hidden');
+      // paginationContainer.classList.add('pagination-hidden');
     }
   }
 

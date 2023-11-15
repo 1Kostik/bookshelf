@@ -169,14 +169,14 @@
   transform: scale(1.2);
 }
 .sign-up-icon {
-  width: 20px;
-  height: 20px;
-  margin-left: 90px;
+  width: 26px;
+  height: 26px;
+  margin-left: 15px;
   fill: rgba(234, 198, 69, 1);
 }
 /* -----------------------------------------------------MOBILE-MENU-AUTHORIZATED------------------------------------------------------------ */
 .authorizated-mobile-menu-box {
-  height: 100%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -204,22 +204,26 @@
   fill: var(--text-color-title-violet);
 }
 .user-name {
-  font-weight: 700;
-  font-size: 22px;
+  font-weight: 500;
+  font-size: 20px;
   line-height: 1.31;
   letter-spacing: -0.02em;
   color: var(--text-color-title-white);
 }
 .mobile-navigation-list {
   display: flex;
-  flex-direction: column;
   gap: 16px;
-  align-items: flex-start;
-  margin-left: auto;
-  margin-right: auto;
+  width:100%;
+  align-items: baseline;
+  justify-content: right;
   margin-top: auto;
   margin-bottom: auto;
 }
+
+.mobile-logout-container{
+  display: flex;
+}
+
 .mobile-navigation-item {
   font-weight: 500;
   font-size: 14px;
@@ -248,18 +252,22 @@
   margin-left: 4px;
   fill: currentColor;
 }
+.mobile-logout-text{
+  font-size: 18px;
+  font-family: inherit;
+}
 .log-out-mobile-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: inherit;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.29;
   letter-spacing: -0.04em;
-  padding: 14px;
+  padding: 11px;
   border: 1.5px solid var(--text-color-title-dark);
-  border-radius: 18px;
+  border-radius: 22px;
   color: var(--text-color-title-dark);
   background: var(--bg-white-header);
   cursor: pointer;
@@ -369,14 +377,16 @@ body.mobile-menu-open {
     transform: scale(1.1);
   }
   .sign-up-icon {
-    margin-left: 90px;
+    margin-left: 20px;
   }
   /* ----------------------------------------------TABLET-AUTHORIZATED----------------------------------------------------------- */
-  // .sign-up-box {
-  //   display: none;
-  // }
+  .sign-up-box {
+    display: none;
+  }
+
   .authorizated-box {
     display: none;
+    position: relative;
   }
 
   .authorizated-btn {
@@ -399,15 +409,17 @@ body.mobile-menu-open {
   .log-out-btn {
     width: 184px;
     position: absolute;
+    top: 45px;
+    z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: inherit;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 1.29;
     letter-spacing: -0.04em;
-    width: 185px;
+    width: 100%;
     height: 48px;
     padding: 14px;
     border: 1.5px solid var(--text-color-title-dark);
@@ -427,6 +439,10 @@ body.mobile-menu-open {
     height: 26px;
     fill: var(--text-color-title-white);
     margin-left: 4px;
+  }
+
+  .logout-container{
+    display:flex;
   }
   /* -----------------------------------------------------books-counter------------------------------------------------ */
   .books-counter {

@@ -15,6 +15,10 @@ const refs = {
   acum: document.querySelector('.acum'),
   spinnerEl: document.querySelector('.spinner-more'),
   errContainerEl: document.querySelector('.errContainer'),
+  modal: document.querySelector('[data-modal-sign]'),
+  mobileMenu: document.querySelector('[data-mobile-menu]'),
+  mobileMenuBtn: document.querySelector('[data-mobile-menu-btn]'),
+  wrapmodalsign: document.querySelector('.wrap_modal_sign'),
 };
 
 const STORAGE_KEY = 'shoppingList';
@@ -146,8 +150,22 @@ function onModalClose(e) {
 }
 // ------------------------------------------------------------------------
 
+
 // -------------------ADD or REMOVE BOOK in SHOPPING LIST--------------------
+function openSignIn(){
+  refs.wrapmodalsign.classList.remove('is-hidden');
+  refs.modal.classList.remove('is-hidden');
+  refs.mobileMenu.classList.remove('is-open');
+  refs.mobileMenuBtn.classList.remove('is-open');
+  refs.body.classList.remove('mobile-menu-open');
+}
+
 function onModalActionBtnClick(e) {
+  const isUserAuth=localStorage.getItem('userInfo')
+  if(!isUserAuth){
+      openSignIn()
+      return
+  }
   const selectedEl = document.getElementById(`${shoppingBook.id}`);
   const cartEl = selectedEl.querySelector('a div.book-shoppingcart');
 
