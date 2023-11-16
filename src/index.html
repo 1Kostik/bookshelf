@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Shelf</title>   
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./sass/_index.scss" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <!-------------Header----------------->
+    <header class="header">
+      <include src="./partials/header.html"></include>
+    </header>
+    <!-------------Main----------------->
+    <h1 class="is-hidden"></h1>
+    <div class="container home_page_main">
+      <div class="left_part">
+        <div class="categories">
+          <include src="./partials/categories.html"></include>
+          <div class="spinner-more spinner-hidden"></div>
+        </div>
+
+        <div class="support">
+          <include src="./partials/support_ukraine.html"></include>
+        </div>
+      </div>
+      <div class="bookshelf">
+        <include src="./partials/bookshelf.html"></include>
+      </div>
+      <div class="scroll_up"></div>
+    </div>
+ </div>
+<!----------------Modal book------------->
+    <div class="backdrop is-hidden" data-modal-close>
+     <div class="container">
+        <div class="modal is-hidden">
+          <include src="./partials/modal_book.html"></include>  
+        </div>
+        <div class="errContainer is-hidden"></div>
+      </div>
+    </div>
+    <!----------------Modal sign------------->
+    <!-- <div class="backdrop is-hidden" data-modal>
+  <div class="container">
+    <div class="modal"> -->
+    <include src="./partials/modal_sign_up.html"></include>
+    <!-- </div>
+  </div>
+</div> -->  
+
+<!----------------scroll_up------------->
+
+<include src="./partials/scroll_up.html"></include>
+  </body>
+</html>

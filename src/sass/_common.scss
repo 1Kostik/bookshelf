@@ -1,0 +1,168 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+:root {
+  --bg-white-header: #ffffff;
+  --bg-dark-theme-header: #111111;
+  --bg-dark-theme-body: #202024;
+
+  --hover-focus: #4f2ee8;
+  --hover-book: #eac645;
+  --hover-text-categori-dark-theme: #eac645;
+
+  --bg-current-page: #eac645;
+  --bg-pagination-btn: #eac645;
+
+  --bg-modal-book-white-theme: #ffffff;
+  --bg-shoppinglist-page: #f6f6f6;
+  --bg-home-page: #f6f6f6;
+  --bg-home-page-cards-book: #f6f6f6;
+
+  --bg-support-ukraine: radial-gradient(
+    183.6% 183.01% at 59.76% -23.42%,
+    #4f2ee8 18.03%,
+    #ffffff 100%
+  );
+  --box-shadow-bg-support: 0px 10px 10px rgba(245, 245, 247, 0.1);
+
+  --bg-card-book-shoppinglist-page: #f6f6f6;
+  --bg-card-book-shoppinglist-page-dark-theme: #202024;
+
+  --bg-border-card-book-shoppinglist-page: #4f2ee866;
+
+  --text-color-card-book-shoppinglist-page: #111111;
+  --text-color-card-book-shoppinglist-page-dark-theme: #ffffff;
+
+  --text-color-title-white: #ffffff;
+  --text-color-title-dark: #111111;
+  --text-color-title-violet: #4f2ee8;
+
+  --text-color-author-category-white-theme: rgba(180, 175, 175, 1);
+  --text-color-title-category-white-theme: rgba(180, 175, 175, 1);
+  --text-color-allcategories-white-theme: rgba(17, 17, 17, 0.6);
+
+  --text-color-book-title-dark-theme: #ffffff;
+  --text-color-allcategories-dark-theme: rgba(255, 255, 255, 0.6);
+  --text-color-title-category-dark-theme: rgba(180, 175, 175, 1);
+  --text-color-author-category-dark-theme: rgba(180, 175, 175, 1);
+  --text-empty-shoplist: rgba(0, 0, 0, 0.6);
+  --text-singup-btn: #f3f3f3;
+}
+// test
+@font-face {
+  font-family: 'DM Sans';
+  src: url(../fonts/DMSans-Italic.ttf) format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url(../fonts/DMSans-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url(../fonts/DMSans-Medium.ttf) format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url(../fonts/DMSans-Bold.ttf) format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'DM Sans', sans-serif;
+
+  background: var(--bg-home-page);
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  font-size: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.container {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 375px) {
+  .container {
+    width: 375px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 30;
+  overflow-y: scroll;
+  background-color: rgba(17, 17, 17, 0.4);
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+body.modalIsOpen {
+  overflow: hidden;
+}

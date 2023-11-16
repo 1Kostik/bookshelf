@@ -1,0 +1,294 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  outline: 0;
+  outline-offset: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.modal,
+.errContainer {
+  position: fixed;
+  z-index: 20;
+  /* overflow: scroll; */
+  /* height: 100%; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  margin-right: auto;
+  margin-left: auto;
+  padding: 40px 24px;
+  width: 339px;
+  border: 2px solid var(--text-color-title-dark);
+  border-radius: 18px;
+  background-color: var(--bg-modal-book-white-theme);
+}
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 579px;
+    padding: 40px;
+  }
+}
+.modal-close-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+}
+@media screen and (min-width: 768px) {
+  .modal-close-btn {
+    top: 24px;
+    right: 24px;
+  }
+}
+.modal-close-btn-icon {
+  fill: var(--text-color-title-dark);
+  background-color: transparent;
+  width: 24px;
+  height: 24px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  .modal-close-btn:hover & {
+    fill: var(--text-color-title-violet);
+  }
+}
+@media screen and (min-width: 768px) {
+  .modal-close-btn-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .modal-book-card-wrapper {
+    display: flex;
+  }
+}
+@media screen and (min-width: 768px) {
+  .modal-book-card-wrapper {
+    width: 495px;
+    height: 281px;
+    display: flex;
+    flex-flow: column wrap; ///////
+  }
+}
+.modal-book-picture-wrapper {
+  border-radius: 8px;
+  width: 287px;
+  height: 408px;
+  overflow: hidden;
+  background-image: url('../images/svg-from-maket/plug.svg');
+  background-color: inherit;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60px 54px;
+}
+@media screen and (min-width: 768px) {
+  .modal-book-picture-wrapper {
+    width: 192px;
+    height: 281px;
+    margin-right: 24px;
+    background-size: 88px 80px;
+  }
+}
+.modalBookImg {
+  width: 100%; ///
+  height: 100%; //
+  object-fit: fill; //
+}
+.modal-book-info-wrapper {
+  display: block;
+  margin-top: 14px;
+}
+@media screen and (min-width: 768px) {
+  .modal-book-info-wrapper {
+    width: 279px;
+    margin-top: 0;
+    overflow: auto;
+    max-height: 219px;
+  }
+}
+.modal-book-title {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  color: var(--text-color-title-dark);
+}
+@media screen and (min-width: 768px) {
+  .modal-book-title {
+    font-size: 24px;
+    line-height: 1.17;
+  }
+}
+.modal-book-author {
+  margin-top: 4px;
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: -0.04em;
+  color: var(--text-color-author-category-white-theme);
+}
+@media screen and (min-width: 768px) {
+  .modal-book-author {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.29;
+  }
+}
+.modal-book-description {
+  margin-top: 18px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  color: var(--text-color-title-dark);
+}
+@media screen and (min-width: 768px) {
+  .modal-book-description {
+    margin-top: 20px;
+  }
+}
+
+.modal-shop-list {
+  margin-top: 14px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .modal-shop-list {
+    margin-top: 20px;
+  }
+}
+.shop-image:hover,
+.shop-image:focus {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+}
+.shop-image_amazon.dark-theme {
+  filter: brightness(100) contrast(100%);
+}
+.modal-action-btn {
+  display: block;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--text-color-title-dark);
+  background-color: transparent;
+  box-sizing: border-box;
+  border: 2px solid #4f2ee8;
+  border-radius: 40px;
+  padding: 14px 24px;
+  // padding-top: 14px;
+  // padding-bottom: 14px;
+  text-align: center;
+  margin: auto;
+  margin-top: 40px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    background-color: var(--text-color-title-violet);
+    color: var(--text-color-title-white);
+  }
+  &:focus {
+    background-color: var(--text-color-title-violet);
+    color: var(--text-color-title-white);
+  }
+}
+@media screen and (min-width: 768px) {
+  .modal-action-btn {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
+.congratulations-text {
+  text-align: center;
+  width: 242px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: var(--text-color-allcategories-white-theme);
+}
+@media screen and (min-width: 768px) {
+  .congratulations-text {
+    width: 324px;
+
+    font-size: 12px;
+    line-height: 1.17;
+  }
+}
+
+.errContainer {
+  width: 335px;
+  height: 500px;
+  background-image: url(/src/images/mobile/shopping_list/books.png);
+  background-color: var(--bg-modal-book-white-theme);
+  background-repeat: no-repeat;
+  background-position: center 290px;
+}
+@media screen and (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .errContainer {
+    background-image: url(/src/images/mobile/shopping_list/books@2x.png);
+    background-size: 250px;
+    background-position: center 315px;
+  }
+}
+.errText {
+  text-align: center;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: -0.04em;
+  color: var(--text-color-title-dark);
+}
+@media screen and (min-width: 768px) {
+  .errContainer {
+    width: 579px;
+    background-position: center 280px;
+  }
+  @media screen and (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .errContainer {
+      background-size: 280px;
+      background-position: center 280px;
+    }
+  }
+}
