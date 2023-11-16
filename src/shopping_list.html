@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./sass/_index.scss" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script type="module" src="./shopping_list.js"></script>
+  </head>
+  <body id="shopping-list">
+    <!-------------Header----------------->
+    <header class="header">
+      <include src="./partials/header.html"></include>
+      <include src="./partials/modal_sign_up.html"></include>
+    </header>
+    <!-------------Main----------------->
+    <div class="container shopping_list_page">
+      <div class="support shoplist-support">
+        <include src="./partials/support_ukraine.html"></include>
+      </div>
+      <div class="shopping_list">
+        <h1 class="title_shopping_list">
+          Shopping <span class="title_shopping_list_span">List</span>
+        </h1>
+        <div class="shopping-list-container">
+          <div class="shopping-list-empty-page">
+            <p class="shopping-list-empty-text">
+              This page is empty, add some books <br />
+              and proceed to order.
+            </p>
+            <div class="shopping-list-empty-image"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!----------------Modal book------------->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="container"></div>
+      <div class="modal">
+        <include src="./partials/modal_book.html"></include>
+      </div>
+    </div>
+  </body>
+</html>
