@@ -15,12 +15,16 @@ const refs = {
   acum: document.querySelector('.acum'),
   spinnerEl: document.querySelector('.spinner-more'),
   errContainerEl: document.querySelector('.errContainer'),
+  modal: document.querySelector('[data-modal-sign]'),
+  mobileMenu: document.querySelector('[data-mobile-menu]'),
+  mobileMenuBtn: document.querySelector('[data-mobile-menu-btn]'),
+  wrapmodalsign: document.querySelector('.wrap_modal_sign'),
 };
 
 const STORAGE_KEY = 'shoppingList';
 const BUTTON_TEXT_ADD = 'ADD TO SHOPPING LIST';
 const BUTTON_TEXT_REMOVE = 'REMOVE FROM THE SHOPPING LIST';
-const NOTIFICATION = `Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.`;
+const NOTIFICATION = `Congratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.`;
 
 let shoppingList = [];
 let shoppingBook = {};
@@ -146,8 +150,22 @@ function onModalClose(e) {
 }
 // ------------------------------------------------------------------------
 
+
 // -------------------ADD or REMOVE BOOK in SHOPPING LIST--------------------
+function openSignIn(){
+  refs.wrapmodalsign.classList.remove('is-hidden');
+  refs.modal.classList.remove('is-hidden');
+  refs.mobileMenu.classList.remove('is-open');
+  refs.mobileMenuBtn.classList.remove('is-open');
+  refs.body.classList.remove('mobile-menu-open');
+}
+
 function onModalActionBtnClick(e) {
+  const isUserAuth=localStorage.getItem('userInfo')
+  if(!isUserAuth){
+      openSignIn()
+      return
+  }
   const selectedEl = document.getElementById(`${shoppingBook.id}`);
   const cartEl = selectedEl.querySelector('a div.book-shoppingcart');
 

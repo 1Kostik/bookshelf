@@ -1,3 +1,6 @@
+import { isAuthUser } from './isAuthUser';
+isAuthUser()
+
 const shoppingListContainer = document.querySelector(
   '.shopping-list-empty-page'
 );

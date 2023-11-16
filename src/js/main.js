@@ -1,3 +1,6 @@
+import { isAuthUser } from './isAuthUser';
+isAuthUser()
+
 const refs = {
   bestsellersSectionEl: document.querySelector('.bookshelf'),
   categoriesListEl: document.querySelector('.categories-list'),
@@ -13,7 +16,7 @@ const fetchApiBooks = new FetchApiBooks();
 
 
 function findAndMarkCartBook(shoppingList) {
-  if (shoppingList.length === 0 || shoppingList===undefined) {
+  if (shoppingList===undefined || shoppingList === null) {
   return
   }
   shoppingList.forEach(({ id }) => {
@@ -34,7 +37,7 @@ async function loadTopBooksOnClick(event) {
   try {
     refs.spinnerEl.classList.remove('spinner-hidden');
     const data = await fetchApiBooks.fetchTopBooks();
-    if (data.length === 0 || data === undefined) {
+    if (data === undefined || data === null) {
       Notiflix.Notify.failure(
         "Sorry, we didn't find anything according to your request."
       );
@@ -59,7 +62,7 @@ const shoppingList = await JSON.parse(localStorage.getItem('shoppingList'));
   const cattegoryName = event.target.name;
   try {
     const data = await fetchApiBooks.fetchSelectedCategory(cattegoryName);
-    if (data.length === 0 || data === undefined) {
+    if ( data === undefined || data===null ) {
       Notiflix.Notify.failure(
         "Sorry, we didn't find anything according to your request."
       );
@@ -112,6 +115,7 @@ function changeColorStyleInTitle(category) {
 refs.categoriesListEl.addEventListener('click', loadCategoryBooksOnClick);
 async function loadCategoryBooksOnClick(event) {
   if (
+    document.querySelector('.bestsellers-category-item') === null ||
     event.target.nodeName !== 'LI' ||
     event.target.textContent.trim() === 'All categories'
   ) {
@@ -121,7 +125,7 @@ async function loadCategoryBooksOnClick(event) {
   const nameCategory = event.target.textContent;
   try {
     const data = await fetchApiBooks.fetchSelectedCategory(nameCategory);
-    if (data.length === 0 || data === undefined) {
+    if (data === undefined || data === null) {
       Notiflix.Notify.failure(
         "Sorry, we didn't find anything according to your request."
       );
