@@ -293,102 +293,83 @@
   // ---------------------------------PAGINATION MOBILE------------------------------------------
 
   .pagination-container {
-    margin-top: 20px;
-    width: 335px;
+    margin: 20px auto 40px;
+    width: 323px;
     display: flex;
     justify-content: center;
+    column-gap: 6px;
   }
   .pagination-button {
     width: 38px;
     height: 38px;
-    border-radius: 100%;
-  }
-
-  .pag-left-pointer,
-  .pag-left-pointer-double,
-  .pag-right-pointer,
-  .pag-right-pointer-double {
+    border-radius: 50%;
     border: 1px solid #111111;
+  }
+
+  .pag-pointer {
     background-color: #eac645;
+    transition: scale 250ms ease-in-out, box-shadow 250ms ease-in-out;
   }
 
-  .pag-left-pointer {
-    margin-right: 14px;
-    background-image: url(../images/svg-from-maket/arrow-left.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 7px 13px;
+  .pag-pointer:hover,
+  .pag-pointer:focus {
+    scale: 1.07;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.072);
   }
 
-  .pag-left-pointer-double {
-    margin-right: 5px;
-    // background-image: url(../images/svg-from-maket/arrow-left.png);
-    // background-repeat: no-repeat;
-    // background-position: center;
-    // background-size: 7px 13px;
-
-    background-image: url(../images/svg-from-maket/arrow-left.png),
-      url(../images/svg-from-maket/arrow-left.png);
-    background-repeat: no-repeat, no-repeat;
-    background-position: 40%, 60%;
-    background-size: 7px 13px, 7px 13px;
+  .left-pointer {
+    margin-right: 8px;
   }
 
   .pag-number-pointer,
   .pag-pt {
-    border: 1px solid #111111;
     font-family: 'DM Sans';
     font-weight: 700;
     font-size: 18px;
     line-height: 1.22;
-    color: #000000;
+    color: var(--text-color-title-dark);
+    border: 1px solid var(--text-color-title-dark);
+    transition: scale 250ms ease-in-out, background-color 250ms ease-in-out, box-shadow 250ms ease-in-out;
+  }
+
+  .pag-number-pointer:hover,
+  .pag-pt:hover,
+  .pag-number-pointer:focus,
+  .pag-pt:focus {
+    background-color: #c6c6c6;
+    scale: 1.07;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.072);
   }
 
   .pag-number-pointer {
-    margin-right: 8px;
+    margin-right: 2px;
   }
 
   .pag-number-pointer:nth-child(5) {
     display: none;
   }
 
-  .pag-pt {
-    margin-right: 14px;
+  .right-pointer {
+    margin-left: 8px;
   }
-
-  .pag-right-pointer {
-    margin-right: 5px;
-    background-image: url(../images/svg-from-maket/arrow-right.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 7px 13px;
-  }
-
-  .pag-right-pointer-double {
-    // background-image: url(../images/svg-from-maket/arrow-right.png);
-    // background-repeat: no-repeat;
-    // background-position: center;
-    // background-size: 7px 13px;
-
-    background-image: url(../images/svg-from-maket/arrow-right.png),
-      url(../images/svg-from-maket/arrow-right.png);
-    background-repeat: no-repeat, no-repeat;
-    background-position: 40%, 60%;
-    background-size: 7px 13px, 7px 13px;
-  }
-
-  // .pag-number-pointer-hidden {
-  //   display: none;
-  // }
 
   .active {
     background-color: #111111;
     color: #ffffff;
   }
 
+  .pag-pointer svg {
+    width: 22px;
+    height: 22px;
+  }
+
   .pag-pointer-not-active {
-    filter: brightness(100);
     background-color: #111111;
+    fill: #b4afaf;
   }
 }
 
@@ -672,100 +653,81 @@
   // ---------------------------------PAGINATION TABLET------------------------------------------
 
   .pagination-container {
-    margin-top: 40px;
+    margin: 40px auto 40px;
     width: 446px;
     display: flex;
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+    column-gap: 8px;
   }
   .pagination-button {
     width: 44px;
     height: 44px;
-    border-radius: 100%;
-  }
-
-  .pag-left-pointer,
-  .pag-left-pointer-double,
-  .pag-right-pointer,
-  .pag-right-pointer-double {
+    border-radius: 50%;
     border: 1px solid #111111;
+  }
+
+  .pag-pointer {
     background-color: #eac645;
+    transition: scale 250ms ease-in-out, box-shadow 250ms ease-in-out;
   }
 
-  .pag-left-pointer {
-    margin-right: 14px;
-    background-image: url(../images/svg-from-maket/arrow-left.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 7px 14px;
+  .pag-pointer:hover,
+  .pag-pointer:focus {
+    scale: 1.07;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.072);
   }
 
-  .pag-left-pointer-double {
-    margin-right: 8px;
-    background-image: url(../images/svg-from-maket/arrow-left.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 7px 14px;
-
-    background-image: url(../images/svg-from-maket/arrow-left.png),
-      url(../images/svg-from-maket/arrow-left.png);
-    background-repeat: no-repeat, no-repeat;
-    background-position: 40%, 60%;
-    background-size: 7px 14px, 7px 14px;
+  .left-pointer {
+    margin-right: 16px;
   }
 
   .pag-number-pointer,
   .pag-pt {
-    border: 1px solid #111111;
     font-family: 'DM Sans';
     font-weight: 700;
     font-size: 18px;
     line-height: 1.22;
-    color: #000000;
+    color: var(--text-color-title-dark);
+    border: 1px solid var(--text-color-title-dark);
+    transition: scale 250ms ease-in-out, background-color 250ms ease-in-out, box-shadow 250ms ease-in-out;
+  }
+
+  .pag-number-pointer:hover,
+  .pag-pt:hover,
+  .pag-number-pointer:focus,
+  .pag-pt:focus {
+    background-color: #c6c6c6;
+    scale: 1.07;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.072);
   }
 
   .pag-number-pointer {
-    margin-right: 8px;
+    margin-right: 2px;
   }
 
-  .pag-pt {
-    margin-right: 14px;
+  .right-pointer {
+    margin-left: 16px;
   }
-
-  .pag-right-pointer {
-    margin-right: 8px;
-    background-image: url(../images/svg-from-maket/arrow-right.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 7px 14px;
-  }
-
-  .pag-right-pointer-double {
-    // background-image: url(../images/svg-from-maket/arrow-right.png);
-    // background-repeat: no-repeat;
-    // background-position: center;
-    // background-size: 7px 14px;
-
-    background-image: url(../images/svg-from-maket/arrow-right.png),
-      url(../images/svg-from-maket/arrow-right.png);
-    background-repeat: no-repeat, no-repeat;
-    background-position: 40%, 60%;
-    background-size: 7px 14px, 7px 14px;
-  }
-
-  // .pag-number-pointer-hidden {
-  //   display: none;
-  // }
 
   .active {
-    background-color: #111111;
-    color: #ffffff;
+    cursor: auto;
+    background-color: var(--text-color-title-dark);
+    color: var(--bg-white-header);
+  }
+
+  .pag-pointer svg {
+    width: 24px;
+    height: 24px;
   }
 
   .pag-pointer-not-active {
-    filter: brightness(100);
     background-color: #111111;
+    fill: #b4afaf;
+    cursor: auto;
   }
 }
 
