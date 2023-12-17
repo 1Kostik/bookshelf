@@ -1,4 +1,5 @@
 import _ from 'lodash.throttle';
+import arrows from '../images/svg-from-maket/symbol-defs.svg';
 import { isAuthUser } from './isAuthUser';
 isAuthUser();
 
@@ -22,23 +23,41 @@ class Pagination {
 
   paginationButtonMarkup(shoppingList) {
     this.markup = `     
-      <button class="pagination-button pag-left-pointer-double">${this.ikonArr[0]}</button>
-      <button class="pagination-button pag-left-pointer">${this.ikonArr[1]}</button>
+      <button class="pagination-button pag-pointer double-left">${this.ikonArr[0]}
+        <svg>
+          <use href="${arrows}#left-arrow" x="-3"></use>
+          <use class="second-left-arrow" href="${arrows}#left-arrow" x="3"></use>
+        </svg>
+      </button>
+      <button class="pagination-button pag-pointer left-pointer">${this.ikonArr[1]}
+        <svg>
+          <use href="${arrows}#left-arrow"></use>
+        </svg>
+      </button>
       <button class="pagination-button pag-number-pointer">${this.ikonArr[2]}</button>
       <button class="pagination-button pag-number-pointer">${this.ikonArr[3]}</button>
       <button class="pagination-button pag-number-pointer">${this.ikonArr[4]}</button>
       <button class="pagination-button pag-pt">${this.ikonArr[5]}</button>
-      <button class="pagination-button pag-right-pointer">${this.ikonArr[6]}</button>
-      <button class="pagination-button pag-right-pointer-double">${this.ikonArr[7]}</button>`;
+      <button class="pagination-button pag-pointer right-pointer">${this.ikonArr[6]}
+        <svg>
+          <use href="${arrows}#right-arrow"></use>
+        </svg>
+      </button>
+      <button class="pagination-button pag-pointer double-right">${this.ikonArr[7]}
+        <svg>
+          <use href="${arrows}#right-arrow" x="-3"></use>
+          <use class="second-left-arrow" href="${arrows}#right-arrow" x="3"></use>
+        </svg>
+      </button>`;
 
     refs.paginationContainer.innerHTML = this.markup;
 
     const handleResize = () => {
       if (window.innerWidth < 768) {
         this.groupPaginIndex = 2;
-         this.changeNumberOfButtons();
-         this.highlightCurrentPage();
-         this.changeStateOfNavigationButtons();
+        this.changeNumberOfButtons();
+        this.highlightCurrentPage();
+        this.changeStateOfNavigationButtons();
       } else {
         this.groupPaginIndex = 3;
         if (this.currentPage > 2) {
@@ -107,6 +126,7 @@ class Pagination {
     this.buttonElements.forEach(element => {
       if (this.currentPage === Number(element.textContent)) {
         element.classList.add('active');
+        element.setAttribute('disabled', '');
       } else {
         element.classList.remove('active');
       }
@@ -153,6 +173,12 @@ class Pagination {
       this.groupPaginIndex === 3
     ) {
       this.buttonElements[5].style.display = 'none';
+    }
+    if (
+      this.currentPage === this.totalPages - 1 &&
+      this.groupPaginIndex === 2
+    ) {
+      this.buttonElements[5].style.display = 'block';
     }
   }
 
@@ -202,7 +228,15 @@ const refs = {
 refs.paginationContainer.addEventListener('click', onTargetPageClick);
 
 function onTargetPageClick(e) {
-  let targetEL = e.target.textContent;
+  let targetEL;
+
+  if (e.target.nodeName === 'svg') {
+    targetEL = e.target.parentNode.textContent.trim();
+  } else if (e.target.nodeName === 'use') {
+    targetEL = e.target.parentNode.parentNode.textContent.trim();
+  } else if (e.target.nodeName === 'BUTTON') {
+    targetEL = e.target.textContent.trim();
+  }
 
   const isTargetNumber = !Number.isNaN(Number(targetEL));
 
