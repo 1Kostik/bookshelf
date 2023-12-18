@@ -331,7 +331,8 @@
     line-height: 1.22;
     color: var(--text-color-title-dark);
     border: 1px solid var(--text-color-title-dark);
-    transition: scale 250ms ease-in-out, background-color 250ms ease-in-out, box-shadow 250ms ease-in-out;
+    transition: scale 250ms ease-in-out, background-color 250ms ease-in-out,
+      box-shadow 250ms ease-in-out;
   }
 
   .pag-number-pointer:hover,
@@ -691,7 +692,8 @@
     line-height: 1.22;
     color: var(--text-color-title-dark);
     border: 1px solid var(--text-color-title-dark);
-    transition: scale 250ms ease-in-out, background-color 250ms ease-in-out, box-shadow 250ms ease-in-out;
+    transition: scale 250ms ease-in-out, background-color 250ms ease-in-out,
+      box-shadow 250ms ease-in-out;
   }
 
   .pag-number-pointer:hover,
