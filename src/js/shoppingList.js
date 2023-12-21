@@ -1,3 +1,4 @@
+import _ from 'lodash.throttle';
 import { Pagination } from './pagination';
 import { isAuthUser } from './isAuthUser';
 isAuthUser();
@@ -55,6 +56,26 @@ function emptyContainerMarkup() {
 }
 
 const pagination = new Pagination();
+
+const handleResize = () => {
+  if (window.innerWidth < 768) {
+    pagination.groupPaginIndex = 2;
+    pagination.makeSliceForRender(pagination.booksList);
+    pagination.changeNumberOfButtons();
+    pagination.highlightCurrentPage();
+    pagination.changeStateOfNavigationButtons();
+  } else {
+    pagination.groupPaginIndex = 3;
+    pagination.makeSliceForRender(pagination.booksList);
+    if (pagination.currentPage > 2) {
+      pagination.changeNumberOfButtons();
+      pagination.highlightCurrentPage();
+      pagination.changeStateOfNavigationButtons();
+    }
+  }
+};
+
+window.addEventListener('resize', _(handleResize, 300));
 
 refs.paginationContainer.addEventListener('click', onTargetPageClick);
 
