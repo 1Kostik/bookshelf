@@ -24,6 +24,8 @@ export class Pagination {
     this.increaseIndex = 1;
     this.decreaseIndex = -1;
     this.groupPaginIndex = window.innerWidth < 768 ? 2 : 3;
+
+    this.booksList = [];
   }
 
   paginationButtonMarkup(shoppingList) {
@@ -57,24 +59,6 @@ export class Pagination {
 
     refs.paginationContainer.innerHTML = this.markup;
 
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        this.groupPaginIndex = 2;
-        this.changeNumberOfButtons();
-        this.highlightCurrentPage();
-        this.changeStateOfNavigationButtons();
-      } else {
-        this.groupPaginIndex = 3;
-        if (this.currentPage > 2) {
-          this.changeNumberOfButtons();
-          this.highlightCurrentPage();
-          this.changeStateOfNavigationButtons();
-        }
-      }
-    };
-
-    window.addEventListener('resize', _(handleResize, 100));
-
     this.buttonElements = [...refs.paginationContainer.children];
     this.buttonElements.forEach(element => {
       element.classList.add('pagination-hidden');
@@ -100,7 +84,8 @@ export class Pagination {
   }
 
   makeSliceForRender(shoppingList) {
-    this.totalPages = Math.ceil(shoppingList.length / 3);
+    let sliceLength = this.groupPaginIndex === 3 ? 3 : 4;
+    this.totalPages = Math.ceil(shoppingList.length / sliceLength);
     if (this.currentPage > this.totalPages) {
       this.currentPage = this.totalPages;
     }
@@ -110,8 +95,8 @@ export class Pagination {
     this.highlightCurrentPage();
     this.changeStateOfNavigationButtons();
 
-    this.sliceBegin = (this.currentPage - 1) * 3;
-    this.sliceEnd = this.sliceBegin + 3;
+    this.sliceBegin = (this.currentPage - 1) * sliceLength;
+    this.sliceEnd = this.sliceBegin + sliceLength;
     this.arrForRender = shoppingList.slice(this.sliceBegin, this.sliceEnd);
 
     shoplistBooksMarkup = this.arrForRender.map(makeShoplistMarkup).join('');
@@ -188,31 +173,38 @@ export class Pagination {
   }
 
   increase(shoppingList) {
+    this.booksList = shoppingList;
     this.changeCurrentPage(this.increaseIndex);
     this.makeSliceForRender(shoppingList);
   }
   decrease(shoppingList) {
+    this.booksList = shoppingList;
     this.changeCurrentPage(this.decreaseIndex);
     this.makeSliceForRender(shoppingList);
   }
   firstPage(shoppingList) {
+    this.booksList = shoppingList;
     this.currentPage = 1;
     this.makeSliceForRender(shoppingList);
   }
   lastPage(shoppingList) {
+    this.booksList = shoppingList;
     this.currentPage = this.totalPages;
     this.makeSliceForRender(shoppingList);
   }
   targetPage(shoppingList, page) {
+    this.booksList = shoppingList;
     this.currentPage = page;
     this.makeSliceForRender(shoppingList);
   }
   nextGroup(shoppingList) {
+    this.booksList = shoppingList;
     this.changeCurrentPage(this.groupPaginIndex);
     this.makeSliceForRender(shoppingList);
   }
 
   afterBookDeleteUpdate(shoppingList) {
+    this.booksList = shoppingList;
     this.makeSliceForRender(shoppingList);
     if (this.currentPage > 1 && this.currentPage <= 2) {
       this.buttonElements.slice(2, 5).forEach((element, i) => {
